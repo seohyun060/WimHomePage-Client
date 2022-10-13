@@ -1,0 +1,21 @@
+@import '../../../styles/colors';
+
+#root {
+  .partners-root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $black;
+    min-height: 100vh;
+    gap: 96px;
+    padding: 400px 0;
+
+    .main-container {
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}

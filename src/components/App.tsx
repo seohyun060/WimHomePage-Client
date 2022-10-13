@@ -7,6 +7,7 @@ import HistoryContainer from './History/containers/HistoryContainer';
 import MainContainer from './Main/containers/MainContainer';
 import PartnersContainer from './Partners/containers/PartnersContainer';
 import '@styles/core.css';
+import FooterContainer from './Footer/containers/FooterContainer';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
       <HistoryContainer />
       <PartnersContainer />
       <ContactContainer />
-      <Footer />
+      <FooterContainer />
     </div>
   );
 }
