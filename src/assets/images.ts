@@ -22,7 +22,7 @@ const images = {
   contactBg: '/assets/images/img-bg.png',
   downloadBig: '/assets/images/ic-download-24.png',
   downloadSmall: '/assets/images/ic-download-18.png',
-  mainBg: '/assets/images/101.gif',
+  mainBg: '/assets/images/101-1.png',
 };
 
 export default images;

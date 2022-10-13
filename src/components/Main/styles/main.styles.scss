@@ -1,0 +1,55 @@
+@import '../../../styles/colors';
+@import '../../../styles/fonts';
+
+#root {
+  .main-root {
+    height: 100vh;
+    background-color: $Black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    .main-container {
+      position: relative;
+      width: 1400px;
+
+      .title-container {
+        display: flex;
+        height: 684px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: $White;
+
+        h1,
+        span {
+          white-space: pre-wrap;
+          z-index: 1;
+        }
+
+        h1 {
+          font-size: 80px;
+          line-height: 100px;
+          font-weight: 700;
+          text-align: center;
+        }
+
+        span {
+          font-size: 24px;
+          line-height: 36px;
+          margin-top: 24px;
+        }
+      }
+
+      .bg-image {
+        position: absolute;
+        left: calc((100% - 646px) / 2);
+        top: 0;
+        width: 646px;
+        height: 684px;
+        z-index: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@import '../../../styles/colors';
+
+#root {
+  .header-root {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: $Black;
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    padding: 0 40px;
+
+    .header-container {
+      position: relative;
+      width: 1400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .logo {
+        position: absolute;
+        left: 0;
+      }
+
+      .gnb-container {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 90px;
+
+        .item {
+          a {
+            color: $White;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}

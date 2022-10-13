@@ -1,0 +1,32 @@
+#root .header-root {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-color: #121212;
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  padding: 0 40px;
+}
+#root .header-root .header-container {
+  position: relative;
+  width: 1400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#root .header-root .header-container .logo {
+  position: absolute;
+  left: 0;
+}
+#root .header-root .header-container .gnb-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 90px;
+}
+#root .header-root .header-container .gnb-container .item a {
+  color: #ffffff;
+  font-size: 18px;
+}/*# sourceMappingURL=header.styles.css.map */
