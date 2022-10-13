@@ -5,12 +5,21 @@
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
+  /* Hide scrollbar for IE, Edge and Firefox */
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+* {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 button {
   cursor: pointer;
   outline: none;
   border: 0;
+  background-color: transparent;
 }
 
 a {
@@ -23,6 +32,20 @@ li {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+input,
+textarea {
+  outline: none;
+  border: 0;
+}
+
+span {
+  cursor: default;
+}
+
+body {
+  background-color: #121212;
 }
 
 #root .homepage-root {
@@ -40,5 +63,6 @@ li {
   color: #ffffff;
 }
 #root .homepage-root .main-container {
-  max-width: 1400px;
+  max-width: 1480px;
+  padding: 0 80px;
 }/*# sourceMappingURL=core.css.map */

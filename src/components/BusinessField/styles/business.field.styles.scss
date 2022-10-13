@@ -2,23 +2,25 @@
 
 #root {
   .bf-root {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 96px;
-    background-color: $Black;
+    background-color: $black;
+    padding: 400px 0;
 
     .title {
       font-size: 48px;
-      color: $White;
+      color: $white;
       line-height: 86px;
       font-weight: 700;
     }
 
     .main-container {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
 
       .item {
@@ -26,13 +28,12 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 450px;
-        height: 475px;
+        min-height: 475px;
         border-radius: 20px;
         padding: 73px 44px 47px;
 
         &:hover {
-          background-color: $Gray200;
+          background-color: $gray200;
         }
 
         img {
@@ -47,7 +48,7 @@
 
         .subtitle {
           font-size: 18px;
-          color: $Gray100;
+          color: $gray100;
           line-height: 26px;
           text-align: center;
           word-break: keep-all;

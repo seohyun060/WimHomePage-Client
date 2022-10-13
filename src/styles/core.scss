@@ -8,17 +8,28 @@
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  & {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 }
 
 button {
   cursor: pointer;
   outline: none;
   border: 0;
+  background-color: transparent;
 }
 
 a {
   text-decoration: none;
-  color: $Black;
+  color: $black;
 }
 
 ul,
@@ -26,6 +37,20 @@ li {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+input,
+textarea {
+  outline: none;
+  border: 0;
+}
+
+span {
+  cursor: default;
+}
+
+body {
+  background-color: $black;
 }
 
 #root {
@@ -40,12 +65,13 @@ li {
       .title {
         font-size: 48px;
         font-weight: 700;
-        color: $White;
+        color: $white;
       }
     }
 
     .main-container {
-      max-width: 1400px;
+      max-width: 1480px;
+      padding: 0 80px;
     }
   }
 }
