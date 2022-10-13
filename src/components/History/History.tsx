@@ -1,7 +1,41 @@
+import { HistoryTypes } from '@typedef/components/history/history.types';
 import React from 'react';
+import './styles/history.styles.css';
 
-const History = () => {
-  return <div>History</div>;
+type Props = {
+  history: HistoryTypes[];
+};
+
+const History = ({ history }: Props) => {
+  return (
+    <div className='history-root'>
+      <h1 className='title'>{'History'}</h1>
+      <div className='timeline-container'>
+        <div className='timeline' />
+        <div className='list-container'>
+          {history.map((item, idx) => {
+            return (
+              <div className='item' key={idx}>
+                <div className='dot' />
+                <div className='content'>
+                  <span className='time'>{item.time}</span>
+                  <div className='history-container'>
+                    {item.list.map((listItem, idx) => {
+                      return (
+                        <span key={idx} className='history'>
+                          {listItem}
+                        </span>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default History;
