@@ -5,8 +5,10 @@ import './styles/business.field.styles.css';
 const BusinessField = () => {
   return (
     <div className='bf-root' id='business'>
-      <h1 className='title'>{'Business Field'}</h1>
-      <div className='list-container'>
+      <div className='title-container'>
+        <h1 className='title'>{'Business Field'}</h1>
+      </div>
+      <div className='main-container'>
         <div className='item'>
           <img src={images.buisiness.hardware} alt='hardware' />
           <div className='title'>{'하드웨어'}</div>

@@ -8,9 +8,11 @@ type Props = {
 
 const History = ({ history }: Props) => {
   return (
-    <div className='history-root'>
-      <h1 className='title'>{'History'}</h1>
-      <div className='timeline-container'>
+    <div className='history-root' id='history'>
+      <div className='title-container'>
+        <h1 className='title'>{'History'}</h1>
+      </div>
+      <div className='main-container'>
         <div className='timeline' />
         <div className='list-container'>
           {history.map((item, idx) => {

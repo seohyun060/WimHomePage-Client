@@ -13,11 +13,11 @@
   line-height: 86px;
   font-weight: 700;
 }
-#root .bf-root .list-container {
+#root .bf-root .main-container {
   display: flex;
   gap: 24px;
 }
-#root .bf-root .list-container .item {
+#root .bf-root .main-container .item {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,18 +27,18 @@
   border-radius: 20px;
   padding: 73px 44px 47px;
 }
-#root .bf-root .list-container .item:hover {
+#root .bf-root .main-container .item:hover {
   background-color: #1e1e1e;
 }
-#root .bf-root .list-container .item img {
+#root .bf-root .main-container .item img {
   width: 152px;
   height: 152px;
 }
-#root .bf-root .list-container .item .title {
+#root .bf-root .main-container .item .title {
   font-size: 26px;
   margin: 50px 0 20px;
 }
-#root .bf-root .list-container .item .subtitle {
+#root .bf-root .main-container .item .subtitle {
   font-size: 18px;
   color: #999999;
   line-height: 26px;

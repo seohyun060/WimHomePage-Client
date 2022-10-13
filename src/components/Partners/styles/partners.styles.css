@@ -1,0 +1,14 @@
+#root .partners-root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #121212;
+  min-height: 100vh;
+  gap: 96px;
+}
+#root .partners-root .main-container {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+}/*# sourceMappingURL=partners.styles.css.map */

@@ -28,4 +28,17 @@ li {
 #root .homepage-root {
   width: 100%;
   min-height: 100vh;
+}
+#root .homepage-root .title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#root .homepage-root .title-container .title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #ffffff;
+}
+#root .homepage-root .main-container {
+  max-width: 1400px;
 }/*# sourceMappingURL=core.css.map */

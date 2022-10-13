@@ -10,7 +10,7 @@
   position: relative;
   width: 1400px;
 }
-#root .main-root .main-container .title-container {
+#root .main-root .main-container .slogan-container {
   display: flex;
   height: 684px;
   flex-direction: column;
@@ -18,18 +18,18 @@
   justify-content: center;
   color: #ffffff;
 }
-#root .main-root .main-container .title-container h1,
-#root .main-root .main-container .title-container span {
+#root .main-root .main-container .slogan-container h1,
+#root .main-root .main-container .slogan-container span {
   white-space: pre-wrap;
   z-index: 1;
 }
-#root .main-root .main-container .title-container h1 {
+#root .main-root .main-container .slogan-container h1 {
   font-size: 80px;
   line-height: 100px;
   font-weight: 700;
   text-align: center;
 }
-#root .main-root .main-container .title-container span {
+#root .main-root .main-container .slogan-container span {
   font-size: 24px;
   line-height: 36px;
   margin-top: 24px;

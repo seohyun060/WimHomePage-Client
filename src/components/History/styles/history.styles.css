@@ -8,31 +8,26 @@
   gap: 96px;
   padding: 240px 60px;
 }
-#root .history-root .title {
-  font-size: 48px;
-  font-weight: 700;
-  color: #ffffff;
-}
-#root .history-root .timeline-container {
+#root .history-root .main-container {
   display: flex;
 }
-#root .history-root .timeline-container .timeline {
+#root .history-root .main-container .timeline {
   width: 8px;
   background-color: #355fff;
   opacity: 0.22;
   border-radius: 4px;
 }
-#root .history-root .timeline-container .list-container {
+#root .history-root .main-container .list-container {
   padding: 48px 0;
   display: flex;
   flex-direction: column;
   gap: 48px;
 }
-#root .history-root .timeline-container .list-container .item {
+#root .history-root .main-container .list-container .item {
   position: relative;
   padding: 0 40px;
 }
-#root .history-root .timeline-container .list-container .item .dot {
+#root .history-root .main-container .list-container .item .dot {
   position: absolute;
   top: 5px;
   left: -14px;
@@ -44,7 +39,7 @@
   align-items: center;
   justify-content: center;
 }
-#root .history-root .timeline-container .list-container .item .dot::after {
+#root .history-root .main-container .list-container .item .dot::after {
   content: "";
   width: 10px;
   height: 10px;
@@ -52,19 +47,19 @@
   opacity: 0.44;
   border-radius: 50%;
 }
-#root .history-root .timeline-container .list-container .item .content .time {
+#root .history-root .main-container .list-container .item .content .time {
   display: block;
   font-size: 26px;
   color: #355fff;
   font-weight: 700;
   margin-bottom: 16px;
 }
-#root .history-root .timeline-container .list-container .item .content .history-container {
+#root .history-root .main-container .list-container .item .content .history-container {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
-#root .history-root .timeline-container .list-container .item .content .history-container .history {
+#root .history-root .main-container .list-container .item .content .history-container .history {
   color: #ffffff;
   font-size: 18px;
   line-height: 26px;
