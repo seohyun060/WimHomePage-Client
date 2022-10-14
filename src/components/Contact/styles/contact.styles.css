@@ -49,6 +49,9 @@
   font-weight: 700;
   color: #ffffff;
 }
+#root .contact-root .main-container .submit-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
 #root .contact-root .main-container .download-container {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -74,4 +77,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+#root .contact-root .main-container .download-container .button:hover {
+  border-color: rgba(255, 255, 255, 0.1);
 }/*# sourceMappingURL=contact.styles.css.map */

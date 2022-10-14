@@ -23,8 +23,11 @@ const images = {
   downloadBig: '/assets/images/ic-download-24.png',
   downloadSmall: '/assets/images/ic-download-18.png',
   mainBg: '/assets/images/101-1.png',
-  pdf: '/assets/pdf/wim-portfolio.pdf',
-  terms: '/terms/privacy.html',
+  titleObjBig: '/assets/images/img-obj-24.png',
+  titleObjSmall: '/assets/images/img-obj-18.png',
+  pdf: '/assets/pdf/WIM_COMPANY_PORTFOLIO.pdf',
+  privacy: '/terms/privacy.html',
+  terms: '/terms/terms.html',
 };
 
 export default images;

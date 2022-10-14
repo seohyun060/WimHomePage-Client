@@ -53,6 +53,7 @@ body {
   min-height: 100vh;
 }
 #root .homepage-root .title-container {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,6 +62,11 @@ body {
   font-size: 48px;
   font-weight: 700;
   color: #ffffff;
+}
+#root .homepage-root .title-container .obj {
+  position: absolute;
+  top: -12px;
+  right: -24px;
 }
 #root .homepage-root .main-container {
   max-width: 1480px;

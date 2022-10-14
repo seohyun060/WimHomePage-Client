@@ -1,3 +1,4 @@
+import images from '@assets/images';
 import { HistoryTypes } from '@typedef/components/history/history.types';
 import React from 'react';
 import './styles/history.styles.css';
@@ -11,6 +12,7 @@ const History = ({ history }: Props) => {
     <div className='history-root' id='history'>
       <div className='title-container'>
         <h1 className='title'>{'History'}</h1>
+        <img src={images.titleObjBig} alt='obj' className='obj' />
       </div>
       <div className='main-container'>
         <div className='timeline' />

@@ -13,13 +13,15 @@ const Footer = ({ info }: Props) => {
       <div className='main-container'>
         <div className='terms-container'>
           <div className='terms'>
-            <a href={images.terms} target='_blank'>
+            <a href={images.privacy} target='_blank'>
               {'개인정보 처리방침'}
             </a>
           </div>
           <div className='bar' />
           <div className='terms'>
-            <a href=''>{'서비스 이용약관'}</a>
+            <a href={images.terms} target='_blank'>
+              {'서비스 이용약관'}
+            </a>
           </div>
         </div>
         <div className='container'>
