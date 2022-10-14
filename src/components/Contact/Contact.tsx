@@ -55,7 +55,7 @@ const Contact = ({ contactForm, onValueChanged, onSubmitClicked }: Props) => {
               onValueChanged={(value) => onValueChanged('email', value)}
             />
             <div className='cinput-root'>
-              <label htmlFor={`input-file`} className='label'>
+              <div className='label'>
                 <span className='span'>{'첨부파일'}</span>
                 <span className='input'>{contactForm.file?.name}</span>
                 <input
@@ -69,8 +69,10 @@ const Contact = ({ contactForm, onValueChanged, onSubmitClicked }: Props) => {
                   }
                   hidden
                 />
-                <div className='button'>{'파일선택'}</div>
-              </label>
+                <label htmlFor={`input-file`} className='button'>
+                  {'파일선택'}
+                </label>
+              </div>
             </div>
           </div>
           <div className='cinput-root textarea'>
