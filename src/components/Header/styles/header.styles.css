@@ -32,4 +32,7 @@
 #root .header-root .header-container .gnb-container .item a {
   color: #ffffff;
   font-size: 18px;
+}
+#root .header-root .header-container .gnb-container .item a:hover {
+  color: #355fff;
 }/*# sourceMappingURL=header.styles.css.map */
