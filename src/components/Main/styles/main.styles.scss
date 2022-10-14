@@ -50,7 +50,25 @@
         width: 646px;
         height: 684px;
         z-index: 0;
+        animation: bgAnim 5s linear infinite;
       }
     }
+  }
+}
+
+@keyframes bgAnim {
+  20% {
+    transform: scaleX(1.3);
+  }
+  40% {
+    transform: scaleY(1.05) scaleX(1.3);
+  }
+
+  60% {
+    transform: scaleY(1.1) scaleX(1.4);
+  }
+
+  80% {
+    transform: scaleX(1.2);
   }
 }
