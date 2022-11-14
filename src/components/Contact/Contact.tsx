@@ -97,7 +97,7 @@ const Contact = ({ contactForm, onValueChanged, onSubmitClicked }: Props) => {
         </form>
         <div className='download-container'>
           <span className='label'>{'포트폴리오 다운로드'}</span>
-          <a href={images.pdf} target='_blank' className='button'>
+          <a target='_blank' className='button'>
             <img src={images.downloadBig} alt='download-btn' />
           </a>
         </div>
