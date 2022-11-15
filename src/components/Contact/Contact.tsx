@@ -95,12 +95,12 @@ const Contact = ({ contactForm, onValueChanged, onSubmitClicked }: Props) => {
             {'문의하기'}
           </button>
         </form>
-        <div className='download-container'>
+        {/* <div className='download-container'>
           <span className='label'>{'포트폴리오 다운로드'}</span>
           <a target='_blank' className='button'>
             <img src={images.downloadBig} alt='download-btn' />
           </a>
-        </div>
+        </div> */}
       </div>
     </div>
   );
