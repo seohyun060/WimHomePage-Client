@@ -1,3 +1,31 @@
+.white {
+  color: #ffffff;
+}
+
+.gray1 {
+  color: #f9fafb;
+}
+
+.gray2 {
+  color: #eff0f2;
+}
+
+.gray3 {
+  color: #d6d6d6;
+}
+
+.gray4 {
+  color: #999999;
+}
+
+.gray5 {
+  color: #767676;
+}
+
+.black {
+  color: #111111;
+}
+
 #root .contact-root {
   position: relative;
   min-height: 100vh;
@@ -20,7 +48,7 @@
   content: "";
   width: 100%;
   height: 100%;
-  background-color: #121212;
+  background-color: #111111;
   opacity: 0.7;
 }
 #root .contact-root .main-container {

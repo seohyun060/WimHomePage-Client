@@ -1,38 +1,65 @@
+.white {
+  color: #ffffff;
+}
+
+.gray1 {
+  color: #f9fafb;
+}
+
+.gray2 {
+  color: #eff0f2;
+}
+
+.gray3 {
+  color: #d6d6d6;
+}
+
+.gray4 {
+  color: #999999;
+}
+
+.gray5 {
+  color: #767676;
+}
+
+.black {
+  color: #111111;
+}
+
 #root .header-root {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: rgba(18, 18, 18, 0.5);
+  background-color: rgba(255, 255, 255, 0);
   display: flex;
   justify-content: center;
-  height: 100px;
+  height: 70px;
   padding: 0 40px;
   z-index: 99;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.0705882353);
+}
+#root .header-root .blur {
   -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
 }
 #root .header-root .header-container {
-  position: relative;
-  width: 1400px;
+  width: 1200px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
-#root .header-root .header-container .logo {
-  position: absolute;
-  left: 0;
+#root .header-root .header-container .logo img {
+  width: 74px;
+  height: 18px;
 }
 #root .header-root .header-container .gnb-container {
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   gap: 90px;
 }
 #root .header-root .header-container .gnb-container .item a {
   color: #ffffff;
   font-size: 18px;
-}
-#root .header-root .header-container .gnb-container .item a:hover {
-  color: #355fff;
 }/*# sourceMappingURL=header.styles.css.map */

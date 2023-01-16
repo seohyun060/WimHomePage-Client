@@ -7,7 +7,6 @@ const BusinessField = () => {
     <div className='bf-root' id='business'>
       <div className='title-container'>
         <h1 className='title'>{'Business Field'}</h1>
-        <img src={images.titleObjBig} alt='obj' className='obj' />
       </div>
       <div className='main-container'>
         <div className='item'>

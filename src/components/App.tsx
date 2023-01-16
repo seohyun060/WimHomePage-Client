@@ -14,11 +14,11 @@ function App() {
     <div className='homepage-root'>
       <HeaderContainer />
       <MainContainer />
-      <BusinessFieldContainer />
+      {/* <BusinessFieldContainer />
       <HistoryContainer />
       <PartnersContainer />
       <ContactContainer />
-      <FooterContainer />
+      <FooterContainer /> */}
     </div>
   );
 }
