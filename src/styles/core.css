@@ -103,6 +103,9 @@
 }
 
 button {
+  font-family: "SpoqaHansSansNeo";
+  color: #ffffff;
+  font-size: 16px;
   cursor: pointer;
   outline: none;
   border: 0;
@@ -158,4 +161,24 @@ body {
 #root .homepage-root .main-container {
   max-width: 1480px;
   padding: 0 80px;
+}
+#root .btn-solid-round {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 18px 30px;
+  border-radius: 28px;
+  color: white;
+}
+#root .btn-outline-round {
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  padding: 18px 30px;
+  border-radius: 28px;
+}
+#root .btn-solid {
+  background-color: #767676;
+  padding: 18px 22px;
+}
+#root .btn-solid-linear {
+  background-image: linear-gradient(to right, #3e5cd1, #a502fb);
+  padding: 18px 0;
 }/*# sourceMappingURL=core.css.map */

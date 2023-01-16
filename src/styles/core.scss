@@ -20,6 +20,9 @@
 }
 
 button {
+  font-family: 'SpoqaHansSansNeo';
+  color: $white;
+  font-size: 16px;
   cursor: pointer;
   outline: none;
   border: 0;
@@ -79,5 +82,29 @@ body {
       max-width: 1480px;
       padding: 0 80px;
     }
+  }
+
+  .btn-solid-round {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 18px 30px;
+    border-radius: 28px;
+    color: white;
+  }
+
+  .btn-outline-round {
+    background-color: transparent;
+    border: 1px solid $white;
+    padding: 18px 30px;
+    border-radius: 28px;
+  }
+
+  .btn-solid {
+    background-color: $gray5;
+    padding: 18px 22px;
+  }
+
+  .btn-solid-linear {
+    background-image: linear-gradient(to right, #3e5cd1, $primary-purple);
+    padding: 18px 0;
   }
 }
