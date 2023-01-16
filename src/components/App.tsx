@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import BusinessFieldContainer from './BusinessField/containers/BusinessFieldContainer';
 import ContactContainer from './Contact/containers/ContactContainer';
 import Footer from './Footer/Footer';
@@ -8,13 +8,24 @@ import MainContainer from './Main/containers/MainContainer';
 import PartnersContainer from './Partners/containers/PartnersContainer';
 import '@styles/core.css';
 import FooterContainer from './Footer/containers/FooterContainer';
+import { useScroll } from '@hooks/useScroll';
 
 function App() {
+  const { rootRef, wheelHandler } = useScroll();
+
+  useEffect(() => {
+    rootRef.current?.addEventListener('wheel', wheelHandler);
+
+    return () => {
+      rootRef.current?.removeEventListener('wheel', wheelHandler);
+    };
+  }, []);
+
   return (
-    <div className='homepage-root'>
+    <div ref={rootRef} className='homepage-root'>
       <HeaderContainer />
       <MainContainer />
-      {/* <BusinessFieldContainer /> */}
+      <BusinessFieldContainer />
       {/* <HistoryContainer /> */}
       {/* <PartnersContainer /> */}
       {/* <ContactContainer /> */}

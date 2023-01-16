@@ -1,4 +1,4 @@
-import { usePointer } from '@libs/usePointer';
+import { usePointer } from '@hooks/usePointer';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import Main from '../Main';
 
