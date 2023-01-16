@@ -5,17 +5,17 @@ import Partners from '../Partners';
 
 const PartnersContainer = () => {
   const [partners, setPartners] = useState([
-    images.partners.logo1,
-    images.partners.logo2,
-    images.partners.logo3,
-    images.partners.logo4,
-    images.partners.logo5,
-    images.partners.logo6,
-    images.partners.logo7,
-    images.partners.logo8,
-    images.partners.logo9,
-    images.partners.logo10,
-    images.partners.logo11,
+    images.partnersLogo.logo1,
+    images.partnersLogo.logo2,
+    images.partnersLogo.logo3,
+    images.partnersLogo.logo4,
+    images.partnersLogo.logo5,
+    images.partnersLogo.logo6,
+    images.partnersLogo.logo7,
+    images.partnersLogo.logo8,
+    images.partnersLogo.logo9,
+    images.partnersLogo.logo10,
+    images.partnersLogo.logo11,
   ]);
 
   return <Partners partners={partners} />;

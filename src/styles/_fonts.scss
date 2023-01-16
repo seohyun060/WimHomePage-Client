@@ -1,15 +1,63 @@
-// PC
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/public/fonts/Montserrat/Montserrat-VariableFont_wght.ttf');
+}
 
-$font-size-title-pc: 80px;
-$font-size-subtitle-pc: 48px;
-$font-size-body1-pc: 26px;
-$font-size-body2-pc: 24px;
-$font-size-body3-pc: 18px;
-$font-size-footer-pc: 14px;
+@font-face {
+  font-family: 'SpoqaHansSansNeo';
+  src: url('/public/fonts/SpoqaHanSansNeo_all/SpoqaHanSansNeo_OTF_original/SpoqaHanSansNeo-Light.otf'),
+    url('/public/fonts/SpoqaHanSansNeo_all/SpoqaHanSansNeo_OTF_original/SpoqaHanSansNeo-Regular.otf'),
+    url('/public/fonts/SpoqaHanSansNeo_all/SpoqaHanSansNeo_OTF_original/SpoqaHanSansNeo-Medium.otf'),
+    url('/public/fonts/SpoqaHanSansNeo_all/SpoqaHanSansNeo_OTF_original/SpoqaHanSansNeo-Bold.otf');
+}
 
-$line-height-title-pc: 100px;
-$line-height-subtitle-pc: 64px;
-$line-height-body1-pc: 38px;
-$line-height-body2-pc: 36px;
-$line-height-body3-pc: 26px;
-$line-height-footer-pc: 20px;
+.eng {
+  font-family: 'Montserrat';
+
+  &-h1 {
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 80px;
+  }
+
+  &-h2 {
+    font-weight: 700;
+    font-size: 22px;
+  }
+
+  &-h3 {
+    font-weight: 400;
+    font-size: 16px;
+  }
+}
+
+.kor {
+  font-family: 'SpoqaHansSansNeo';
+  font-weight: 400;
+
+  &-h1 {
+    font-weight: 700;
+    font-size: 24px;
+  }
+
+  &-h2 {
+    font-size: 22px;
+    letter-spacing: -25px;
+    line-height: 34px;
+  }
+
+  &-h3 {
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  &-h4 {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  &-h5 {
+    font-size: 15px;
+    line-height: 22px;
+  }
+}

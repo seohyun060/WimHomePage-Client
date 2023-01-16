@@ -13,12 +13,12 @@ function App() {
   return (
     <div className='homepage-root'>
       <HeaderContainer />
-      <MainContainer />
+      {/* <MainContainer />
       <BusinessFieldContainer />
       <HistoryContainer />
       <PartnersContainer />
       <ContactContainer />
-      <FooterContainer />
+      <FooterContainer /> */}
     </div>
   );
 }

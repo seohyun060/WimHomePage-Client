@@ -19,7 +19,7 @@ const Contact = ({ contactForm, onValueChanged, onSubmitClicked }: Props) => {
     <div className='contact-root' id='contact'>
       <div className='title-container'>
         <h1 className='title'>{'Contact Us'}</h1>
-        <img src={images.titleObjBig} alt='obj' className='obj' />
+        <img alt='obj' className='obj' />
       </div>
       <div className='main-container'>
         <form className='form'>

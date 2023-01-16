@@ -11,7 +11,6 @@ const Partners = ({ partners }: Props) => {
     <div className='partners-root' id='partners'>
       <div className='title-container'>
         <h1 className='title'>{'Partners'}</h1>
-        <img src={images.titleObjBig} alt='obj' className='obj' />
       </div>
 
       <div className='main-container'>
