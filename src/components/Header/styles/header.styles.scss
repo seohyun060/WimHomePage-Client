@@ -11,9 +11,12 @@
     height: 70px;
     padding: 0 40px;
     z-index: 99;
-    -webkit-backdrop-filter: blur(15px);
-    backdrop-filter: blur(15px);
     border-bottom: 1px solid #ffffff12;
+
+    .blur {
+      -webkit-backdrop-filter: blur(15px);
+      backdrop-filter: blur(15px);
+    }
 
     .header-container {
       width: 1200px;

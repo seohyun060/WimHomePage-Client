@@ -1,16 +1,52 @@
+.white {
+  color: #ffffff;
+}
+
+.gray1 {
+  color: #f9fafb;
+}
+
+.gray2 {
+  color: #eff0f2;
+}
+
+.gray3 {
+  color: #d6d6d6;
+}
+
+.gray4 {
+  color: #999999;
+}
+
+.gray5 {
+  color: #767676;
+}
+
+.black {
+  color: #111111;
+}
+
 @font-face {
   font-family: "Montserrat";
   src: url("/public/fonts/Montserrat/Montserrat-VariableFont_wght.ttf");
 }
 @font-face {
+  font-family: "Montserrat-Bold";
+  src: url("/public/fonts/Montserrat/static/Montserrat-Bold.ttf");
+}
+@font-face {
   font-family: "SpoqaHansSansNeo";
-  src: url("/public/fonts/SpoqaHanSansNeo_all/SpoqaHanSansNeo_OTF_original/SpoqaHanSansNeo-Light.otf"), url("/public/fonts/SpoqaHanSansNeo_all/SpoqaHanSansNeo_OTF_original/SpoqaHanSansNeo-Regular.otf"), url("/public/fonts/SpoqaHanSansNeo_all/SpoqaHanSansNeo_OTF_original/SpoqaHanSansNeo-Medium.otf"), url("/public/fonts/SpoqaHanSansNeo_all/SpoqaHanSansNeo_OTF_original/SpoqaHanSansNeo-Bold.otf");
+  src: url("/public/fonts/SpoqaHanSansNeo_all/SpoqaHanSansNeo_OTF_original/SpoqaHanSansNeo-Regular.otf");
+}
+@font-face {
+  font-family: "SpoqaHansSansNeo-Bold";
+  src: url("/public/fonts/SpoqaHanSansNeo_all/SpoqaHanSansNeo_OTF_original/SpoqaHanSansNeo-Bold.otf");
 }
 .eng {
   font-family: "Montserrat";
 }
 .eng-h1 {
-  font-weight: 700;
+  font-family: "Montserrat-Bold";
   font-size: 60px;
   line-height: 80px;
 }
@@ -28,6 +64,7 @@
   font-weight: 400;
 }
 .kor-h1 {
+  font-family: "SpoqaHansSansNeo-Bold";
   font-weight: 700;
   font-size: 24px;
 }

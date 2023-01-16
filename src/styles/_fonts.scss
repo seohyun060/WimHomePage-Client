@@ -4,18 +4,25 @@
 }
 
 @font-face {
+  font-family: 'Montserrat-Bold';
+  src: url('/public/fonts/Montserrat/static/Montserrat-Bold.ttf');
+}
+
+@font-face {
   font-family: 'SpoqaHansSansNeo';
-  src: url('/public/fonts/SpoqaHanSansNeo_all/SpoqaHanSansNeo_OTF_original/SpoqaHanSansNeo-Light.otf'),
-    url('/public/fonts/SpoqaHanSansNeo_all/SpoqaHanSansNeo_OTF_original/SpoqaHanSansNeo-Regular.otf'),
-    url('/public/fonts/SpoqaHanSansNeo_all/SpoqaHanSansNeo_OTF_original/SpoqaHanSansNeo-Medium.otf'),
-    url('/public/fonts/SpoqaHanSansNeo_all/SpoqaHanSansNeo_OTF_original/SpoqaHanSansNeo-Bold.otf');
+  src: url('/public/fonts/SpoqaHanSansNeo_all/SpoqaHanSansNeo_OTF_original/SpoqaHanSansNeo-Regular.otf');
+}
+
+@font-face {
+  font-family: 'SpoqaHansSansNeo-Bold';
+  src: url('/public/fonts/SpoqaHanSansNeo_all/SpoqaHanSansNeo_OTF_original/SpoqaHanSansNeo-Bold.otf');
 }
 
 .eng {
   font-family: 'Montserrat';
 
   &-h1 {
-    font-weight: 700;
+    font-family: 'Montserrat-Bold';
     font-size: 60px;
     line-height: 80px;
   }
@@ -36,6 +43,7 @@
   font-weight: 400;
 
   &-h1 {
+    font-family: 'SpoqaHansSansNeo-Bold';
     font-weight: 700;
     font-size: 24px;
   }

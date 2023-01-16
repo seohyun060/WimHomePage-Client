@@ -20,6 +20,7 @@ const images = {
     logo10: '/assets/images/logo/logo-10.png',
     logo11: '/assets/images/logo/logo-11.png',
   },
+  mainVideo: '/assets/images/main-video.mp4',
   contact: '/assets/images/img-contact-us.jpg',
   contactDetail: '/assets/images/img-contact-us-detail.jpg',
   hisotry: '/assets/images/history.jpg',
