@@ -96,6 +96,18 @@
   align-items: center;
   overflow: hidden;
 }
+#root .main-root .pointer {
+  z-index: 9999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  mix-blend-mode: difference;
+  pointer-events: none;
+}
 #root .main-root .background {
   position: absolute;
   left: 0;
