@@ -1,14 +1,21 @@
 import images from '@assets/images';
 import React from 'react';
 import './styles/header.styles.css';
+type Props = {
+  headerColor: string;
+};
 
-const Header = () => {
+const Header = ({ headerColor }: Props) => {
   return (
-    <header className='header-root'>
+    <header className={`header-root${headerColor}`}>
       <div className='header-container'>
         <div className='logo'>
           <a href='#main'>
-            <img src={images.logoHeaderW} alt='logo' />
+            {headerColor === '-black' ? (
+              <img src={images.logoHeaderb} alt='logo' />
+            ) : (
+              <img src={images.logoHeaderW} alt='logo' />
+            )}
           </a>
         </div>
         <ul className='gnb-container'>

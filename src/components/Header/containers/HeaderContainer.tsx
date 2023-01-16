@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../Header';
+type Props = {
+  location: string;
+};
+const HeaderContainer = ({ location }: Props) => {
+  const [headerColor, setHeaderColor] = useState('');
 
-const HeaderContainer = () => {
-  return <Header />;
+  useEffect(() => {
+    if (location === 'http://localhost:3000/#partners') {
+      setHeaderColor('-black');
+    } else {
+      setHeaderColor('');
+    }
+    console.log(location);
+  }, [location, headerColor]);
+
+  return <Header headerColor={headerColor} />;
 };
 
 export default HeaderContainer;
