@@ -12,45 +12,94 @@
     align-items: center;
     overflow: hidden;
 
-    .main-container {
-      position: relative;
-      width: 1400px;
-
-      .slogan-container {
-        display: flex;
-        height: 684px;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        color: $white;
-
-        h1,
-        span {
-          white-space: pre-wrap;
-          z-index: 1;
-        }
-
-        h1 {
-          font-size: 80px;
-          line-height: 100px;
-          font-weight: 700;
-          text-align: center;
-        }
-
-        span {
-          font-size: 24px;
-          line-height: 36px;
-          margin-top: 24px;
-          font-weight: 200;
-        }
-      }
-    }
-
-    .bg-video {
+    .background {
       position: absolute;
       left: 0;
       top: 0;
-      height: 100vh;
+      .bg-video {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+      }
+
+      .layer1 {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        background-color: $black;
+        opacity: 0.5;
+      }
+
+      .layer2 {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        background-image: radial-gradient(
+          circle at 50% 50%,
+          rgba(0, 23, 49, 0),
+          rgba(0, 26, 56, 0.51) 87%
+        );
+      }
     }
+
+    .main-container {
+      position: relative;
+      width: 1400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: $white;
+
+      h1,
+      span {
+        white-space: pre-wrap;
+        text-align: center;
+      }
+
+      span {
+        margin-top: 25px;
+      }
+
+      button {
+        margin-top: 48px;
+      }
+    }
+
+    .scroll-container {
+      position: absolute;
+      bottom: 62px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+
+      .scroll-anim {
+        width: 24px;
+        height: 32px;
+        border: 1px solid $white;
+        border-radius: 12px;
+        padding: 5px 0;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+
+        .ball {
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background-color: $white;
+          animation: ball-animation ease-out 0.7s infinite alternate;
+        }
+      }
+    }
+  }
+}
+
+@keyframes ball-animation {
+  100% {
+    transform: translateY(15px);
   }
 }

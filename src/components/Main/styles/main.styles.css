@@ -96,38 +96,87 @@
   align-items: center;
   overflow: hidden;
 }
+#root .main-root .background {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#root .main-root .background .bg-video {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#root .main-root .background .layer1 {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: #111111;
+  opacity: 0.5;
+}
+#root .main-root .background .layer2 {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-image: radial-gradient(circle at 50% 50%, rgba(0, 23, 49, 0), rgba(0, 26, 56, 0.51) 87%);
+}
 #root .main-root .main-container {
   position: relative;
   width: 1400px;
-}
-#root .main-root .main-container .slogan-container {
   display: flex;
-  height: 684px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: #ffffff;
 }
-#root .main-root .main-container .slogan-container h1,
-#root .main-root .main-container .slogan-container span {
+#root .main-root .main-container h1,
+#root .main-root .main-container span {
   white-space: pre-wrap;
-  z-index: 1;
-}
-#root .main-root .main-container .slogan-container h1 {
-  font-size: 80px;
-  line-height: 100px;
-  font-weight: 700;
   text-align: center;
 }
-#root .main-root .main-container .slogan-container span {
-  font-size: 24px;
-  line-height: 36px;
-  margin-top: 24px;
-  font-weight: 200;
+#root .main-root .main-container span {
+  margin-top: 25px;
 }
-#root .main-root .bg-video {
+#root .main-root .main-container button {
+  margin-top: 48px;
+}
+#root .main-root .scroll-container {
   position: absolute;
-  left: 0;
-  top: 0;
-  height: 100vh;
+  bottom: 62px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+#root .main-root .scroll-container .scroll-anim {
+  width: 24px;
+  height: 32px;
+  border: 1px solid #ffffff;
+  border-radius: 12px;
+  padding: 5px 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+#root .main-root .scroll-container .scroll-anim .ball {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  -webkit-animation: ball-animation ease-out 0.7s infinite alternate;
+          animation: ball-animation ease-out 0.7s infinite alternate;
+}
+
+@-webkit-keyframes ball-animation {
+  100% {
+    transform: translateY(15px);
+  }
+}
+
+@keyframes ball-animation {
+  100% {
+    transform: translateY(15px);
+  }
 }/*# sourceMappingURL=main.styles.css.map */
