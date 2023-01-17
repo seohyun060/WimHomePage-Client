@@ -1,18 +1,15 @@
 import images from '@assets/images';
 import React from 'react';
 import './styles/header.styles.css';
-type Props = {
-  headerColor: string;
-};
 
 type Props = {
   page: number;
-  headerColor:string;
+  headerColor: string;
 };
 
 const Header = ({ page, headerColor }: Props) => {
   return (
-    <header className={`header-root${headerColor} ${page>0?'blur':''}`}>
+    <header className={`header-root${headerColor} ${page > 0 ? 'blur' : ''}`}>
       <div className='header-container'>
         <div className='logo'>
           <a href='#main'>

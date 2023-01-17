@@ -27,7 +27,7 @@ function App() {
       <MainContainer />
       <BusinessFieldContainer />
       {/* <HistoryContainer /> */}
-      {/* <PartnersContainer /> */}
+      <PartnersContainer />
       {/* <ContactContainer /> */}
       {/* <FooterContainer /> */}
     </div>
