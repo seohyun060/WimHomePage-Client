@@ -40,8 +40,21 @@
 
         .item {
           a {
-            color: $white;
+            color: white;
             font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+  .header-root-black {
+    @extend .header-root;
+    background-color: white;
+    .header-container {
+      .gnb-container {
+        .item {
+          a {
+            color: black;
           }
         }
       }

@@ -26,7 +26,7 @@
   color: #111111;
 }
 
-#root .header-root {
+#root .header-root, #root .header-root-black {
   position: fixed;
   top: 0;
   width: 100%;
@@ -42,24 +42,30 @@
   -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
 }
-#root .header-root .header-container {
+#root .header-root .header-container, #root .header-root-black .header-container {
   width: 1200px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-#root .header-root .header-container .logo img {
+#root .header-root .header-container .logo img, #root .header-root-black .header-container .logo img {
   width: 74px;
   height: 18px;
 }
-#root .header-root .header-container .gnb-container {
+#root .header-root .header-container .gnb-container, #root .header-root-black .header-container .gnb-container {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   gap: 90px;
 }
-#root .header-root .header-container .gnb-container .item a {
-  color: #ffffff;
+#root .header-root .header-container .gnb-container .item a, #root .header-root-black .header-container .gnb-container .item a {
+  color: white;
   font-size: 18px;
+}
+#root .header-root-black {
+  background-color: white;
+}
+#root .header-root-black .header-container .gnb-container .item a {
+  color: black;
 }/*# sourceMappingURL=header.styles.css.map */
