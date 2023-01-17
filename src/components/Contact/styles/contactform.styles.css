@@ -1,0 +1,111 @@
+.white {
+  color: #ffffff;
+}
+
+.gray1 {
+  color: #f9fafb;
+}
+
+.gray2 {
+  color: #eff0f2;
+}
+
+.gray3 {
+  color: #d6d6d6;
+}
+
+.gray4 {
+  color: #999999;
+}
+
+.gray5 {
+  color: #767676;
+}
+
+.black {
+  color: #111111;
+}
+
+#root .contact-root {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 240px 0;
+  align-items: center;
+  background-size: cover;
+  gap: 70px;
+}
+#root .contact-root .title-container,
+#root .contact-root .main-container {
+  z-index: 9;
+}
+#root .contact-root::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #111111;
+  opacity: 0.7;
+}
+#root .contact-root .main-container {
+  width: 100%;
+}
+#root .contact-root .main-container .input-container {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 20px;
+  -moz-column-gap: 24px;
+       column-gap: 24px;
+}
+#root .contact-root .main-container .cinput-root.textarea {
+  margin-top: 20px;
+}
+#root .contact-root .main-container .submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ffffff;
+  width: 100%;
+  height: 62px;
+  margin-top: 48px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+}
+#root .contact-root .main-container .submit-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+#root .contact-root .main-container .download-container {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: auto;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+#root .contact-root .main-container .download-container .label {
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 28px;
+}
+#root .contact-root .main-container .download-container .button {
+  width: 100px;
+  height: 100px;
+  background-color: #343744;
+  border-radius: 50%;
+  border: 15px solid #1a1d29;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 300ms ease-in;
+}
+#root .contact-root .main-container .download-container .button:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+}/*# sourceMappingURL=contactform.styles.css.map */

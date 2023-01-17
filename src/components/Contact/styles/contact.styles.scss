@@ -1,96 +1,57 @@
 @import '../../../styles/colors';
 
 #root {
+  background-color: white;
   .contact-root {
-    position: relative;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding: 240px 0;
+
     align-items: center;
-    background: url('/public/assets/images/img-bg.png') no-repeat;
-    background-size: cover;
-    gap: 70px;
 
-    .title-container,
-    .main-container {
-      z-index: 9;
-    }
-
-    &::after {
+    //background-color: black;
+    min-height: 100vh;
+    .curtain {
       position: absolute;
-      top: 0;
-      left: 0;
-      content: '';
       width: 100%;
-      height: 100%;
-      background-color: $black;
-      opacity: 0.7;
+      height: 680px;
+      z-index: 1;
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #191b1f);
     }
-
-    .main-container {
+    .contact-logo {
+      position: absolute;
+      //background-color: linear-gradient(to bottom, rgba(0, 0, 0, 0), #191b1f);
       width: 100%;
+      height: 680px;
+      z-index: 0;
+    }
+    .eng-h1 {
+      margin-top: 170px;
+      color: white;
+      z-index: 2;
+    }
+    .kor-h3 {
+      margin-top: 22px;
+      text-align: center;
+      margin-bottom: 122px;
+      color: white;
+      font-size: 20px;
+      z-index: 2;
+    }
+  }
+}
 
-      .input-container {
-        display: grid;
-        grid-template-rows: repeat(3, 1fr);
-        grid-template-columns: repeat(2, 1fr);
-        row-gap: 20px;
-        column-gap: 24px;
-      }
+@media (max-width: 1200px) {
+  #root {
+    .contact-root {
+      flex-direction: column;
+    }
+  }
+}
 
-      .cinput-root.textarea {
-        margin-top: 20px;
-      }
-
-      .submit-btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid $white;
-        width: 100%;
-        height: 62px;
-        margin-top: 48px;
-        font-size: 18px;
-        font-weight: 700;
-        color: $white;
-
-        &:hover {
-          background-color: rgba(255, 255, 255, 0.1);
-        }
-      }
-
-      .download-container {
-        width: fit-content;
-        margin-left: auto;
-        margin-top: 60px;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        align-items: center;
-
-        .label {
-          color: $white;
-          font-size: 16px;
-          line-height: 28px;
-        }
-
-        .button {
-          width: 100px;
-          height: 100px;
-          background-color: #343744;
-          border-radius: 50%;
-          border: 15px solid #1a1d29;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          transition: all 300ms ease-in;
-
-          &:hover {
-            border-color: rgb(255, 255, 255, 0.1);
-          }
-        }
-      }
+@media (max-width: 800px) {
+  #root {
+    .contact-root {
+      flex-direction: column;
     }
   }
 }
