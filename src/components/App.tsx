@@ -11,7 +11,6 @@ import FooterContainer from './Footer/containers/FooterContainer';
 import { BrowserRouter, useLocation } from 'react-router-dom';
 
 function App() {
-  const location = useLocation();
   return (
     <div className='homepage-root'>
       <HeaderContainer location={window.location.href} />
