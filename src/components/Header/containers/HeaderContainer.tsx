@@ -1,8 +1,10 @@
 import React from 'react';
 import Header from '../Header';
 
-const HeaderContainer = () => {
-  return <Header />;
+type Props = { page: number };
+
+const HeaderContainer = (props: Props) => {
+  return <Header {...props} />;
 };
 
 export default HeaderContainer;

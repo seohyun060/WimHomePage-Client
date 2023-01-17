@@ -12,6 +12,19 @@
     align-items: center;
     overflow: hidden;
 
+    .pointer {
+      z-index: 9999;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: $white;
+      mix-blend-mode: difference;
+      pointer-events: none;
+    }
+
     .background {
       position: absolute;
       left: 0;

@@ -2,56 +2,172 @@
 
 #root {
   .bf-root {
-    min-height: 100vh;
+    position: relative;
+    height: 100vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 96px;
-    background-color: $black;
     padding: 400px 0;
+    transition: background-image 650ms ease-in-out;
 
-    .title {
-      font-size: 48px;
-      color: $white;
-      line-height: 86px;
-      font-weight: 700;
+    &.ai {
+      background: center / cover no-repeat
+        url('/public/assets/images/img-business-ai.jpg');
+    }
+
+    &.hardware {
+      background: center / cover no-repeat
+        url('/public/assets/images/img-business-hardware.jpg');
+    }
+
+    &.webApp {
+      background: center / cover no-repeat
+        url('/public/assets/images/img-business-web-app.jpg');
+    }
+
+    .layer {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      background-image: linear-gradient(
+        to top,
+        $white,
+        rgba(255, 255, 255, 0.3)
+      );
     }
 
     .main-container {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      display: flex;
+      gap: 230px;
+      z-index: 999;
 
-      .item {
+      .title-container {
+        .description {
+          margin-top: 22px;
+          white-space: pre-wrap;
+        }
+      }
+
+      .pagination-container {
+        margin-top: 148px;
         display: flex;
-        flex-direction: column;
         align-items: center;
-        justify-content: center;
-        min-height: 475px;
-        border-radius: 20px;
-        padding: 73px 44px 47px;
+        gap: 36px;
 
-        &:hover {
-          background-color: $gray200;
+        .page {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+
+          .line {
+            height: 1px;
+            width: 44px;
+            background-color: $black;
+          }
         }
 
-        img {
-          width: 152px;
-          height: 152px;
+        .button-container {
+          display: flex;
+          gap: 8px;
+          img {
+            width: 40px;
+            height: 40px;
+          }
         }
+      }
 
-        .title {
-          font-size: 26px;
-          margin: 50px 0 20px;
-        }
+      .carousel-container {
+        width: 1098px;
+        display: flex;
+        overflow-y: hidden;
+        flex-shrink: 0;
 
-        .subtitle {
-          font-size: 18px;
-          color: $gray100;
-          line-height: 26px;
-          text-align: center;
-          word-break: keep-all;
+        .item {
+          position: relative;
+          flex-grow: 0;
+          flex-basis: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+          transition: all 650ms ease-in-out;
+          cursor: pointer;
+
+          .invisible {
+            display: none;
+          }
+
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 50%;
+            background-image: linear-gradient(
+              to bottom,
+              rgba(0, 0, 0, 0),
+              rgba(0, 0, 0, 0.6)
+            );
+          }
+
+          .item-desc-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 10;
+            text-align: center;
+            padding: 48px 0;
+            overflow: hidden;
+            width: 400px;
+
+            .subtitle {
+              margin-top: 6px;
+            }
+
+            .description {
+              margin-top: 16px;
+            }
+          }
+
+          &.inactive {
+            flex-basis: 282px;
+            justify-content: flex-end;
+            max-width: 282px;
+            margin-left: 24px;
+          }
+
+          &.active {
+            flex-grow: 1;
+            height: 486px;
+            padding: 48px 40px;
+
+            &::after {
+              height: 100%;
+              background-image: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0),
+                rgba(0, 0, 0, 0.6)
+              );
+            }
+          }
+
+          &.ai {
+            background: center / cover no-repeat
+              url('/public/assets/images/img-business-ai.jpg');
+          }
+
+          &.hardware {
+            background: center / cover no-repeat
+              url('/public/assets/images/img-business-hardware.jpg');
+          }
+
+          &.webApp {
+            background: center / cover no-repeat
+              url('/public/assets/images/img-business-web-app.jpg');
+          }
         }
       }
     }
