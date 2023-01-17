@@ -8,16 +8,17 @@ import MainContainer from './Main/containers/MainContainer';
 import PartnersContainer from './Partners/containers/PartnersContainer';
 import '@styles/core.css';
 import FooterContainer from './Footer/containers/FooterContainer';
+import { BrowserRouter, useLocation } from 'react-router-dom';
 
 function App() {
   return (
     <div className='homepage-root'>
-      <HeaderContainer />
+      <HeaderContainer location={window.location.href} />
       <MainContainer />
       {/* <BusinessFieldContainer />
-      <HistoryContainer />
+      <HistoryContainer /> */}
       <PartnersContainer />
-      <ContactContainer />
+      {/* <ContactContainer />
       <FooterContainer /> */}
     </div>
   );
