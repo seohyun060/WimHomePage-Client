@@ -60,27 +60,9 @@ body {
     width: 100%;
     min-height: 100vh;
 
-    .title-container {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      .title {
-        font-size: 48px;
-        font-weight: 700;
-        color: $white;
-      }
-
-      .obj {
-        position: absolute;
-        top: -12px;
-        right: -24px;
-      }
-    }
-
     .main-container {
-      max-width: 1480px;
-      padding: 0 80px;
+      max-width: 1200px;
+      padding: 0 40px;
     }
   }
 

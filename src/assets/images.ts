@@ -4,7 +4,7 @@ const images = {
   logoFooter: '/assets/images/ic-logo-footer-g@3x.png',
   buisiness: {
     hardware: '/assets/images/img-business-hardware.jpg',
-    webApp: '/assets/images/img-business-webapp.jpg',
+    webApp: '/assets/images/img-business-web-app.jpg',
     ai: '/assets/images/img-business-ai.jpg',
   },
   partnersLogo: {

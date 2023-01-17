@@ -20,9 +20,9 @@ export function usePointer() {
 
     positionMX += (positionX - positionMX) * speed;
     positionMY += (positionY - positionMY) * speed;
-
-    pointer.style.top = `${positionMY - 50}px`;
-    pointer.style.left = `${positionMX - 50}px`;
+    pointer.style.transform = `translate(${positionMX - 50}px, ${
+      positionMY - 50
+    }px)`;
 
     requestAnimationFrame(pointerAnimation);
   }, []);

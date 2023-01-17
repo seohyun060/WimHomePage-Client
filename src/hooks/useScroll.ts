@@ -1,6 +1,8 @@
-import { useCallback, useRef } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 export function useScroll() {
+  const [page, setPage] = useState(0);
+
   const rootRef = useRef<HTMLDivElement>(null);
 
   const wheelHandler = useCallback((e: WheelEvent) => {
@@ -11,18 +13,21 @@ export function useScroll() {
 
     const currentPage = Math.floor((pageY - clientY) / windowHeight);
 
-    if (deltaY > 100)
+    if (deltaY > 100) {
       window.scrollTo({
         top: windowHeight * (currentPage + 1),
         behavior: 'smooth',
       });
-
-    if (deltaY < -100)
+      setPage(currentPage + 1);
+    }
+    if (deltaY < -100) {
       window.scrollTo({
         top: windowHeight * (currentPage - 1),
         behavior: 'smooth',
       });
+      setPage(currentPage - 1);
+    }
   }, []);
 
-  return { rootRef, wheelHandler };
+  return { rootRef, wheelHandler, page };
 }

@@ -1,48 +1,156 @@
+.white {
+  color: #ffffff;
+}
+
+.gray1 {
+  color: #f9fafb;
+}
+
+.gray2 {
+  color: #eff0f2;
+}
+
+.gray3 {
+  color: #d6d6d6;
+}
+
+.gray4 {
+  color: #999999;
+}
+
+.gray5 {
+  color: #767676;
+}
+
+.black {
+  color: #111111;
+}
+
 #root .bf-root {
-  min-height: 100vh;
+  position: relative;
+  height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 96px;
-  background-color: #121212;
   padding: 400px 0;
+  transition: background-image 650ms ease-in-out;
 }
-#root .bf-root .title {
-  font-size: 48px;
-  color: #ffffff;
-  line-height: 86px;
-  font-weight: 700;
+#root .bf-root.ai {
+  background: center/cover no-repeat url("/public/assets/images/img-business-ai.jpg");
+}
+#root .bf-root.hardware {
+  background: center/cover no-repeat url("/public/assets/images/img-business-hardware.jpg");
+}
+#root .bf-root.webApp {
+  background: center/cover no-repeat url("/public/assets/images/img-business-web-app.jpg");
+}
+#root .bf-root .layer {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(to top, #ffffff, rgba(255, 255, 255, 0.3));
 }
 #root .bf-root .main-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  display: flex;
+  gap: 230px;
+  z-index: 999;
 }
-#root .bf-root .main-container .item {
+#root .bf-root .main-container .title-container .description {
+  margin-top: 22px;
+  white-space: pre-wrap;
+}
+#root .bf-root .main-container .pagination-container {
+  margin-top: 148px;
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+#root .bf-root .main-container .pagination-container .page {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+#root .bf-root .main-container .pagination-container .page .line {
+  height: 1px;
+  width: 44px;
+  background-color: #111111;
+}
+#root .bf-root .main-container .pagination-container .button-container {
+  display: flex;
+  gap: 8px;
+}
+#root .bf-root .main-container .pagination-container .button-container img {
+  width: 40px;
+  height: 40px;
+}
+#root .bf-root .main-container .carousel-container {
+  width: 1098px;
+  display: flex;
+  overflow-y: hidden;
+  flex-shrink: 0;
+}
+#root .bf-root .main-container .carousel-container .item {
+  position: relative;
+  flex-grow: 0;
+  flex-basis: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 475px;
-  border-radius: 20px;
-  padding: 73px 44px 47px;
+  overflow: hidden;
+  transition: all 650ms ease-in-out;
+  cursor: pointer;
 }
-#root .bf-root .main-container .item:hover {
-  background-color: #1e1e1e;
+#root .bf-root .main-container .carousel-container .item .invisible {
+  display: none;
 }
-#root .bf-root .main-container .item img {
-  width: 152px;
-  height: 152px;
+#root .bf-root .main-container .carousel-container .item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
 }
-#root .bf-root .main-container .item .title {
-  font-size: 26px;
-  margin: 50px 0 20px;
-}
-#root .bf-root .main-container .item .subtitle {
-  font-size: 18px;
-  color: #999999;
-  line-height: 26px;
+#root .bf-root .main-container .carousel-container .item .item-desc-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
   text-align: center;
-  word-break: keep-all;
+  padding: 48px 0;
+  overflow: hidden;
+  width: 400px;
+}
+#root .bf-root .main-container .carousel-container .item .item-desc-container .subtitle {
+  margin-top: 6px;
+}
+#root .bf-root .main-container .carousel-container .item .item-desc-container .description {
+  margin-top: 16px;
+}
+#root .bf-root .main-container .carousel-container .item.inactive {
+  flex-basis: 282px;
+  justify-content: flex-end;
+  max-width: 282px;
+  margin-left: 24px;
+}
+#root .bf-root .main-container .carousel-container .item.active {
+  flex-grow: 1;
+  height: 486px;
+  padding: 48px 40px;
+}
+#root .bf-root .main-container .carousel-container .item.active::after {
+  height: 100%;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+}
+#root .bf-root .main-container .carousel-container .item.ai {
+  background: center/cover no-repeat url("/public/assets/images/img-business-ai.jpg");
+}
+#root .bf-root .main-container .carousel-container .item.hardware {
+  background: center/cover no-repeat url("/public/assets/images/img-business-hardware.jpg");
+}
+#root .bf-root .main-container .carousel-container .item.webApp {
+  background: center/cover no-repeat url("/public/assets/images/img-business-web-app.jpg");
 }/*# sourceMappingURL=business.field.styles.css.map */

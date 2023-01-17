@@ -2,9 +2,13 @@ import images from '@assets/images';
 import React from 'react';
 import './styles/header.styles.css';
 
-const Header = () => {
+type Props = {
+  page: number;
+};
+
+const Header = ({ page }: Props) => {
   return (
-    <header className='header-root'>
+    <header className={`header-root ${page > 0 ? 'blur' : ''}`}>
       <div className='header-container'>
         <div className='logo'>
           <a href='#main'>
