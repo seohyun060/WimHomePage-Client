@@ -9,9 +9,12 @@ import PartnersContainer from './Partners/containers/PartnersContainer';
 import '@styles/core.css';
 import FooterContainer from './Footer/containers/FooterContainer';
 import { useScroll } from '@hooks/useScroll';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import HomeContainer from './Home/containers/HomeContainer';
+import ContactDetailContainer from './Contact/containers/ContactDetailContainer';
 
 function App() {
-  const { rootRef, wheelHandler, page, onPageClicked } = useScroll();
+  const { rootRef, wheelHandler, page, onPageChanged } = useScroll();
 
   useEffect(() => {
     rootRef.current?.addEventListener('wheel', wheelHandler);
@@ -22,19 +25,15 @@ function App() {
   }, []);
 
   return (
-    <div ref={rootRef} className='homepage-root'>
-      <HeaderContainer
-        page={page}
-        location={window.location.href}
-        onPageClicked={onPageClicked}
-      />
-      <MainContainer />
-      <BusinessFieldContainer />
-      <HistoryContainer />
-      <PartnersContainer />
-      {/* <ContactContainer /> */}
-      {/* <FooterContainer /> */}
-    </div>
+    <BrowserRouter>
+      <div ref={rootRef} className='homepage-root'>
+        <HeaderContainer page={page} onPageChanged={onPageChanged} />
+        <Routes>
+          <Route index element={<HomeContainer />} />
+          <Route path='/contact-detail' element={<ContactDetailContainer />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
