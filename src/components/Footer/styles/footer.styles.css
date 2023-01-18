@@ -26,6 +26,10 @@
   color: #111111;
 }
 
+.primary-purple {
+  color: #a502fb;
+}
+
 #root .footer-root {
   min-height: 400px;
   display: flex;

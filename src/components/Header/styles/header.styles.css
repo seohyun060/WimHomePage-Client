@@ -26,6 +26,10 @@
   color: #111111;
 }
 
+.primary-purple {
+  color: #a502fb;
+}
+
 #root .header-root, #root .header-root-black {
   position: fixed;
   top: 0;
