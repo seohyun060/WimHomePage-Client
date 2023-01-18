@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import Header from '../Header';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -16,13 +16,26 @@ type Props = {
 };
 const HeaderContainer = ({ page, onPageChanged }: Props) => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const isBlackMode = useMemo(() => {
+    return (
+      section[page] === '#partners' || location.pathname === '/contact-detail'
+    );
+  }, [page, location]);
 
   const onItemClicked = useCallback((page: number) => {
     onPageChanged(page);
     navigate(`/${section[page]}`);
   }, []);
 
-  return <Header page={page} onItemClicked={onItemClicked} />;
+  return (
+    <Header
+      page={page}
+      onItemClicked={onItemClicked}
+      isBlackMode={isBlackMode}
+    />
+  );
 };
 
 export default HeaderContainer;

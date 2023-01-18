@@ -26,6 +26,10 @@
   color: #111111;
 }
 
+.primary-purple {
+  color: #a502fb;
+}
+
 @font-face {
   font-family: "Montserrat";
   src: url("/public/fonts/Montserrat/Montserrat-VariableFont_wght.ttf");
@@ -100,8 +104,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   background-color: #ffffff;
   mix-blend-mode: difference;

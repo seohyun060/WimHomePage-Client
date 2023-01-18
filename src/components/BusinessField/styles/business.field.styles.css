@@ -26,6 +26,10 @@
   color: #111111;
 }
 
+.primary-purple {
+  color: #a502fb;
+}
+
 #root .bf-root {
   position: relative;
   height: 100vh;

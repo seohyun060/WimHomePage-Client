@@ -1,23 +1,25 @@
 import images from '@assets/images';
 import React from 'react';
+import { section } from './containers/HeaderContainer';
 import './styles/header.styles.css';
 
 type Props = {
   page: number;
+  isBlackMode: boolean;
   onItemClicked: (page: number) => void;
 };
 
-const Header = ({ page, onItemClicked }: Props) => {
+const Header = ({ page, isBlackMode, onItemClicked }: Props) => {
   return (
     <header
-      className={`header-root${page === 3 ? '-black' : ''} ${
+      className={`header-root${isBlackMode ? '-black' : ''} ${
         page > 0 ? 'blur' : ''
       }`}>
       <div className='header-container'>
         <div className='logo'>
           <a onClick={() => onItemClicked(0)}>
             <img
-              src={page === 3 ? images.logoHeaderb : images.logoHeaderW}
+              src={isBlackMode ? images.logoHeaderb : images.logoHeaderW}
               alt='logo'
             />
           </a>
