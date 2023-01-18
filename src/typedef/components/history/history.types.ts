@@ -1,4 +1,6 @@
 export type HistoryTypes = {
-  time: string;
-  list: string[];
+  [year: number]: {
+    month: number;
+    list: string[];
+  }[];
 };

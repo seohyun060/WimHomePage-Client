@@ -1,66 +1,91 @@
+.white {
+  color: #ffffff;
+}
+
+.gray1 {
+  color: #f9fafb;
+}
+
+.gray2 {
+  color: #eff0f2;
+}
+
+.gray3 {
+  color: #d6d6d6;
+}
+
+.gray4 {
+  color: #999999;
+}
+
+.gray5 {
+  color: #767676;
+}
+
+.black {
+  color: #111111;
+}
+
 #root .history-root {
-  min-height: 100vh;
-  background-color: #1e1e1e;
+  position: relative;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 96px;
-  padding: 240px 60px;
+  background: center/cover no-repeat url("/public/assets/images/img-history.jpg");
+}
+#root .history-root .layer {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  opacity: 0.5;
 }
 #root .history-root .main-container {
-  display: flex;
-}
-#root .history-root .main-container .timeline {
-  width: 8px;
-  background-color: #355fff;
-  opacity: 0.22;
-  border-radius: 4px;
-}
-#root .history-root .main-container .list-container {
-  padding: 48px 0;
+  position: absolute;
+  top: 70px;
+  width: 100%;
+  height: calc(100% - 70px);
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  justify-content: center;
+  gap: 130px;
+  z-index: 10;
 }
-#root .history-root .main-container .list-container .item {
-  position: relative;
-  padding: 0 40px;
+#root .history-root .main-container .content {
+  display: flex;
 }
-#root .history-root .main-container .list-container .item .dot {
-  position: absolute;
-  top: 5px;
-  left: -14px;
-  width: 20px;
-  height: 20px;
-  background-color: rgba(53, 95, 255, 0.4);
-  border-radius: 50%;
+#root .history-root .main-container .content .pagination-container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 36px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
-#root .history-root .main-container .list-container .item .dot::after {
-  content: "";
-  width: 10px;
-  height: 10px;
-  background-color: #355fff;
-  opacity: 0.44;
-  border-radius: 50%;
+#root .history-root .main-container .content .pagination-container .button-container {
+  display: flex;
+  gap: 8px;
 }
-#root .history-root .main-container .list-container .item .content .time {
-  display: block;
-  font-size: 26px;
-  color: #355fff;
-  font-weight: 700;
-  margin-bottom: 16px;
+#root .history-root .main-container .content .pagination-container .button-container img {
+  width: 40px;
+  height: 40px;
 }
-#root .history-root .main-container .list-container .item .content .history-container {
+#root .history-root .main-container .list-container {
+  min-height: 480px;
+  padding-left: 45px;
+  margin-left: 126px;
+  border-left: 1px solid #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+#root .history-root .main-container .list-container .month-list {
+  display: flex;
+  gap: 24px;
+}
+#root .history-root .main-container .list-container .month-list .list-item {
   display: flex;
   flex-direction: column;
   gap: 12px;
-}
-#root .history-root .main-container .list-container .item .content .history-container .history {
-  color: #ffffff;
-  font-size: 18px;
-  line-height: 26px;
 }/*# sourceMappingURL=history.styles.css.map */
