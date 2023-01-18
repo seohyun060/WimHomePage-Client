@@ -26,7 +26,7 @@ function App() {
       <HeaderContainer page={page} />
       <MainContainer />
       <BusinessFieldContainer />
-      {/* <HistoryContainer /> */}
+      <HistoryContainer />
       {/* <PartnersContainer /> */}
       {/* <ContactContainer /> */}
       {/* <FooterContainer /> */}
