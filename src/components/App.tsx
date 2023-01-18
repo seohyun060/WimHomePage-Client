@@ -23,11 +23,11 @@ function App() {
 
   return (
     <div ref={rootRef} className='homepage-root'>
-      <HeaderContainer page={page} />
+      <HeaderContainer page={page} location={window.location.href} />
       <MainContainer />
       <BusinessFieldContainer />
       <HistoryContainer />
-      {/* <PartnersContainer /> */}
+      <PartnersContainer />
       {/* <ContactContainer /> */}
       {/* <FooterContainer /> */}
     </div>

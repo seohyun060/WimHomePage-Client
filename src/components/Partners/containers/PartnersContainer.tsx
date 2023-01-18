@@ -16,6 +16,7 @@ const PartnersContainer = () => {
     images.partnersLogo.logo9,
     images.partnersLogo.logo10,
     images.partnersLogo.logo11,
+    images.partnersLogo.logo12,
   ]);
 
   return <Partners partners={partners} />;
