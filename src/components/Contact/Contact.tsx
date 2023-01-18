@@ -12,6 +12,9 @@ const Contact = () => {
         <br />
         {'연락을 드리겠습니다.'}
       </h3>
+      <a className='kor-h3-ask' href='#contactform'>
+        {'프로젝트 문의하기'}
+      </a>
     </div>
   );
 };

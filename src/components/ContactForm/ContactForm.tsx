@@ -1,8 +1,8 @@
 import { ContactFormType } from '@typedef/components/Contact/contact.types';
 import React from 'react';
-import CInput from './CInput';
-import '../styles/cinput.styles.css';
-import '../styles/contactform.styles.css';
+import CInput from './components/CInput';
+import './styles/cinput.styles.scss';
+import './styles/contactform.styles.scss';
 import images from '@assets/images';
 
 type Props = {
@@ -20,10 +20,9 @@ const ContactForm = ({
   onSubmitClicked,
 }: Props) => {
   return (
-    <div className='contact-root' id='contact'>
+    <div className='contactform-root' id='contactform'>
       <div className='title-container'>
         <h1 className='title'>{'Contact Us'}</h1>
-        <img alt='obj' className='obj' />
       </div>
       <div className='main-container'>
         <form className='form'>

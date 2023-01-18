@@ -2,7 +2,7 @@ import { ContactFormType } from '@typedef/components/Contact/contact.types';
 import React from 'react';
 import { useCallback } from 'react';
 import { useState } from 'react';
-import ContactForm from '../components/ContactForm';
+import ContactForm from '../ContactForm';
 
 const initialForm: ContactFormType = {
   title: '',

@@ -1,9 +1,37 @@
+.white {
+  color: #ffffff;
+}
+
+.gray1 {
+  color: #f9fafb;
+}
+
+.gray2 {
+  color: #eff0f2;
+}
+
+.gray3 {
+  color: #d6d6d6;
+}
+
+.gray4 {
+  color: #999999;
+}
+
+.gray5 {
+  color: #767676;
+}
+
+.black {
+  color: #111111;
+}
+
 #root .cinput-root .label {
   width: 100%;
   display: flex;
   height: 62px;
   align-items: center;
-  border: 1px solid #575a65;
+  border: 1px solid #f9fafb;
   padding: 0 20px;
   gap: 20px;
   font-size: 18px;
@@ -13,7 +41,7 @@
   color: #ffffff;
 }
 #root .cinput-root .label .span {
-  color: #999999;
+  color: #f9fafb;
 }
 #root .cinput-root .label .input {
   color: #ffffff;

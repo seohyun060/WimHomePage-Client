@@ -7,7 +7,7 @@
     flex-direction: column;
 
     align-items: center;
-
+    height: 1080px;
     //background-color: black;
     min-height: 100vh;
     .curtain {
@@ -32,10 +32,25 @@
     .kor-h3 {
       margin-top: 22px;
       text-align: center;
-      margin-bottom: 122px;
+      margin-bottom: 48px;
       color: white;
       font-size: 20px;
       z-index: 2;
+    }
+    .kor-h3-ask {
+      color: white;
+      width: 184px;
+      height: 56px;
+      text-align: center;
+      border: 1px solid $white;
+      line-height: 3.5;
+      z-index: 2;
+      border-radius: 28px;
+    }
+    .contact-footer {
+      width: 100vw;
+      height: 400px;
+      background-color: black;
     }
   }
 }
