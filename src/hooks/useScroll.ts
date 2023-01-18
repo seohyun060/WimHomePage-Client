@@ -5,7 +5,7 @@ export function useScroll() {
 
   const rootRef = useRef<HTMLDivElement>(null);
 
-  const onPageClicked = useCallback((page: number) => {
+  const onPageChanged = useCallback((page: number) => {
     setPage(page);
   }, []);
 
@@ -32,5 +32,5 @@ export function useScroll() {
     });
   }, [page]);
 
-  return { rootRef, wheelHandler, page, onPageClicked };
+  return { rootRef, wheelHandler, page, onPageChanged };
 }

@@ -1,23 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import Header from '../Header';
+import { useLocation, useNavigate } from 'react-router-dom';
+
+export const section: { [key: number]: string } = {
+  0: '#main',
+  1: '#business',
+  2: '#history',
+  3: '#partners',
+  4: '#contact',
+};
+
 type Props = {
   page: number;
-  location: string;
-  onPageClicked: (page: number) => void;
+  onPageChanged: (page: number) => void;
 };
-const HeaderContainer = (props: Props) => {
-  const [headerColor, setHeaderColor] = useState('');
+const HeaderContainer = ({ page, onPageChanged }: Props) => {
+  const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   if (location === 'http://localhost:3000/#partners') {
-  //     setHeaderColor('-black');
-  //   } else {
-  //     setHeaderColor('');
-  //   }
-  //   console.log(location);
-  // }, [location, headerColor]);
+  const onItemClicked = useCallback((page: number) => {
+    onPageChanged(page);
+    navigate(`/${section[page]}`);
+  }, []);
 
-  return <Header {...props} />;
+  return <Header page={page} onItemClicked={onItemClicked} />;
 };
 
 export default HeaderContainer;
