@@ -11,7 +11,7 @@ import FooterContainer from './Footer/containers/FooterContainer';
 import { useScroll } from '@hooks/useScroll';
 
 function App() {
-  const { rootRef, wheelHandler, page } = useScroll();
+  const { rootRef, wheelHandler, page, onPageClicked } = useScroll();
 
   useEffect(() => {
     rootRef.current?.addEventListener('wheel', wheelHandler);
@@ -23,7 +23,11 @@ function App() {
 
   return (
     <div ref={rootRef} className='homepage-root'>
-      <HeaderContainer page={page} location={window.location.href} />
+      <HeaderContainer
+        page={page}
+        location={window.location.href}
+        onPageClicked={onPageClicked}
+      />
       <MainContainer />
       <BusinessFieldContainer />
       <HistoryContainer />

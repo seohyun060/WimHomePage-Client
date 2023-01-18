@@ -5,6 +5,10 @@ export function useScroll() {
 
   const rootRef = useRef<HTMLDivElement>(null);
 
+  const onPageClicked = useCallback((page: number) => {
+    setPage(page);
+  }, []);
+
   const wheelHandler = useCallback((e: WheelEvent) => {
     e.preventDefault();
 
@@ -14,20 +18,19 @@ export function useScroll() {
     const currentPage = Math.floor((pageY - clientY) / windowHeight);
 
     if (deltaY > 100) {
-      window.scrollTo({
-        top: windowHeight * (currentPage + 1),
-        behavior: 'smooth',
-      });
       setPage(currentPage + 1);
     }
     if (deltaY < -100) {
-      window.scrollTo({
-        top: windowHeight * (currentPage - 1),
-        behavior: 'smooth',
-      });
       setPage(currentPage - 1);
     }
   }, []);
 
-  return { rootRef, wheelHandler, page };
+  useEffect(() => {
+    window.scrollTo({
+      top: window.innerHeight * page,
+      behavior: 'smooth',
+    });
+  }, [page]);
+
+  return { rootRef, wheelHandler, page, onPageClicked };
 }

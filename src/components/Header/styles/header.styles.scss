@@ -24,6 +24,10 @@
       align-items: center;
       justify-content: space-between;
 
+      a {
+        cursor: pointer;
+      }
+
       .logo {
         img {
           width: 74px;
@@ -42,6 +46,8 @@
           a {
             color: white;
             font-size: 18px;
+
+            transition: color 0.7s ease-in-out;
           }
         }
       }
@@ -49,7 +55,6 @@
   }
   .header-root-black {
     @extend .header-root;
-    background-color: white;
     .header-container {
       .gnb-container {
         .item {

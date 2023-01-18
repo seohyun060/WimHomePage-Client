@@ -4,34 +4,36 @@ import './styles/header.styles.css';
 
 type Props = {
   page: number;
-  headerColor: string;
+  onPageClicked: (page: number) => void;
 };
 
-const Header = ({ page, headerColor }: Props) => {
+const Header = ({ page, onPageClicked }: Props) => {
   return (
-    <header className={`header-root${headerColor} ${page > 0 ? 'blur' : ''}`}>
+    <header
+      className={`header-root${page === 3 ? '-black' : ''} ${
+        page > 0 ? 'blur' : ''
+      }`}>
       <div className='header-container'>
         <div className='logo'>
-          <a href='#main'>
-            {headerColor === '-black' ? (
-              <img src={images.logoHeaderb} alt='logo' />
-            ) : (
-              <img src={images.logoHeaderW} alt='logo' />
-            )}
+          <a onClick={() => onPageClicked(0)}>
+            <img
+              src={page === 3 ? images.logoHeaderb : images.logoHeaderW}
+              alt='logo'
+            />
           </a>
         </div>
         <ul className='gnb-container'>
           <li className='item eng-h3'>
-            <a href='#business'>{'Business Field'}</a>
+            <a onClick={() => onPageClicked(1)}>{'Business Field'}</a>
           </li>
           <li className='item eng-h3'>
-            <a href='#history'>{'History'}</a>
+            <a onClick={() => onPageClicked(2)}>{'History'}</a>
           </li>
           <li className='item eng-h3'>
-            <a href='#partners'>{'Partners'}</a>
+            <a onClick={() => onPageClicked(3)}>{'Partners'}</a>
           </li>
           <li className='item eng-h3'>
-            <a href='#contact'>{'Contact Us'}</a>
+            <a onClick={() => onPageClicked(4)}>{'Contact Us'}</a>
           </li>
         </ul>
       </div>

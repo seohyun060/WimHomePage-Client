@@ -48,6 +48,9 @@
   align-items: center;
   justify-content: space-between;
 }
+#root .header-root .header-container a, #root .header-root-black .header-container a {
+  cursor: pointer;
+}
 #root .header-root .header-container .logo img, #root .header-root-black .header-container .logo img {
   width: 74px;
   height: 18px;
@@ -62,9 +65,7 @@
 #root .header-root .header-container .gnb-container .item a, #root .header-root-black .header-container .gnb-container .item a {
   color: white;
   font-size: 18px;
-}
-#root .header-root-black {
-  background-color: white;
+  transition: color 0.7s ease-in-out;
 }
 #root .header-root-black .header-container .gnb-container .item a {
   color: black;
