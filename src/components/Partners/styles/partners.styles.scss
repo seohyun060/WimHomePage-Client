@@ -1,22 +1,26 @@
-@import '../../../styles/colors';
+@import '../../../styles/mixin';
 
 #root {
-  background-color: white;
+  background-color: $white;
   .partners-root {
     display: flex;
     flex-direction: column;
 
     align-items: center;
-    background-color: #f9fafb;
+    background-color: $gray1;
     min-height: 100vh;
 
-    .eng-h1 {
+    .title {
       margin-top: 170px;
+      @include eng-h1;
+      color: $black;
     }
-    .kor-h3 {
+    .description {
       margin-top: 22px;
       text-align: center;
       margin-bottom: 122px;
+      @include kor-h3;
+      color: $black;
     }
     .partners-logo {
       z-index: 0;

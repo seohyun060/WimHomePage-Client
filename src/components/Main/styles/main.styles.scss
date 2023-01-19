@@ -1,5 +1,4 @@
-@import '../../../styles/colors';
-@import '../../../styles/fonts';
+@import '../../../styles/mixin';
 
 #root {
   .main-root {
@@ -71,11 +70,18 @@
         text-align: center;
       }
 
-      span {
+      .title {
+        @include eng-h1;
+        color: white;
+      }
+
+      .description {
+        @include kor-h3;
+        color: $gray2;
         margin-top: 25px;
       }
 
-      button {
+      .inquiry {
         margin-top: 48px;
       }
     }
@@ -88,6 +94,11 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
+
+      .label {
+        @include eng-h3;
+        color: $white;
+      }
 
       .scroll-anim {
         width: 24px;

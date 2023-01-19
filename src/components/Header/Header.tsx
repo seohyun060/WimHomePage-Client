@@ -1,7 +1,8 @@
 import images from '@assets/images';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { section } from './containers/HeaderContainer';
 import './styles/header.styles.css';
+import { Link } from 'react-router-dom';
 
 type Props = {
   page: number;

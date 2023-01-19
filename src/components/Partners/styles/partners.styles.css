@@ -30,8 +30,67 @@
   color: #a502fb;
 }
 
+@font-face {
+  font-family: "Montserrat";
+  src: url("/public/fonts/Montserrat/Montserrat-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url("/public/fonts/Montserrat/static/Montserrat-Bold.ttf");
+}
+@font-face {
+  font-family: "SpoqaHansSansNeo";
+  src: url("/public/fonts/SpoqaHanSansNeo_all/SpoqaHanSansNeo_OTF_original/SpoqaHanSansNeo-Regular.otf");
+}
+@font-face {
+  font-family: "SpoqaHansSansNeo-Bold";
+  src: url("/public/fonts/SpoqaHanSansNeo_all/SpoqaHanSansNeo_OTF_original/SpoqaHanSansNeo-Bold.otf");
+}
+.eng {
+  font-family: "Montserrat";
+}
+.eng-h1 {
+  font-family: "Montserrat-Bold";
+  font-size: 60px;
+  line-height: 80px;
+}
+.eng-h2 {
+  font-weight: 700;
+  font-size: 22px;
+}
+.eng-h3 {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.kor {
+  font-family: "SpoqaHansSansNeo";
+  font-weight: 400;
+}
+.kor-h1 {
+  font-family: "SpoqaHansSansNeo-Bold";
+  font-weight: 700;
+  font-size: 24px;
+}
+.kor-h2 {
+  font-size: 22px;
+  line-height: 34px;
+}
+.kor-h3 {
+  font-size: 20px;
+  line-height: 32px;
+}
+.kor-h4 {
+  font-size: 16px;
+  line-height: 26px;
+}
+.kor-h5 {
+  font-size: 15px;
+  line-height: 22px;
+}
+
 #root {
-  background-color: white;
+  background-color: #ffffff;
 }
 #root .partners-root {
   display: flex;
@@ -40,13 +99,22 @@
   background-color: #f9fafb;
   min-height: 100vh;
 }
-#root .partners-root .eng-h1 {
+#root .partners-root .title {
   margin-top: 170px;
+  font-family: "Montserrat-Bold";
+  font-size: 60px;
+  line-height: 80px;
+  color: #111111;
 }
-#root .partners-root .kor-h3 {
+#root .partners-root .description {
   margin-top: 22px;
   text-align: center;
   margin-bottom: 122px;
+  font-family: "SpoqaHansSansNeo";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  color: #111111;
 }
 #root .partners-root .partners-logo {
   z-index: 0;

@@ -30,6 +30,65 @@
   color: #a502fb;
 }
 
+@font-face {
+  font-family: "Montserrat";
+  src: url("/public/fonts/Montserrat/Montserrat-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url("/public/fonts/Montserrat/static/Montserrat-Bold.ttf");
+}
+@font-face {
+  font-family: "SpoqaHansSansNeo";
+  src: url("/public/fonts/SpoqaHanSansNeo_all/SpoqaHanSansNeo_OTF_original/SpoqaHanSansNeo-Regular.otf");
+}
+@font-face {
+  font-family: "SpoqaHansSansNeo-Bold";
+  src: url("/public/fonts/SpoqaHanSansNeo_all/SpoqaHanSansNeo_OTF_original/SpoqaHanSansNeo-Bold.otf");
+}
+.eng {
+  font-family: "Montserrat";
+}
+.eng-h1 {
+  font-family: "Montserrat-Bold";
+  font-size: 60px;
+  line-height: 80px;
+}
+.eng-h2 {
+  font-weight: 700;
+  font-size: 22px;
+}
+.eng-h3 {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.kor {
+  font-family: "SpoqaHansSansNeo";
+  font-weight: 400;
+}
+.kor-h1 {
+  font-family: "SpoqaHansSansNeo-Bold";
+  font-weight: 700;
+  font-size: 24px;
+}
+.kor-h2 {
+  font-size: 22px;
+  line-height: 34px;
+}
+.kor-h3 {
+  font-size: 20px;
+  line-height: 32px;
+}
+.kor-h4 {
+  font-size: 16px;
+  line-height: 26px;
+}
+.kor-h5 {
+  font-size: 15px;
+  line-height: 22px;
+}
+
 #root .bf-root {
   position: relative;
   height: 100vh;
@@ -38,8 +97,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 400px 0;
+  padding: 300px 0;
   transition: background-image 650ms ease-in-out;
+  overflow: hidden;
 }
 #root .bf-root.ai {
   background: center/cover no-repeat url("/public/assets/images/img-business-ai.jpg");
@@ -52,18 +112,37 @@
 }
 #root .bf-root .layer {
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-image: linear-gradient(to top, #ffffff, rgba(255, 255, 255, 0.3));
 }
 #root .bf-root .main-container {
   display: flex;
+  align-items: center;
   gap: 230px;
-  z-index: 999;
+  z-index: 9;
+}
+@media (max-width: 1200px) {
+  #root .bf-root .main-container {
+    position: absolute;
+    left: 80px;
+    gap: 180px;
+  }
+}
+#root .bf-root .main-container .title-container .title {
+  font-family: "Montserrat-Bold";
+  font-size: 60px;
+  line-height: 80px;
+  color: #111111;
 }
 #root .bf-root .main-container .title-container .description {
   margin-top: 22px;
   white-space: pre-wrap;
+  font-family: "SpoqaHansSansNeo";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  color: #111111;
 }
 #root .bf-root .main-container .pagination-container {
   margin-top: 148px;
@@ -75,6 +154,12 @@
   display: flex;
   align-items: center;
   gap: 12px;
+}
+#root .bf-root .main-container .pagination-container .page span {
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 16px;
+  color: #111111;
 }
 #root .bf-root .main-container .pagination-container .page .line {
   height: 1px;
@@ -92,7 +177,6 @@
 #root .bf-root .main-container .carousel-container {
   width: 1098px;
   display: flex;
-  overflow-y: hidden;
   flex-shrink: 0;
 }
 #root .bf-root .main-container .carousel-container .item {
@@ -106,6 +190,8 @@
   overflow: hidden;
   transition: all 650ms ease-in-out;
   cursor: pointer;
+  font-size: 16px;
+  line-height: 26px;
 }
 #root .bf-root .main-container .carousel-container .item .invisible {
   display: none;
@@ -127,12 +213,23 @@
   padding: 48px 0;
   overflow: hidden;
   width: 400px;
+  color: white;
+}
+#root .bf-root .main-container .carousel-container .item .item-desc-container .title {
+  font-family: "SpoqaHansSansNeo-Bold";
+  font-weight: 700;
+  font-size: 24px;
 }
 #root .bf-root .main-container .carousel-container .item .item-desc-container .subtitle {
   margin-top: 6px;
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 16px;
 }
 #root .bf-root .main-container .carousel-container .item .item-desc-container .description {
   margin-top: 16px;
+  font-size: 16px;
+  line-height: 26px;
 }
 #root .bf-root .main-container .carousel-container .item.inactive {
   flex-basis: 282px;

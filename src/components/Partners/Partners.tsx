@@ -9,8 +9,8 @@ type Props = {
 const Partners = ({ partners }: Props) => {
   return (
     <div className='partners-root' id='partners'>
-      <h1 className='eng-h1'>{'Partners'}</h1>
-      <h3 className='kor-h3'>
+      <h1 className='title'>{'Partners'}</h1>
+      <h3 className='description'>
         {'윔은 기술력과 안정성, 신뢰성을 바탕으로 '}
         <br />
         {'파트너사들과 함께하고 있습니다.'}

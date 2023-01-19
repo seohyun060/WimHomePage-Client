@@ -14,10 +14,12 @@ import HomeContainer from './Home/containers/HomeContainer';
 import ContactDetailContainer from './Contact/containers/ContactDetailContainer';
 
 function App() {
-  const { rootRef, wheelHandler, page, onPageChanged } = useScroll();
+  const { rootRef, wheelHandler, page, onPageChanged, scrollHandler } =
+    useScroll();
 
   useEffect(() => {
     rootRef.current?.addEventListener('wheel', wheelHandler);
+    document.addEventListener('scroll', scrollHandler);
 
     return () => {
       rootRef.current?.removeEventListener('wheel', wheelHandler);

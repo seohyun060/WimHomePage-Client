@@ -21,16 +21,12 @@ const History = ({
       <div className='layer' />
       <div className='main-container'>
         <div className='title-container'>
-          <h1 className='title eng-h1 white'>{'History'}</h1>
-          <div className='description kor-h3 white'>
-            {'윔이 만들어온 길입니다.'}
-          </div>
+          <h1 className='title'>{'History'}</h1>
+          <div className='description'>{'윔이 만들어온 길입니다.'}</div>
         </div>
         <div className='content'>
           <div className='pagination-container'>
-            <span className='eng-h1 white'>
-              {Object.keys(history)[currentIdx]}
-            </span>
+            <span className='year '>{Object.keys(history)[currentIdx]}</span>
             <div className='button-container'>
               <button className='button' onClick={onPrevClicked}>
                 <img src={images.leftBtnW} alt='left-button' />
@@ -44,13 +40,13 @@ const History = ({
             {Object.values(history)[currentIdx].map((item, idx) => {
               return (
                 <div className='month-list' key={idx}>
-                  <span className='time eng-h2 white'>
+                  <span className='time '>
                     {item.month.toString().padStart(2, '0')}
                   </span>
                   <div className='list-item'>
                     {item.list.map((listItem, idx) => {
                       return (
-                        <span key={idx} className='history kor-h3 gray2'>
+                        <span key={idx} className='history '>
                           {listItem}
                         </span>
                       );

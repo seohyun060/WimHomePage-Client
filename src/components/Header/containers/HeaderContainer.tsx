@@ -26,7 +26,7 @@ const HeaderContainer = ({ page, onPageChanged }: Props) => {
 
   const onItemClicked = useCallback((page: number) => {
     onPageChanged(page);
-    navigate(`/${section[page]}`);
+    window.location.href = `/${section[page]}`;
   }, []);
 
   return (
