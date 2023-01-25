@@ -17,14 +17,14 @@ function App() {
   const { rootRef, wheelHandler, page, onPageChanged, scrollHandler } =
     useScroll();
 
-  useEffect(() => {
-    rootRef.current?.addEventListener('wheel', wheelHandler);
-    document.addEventListener('scroll', scrollHandler);
+  // useEffect(() => {
+  //   rootRef.current?.addEventListener('wheel', wheelHandler);
+  //   // document.addEventListener('scroll', scrollHandler);
 
-    return () => {
-      rootRef.current?.removeEventListener('wheel', wheelHandler);
-    };
-  }, []);
+  //   return () => {
+  //     rootRef.current?.removeEventListener('wheel', wheelHandler);
+  //   };
+  // }, []);
 
   return (
     <BrowserRouter>

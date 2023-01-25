@@ -91,7 +91,7 @@
 
 #root .main-root {
   position: relative;
-  height: 100vh;
+  height: 200vh;
   width: 100%;
   background-color: #111111;
   display: flex;
@@ -112,7 +112,7 @@
   pointer-events: none;
 }
 #root .main-root .background {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
 }
@@ -123,22 +123,25 @@
   -o-object-fit: cover;
      object-fit: cover;
 }
-#root .main-root .background .layer1 {
+#root .main-root .background .layer-black {
   position: absolute;
   width: 100vw;
   height: 100vh;
   background-color: #111111;
   opacity: 0.5;
 }
-#root .main-root .background .layer2 {
+#root .main-root .background .layer-blue {
   position: absolute;
   width: 100vw;
   height: 100vh;
   background-image: radial-gradient(circle at 50% 50%, rgba(0, 23, 49, 0), rgba(0, 26, 56, 0.51) 87%);
 }
 #root .main-root .main-container {
-  position: relative;
-  width: 1400px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -168,13 +171,18 @@
   margin-top: 48px;
 }
 #root .main-root .scroll-container {
-  position: absolute;
+  position: fixed;
   bottom: 62px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 8px;
+  transition: all 300ms ease-in-out;
+}
+#root .main-root .scroll-container.hidden {
+  opacity: 0;
+  transform: translate(0, -70%);
 }
 #root .main-root .scroll-container .label {
   font-family: "Montserrat";

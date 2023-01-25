@@ -20,6 +20,7 @@ export function usePointer() {
 
     positionMX += (positionX - positionMX) * speed;
     positionMY += (positionY - positionMY) * speed;
+    pointer.style.position = 'fixed';
     pointer.style.transform = `translate(${positionMX - 40}px, ${
       positionMY - 40
     }px)`;

@@ -149,9 +149,6 @@ body {
   width: 100%;
   min-height: 100vh;
 }
-#root .homepage-root .main-container {
-  max-width: 1200px;
-}
 #root .btn-solid-round {
   background-color: rgba(255, 255, 255, 0.1);
   padding: 18px 30px;
