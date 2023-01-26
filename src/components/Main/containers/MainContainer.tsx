@@ -21,6 +21,9 @@ const MainContainer = () => {
   const mainScrollHandler = useCallback(() => {
     const scrollTop = window.scrollY;
     const screenHeight = window.innerHeight;
+
+    if (scrollTop > screenHeight * 2) return;
+
     const pointer = pointerRef.current;
     const background = backgroundRef.current;
     const main = mainRef.current;
@@ -41,21 +44,13 @@ const MainContainer = () => {
     button.style.transform = `translate(0,${-scrollTop / 3}px)`;
     button.style.opacity = `${1 - scrollTop / screenHeight}`;
 
-    scroll.style.transform = `translate(0,${-scrollTop / 10}px)`;
+    scroll.style.transform = `translate(0,${scrollTop / 2}px)`;
     scroll.style.opacity = `${1 - scrollTop / screenHeight}`;
 
     if (scrollTop > screenHeight * 1.5) {
       pointer.style.visibility = 'hidden';
     } else {
       pointer.style.visibility = 'visible';
-    }
-
-    if (scrollTop > screenHeight * 3) {
-      main.style.position = 'absolute';
-      background.style.position = 'absolute';
-    } else {
-      main.style.position = 'fixed';
-      background.style.position = 'fixed';
     }
   }, []);
 

@@ -3,35 +3,54 @@
 #root {
   .bf-root {
     position: relative;
-    height: 100vh;
+    height: calc(100vh + 1600px + 300px);
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 300px 0;
-    transition: background-image 650ms ease-in-out;
-    overflow: hidden;
 
-    &.ai {
-      background: center / cover no-repeat
-        url('/public/assets/images/img-business-ai.jpg');
+    .bf-fixed-root {
+      position: sticky;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
     }
 
-    &.hardware {
-      background: center / cover no-repeat
-        url('/public/assets/images/img-business-hardware.jpg');
-    }
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      will-change: background-image;
+      transition: background-image 300ms ease-in-out;
 
-    &.webApp {
-      background: center / cover no-repeat
-        url('/public/assets/images/img-business-web-app.jpg');
+      &.ai {
+        background: center / cover no-repeat
+          url('/public/assets/images/img-business-ai.jpg');
+      }
+
+      &.hardware {
+        background: center / cover no-repeat
+          url('/public/assets/images/img-business-hardware.jpg');
+      }
+
+      &.webApp {
+        background: center / cover no-repeat
+          url('/public/assets/images/img-business-web-app.jpg');
+      }
     }
 
     .layer {
       position: absolute;
-      width: 100%;
-      height: 100%;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
       background-image: linear-gradient(
         to top,
         $white,
@@ -40,10 +59,11 @@
     }
 
     .main-container {
+      position: relative;
       display: flex;
+      width: 1200px;
       align-items: center;
       gap: 230px;
-      z-index: 9;
 
       @include tablet {
         position: absolute;
@@ -100,20 +120,29 @@
       }
 
       .carousel-container {
-        width: 1098px;
+        position: absolute;
+        left: 500px;
+        overflow: hidden;
+        width: calc(486 * 3 + 40);
+      }
+
+      .items {
+        width: calc(486 * 3);
         display: flex;
-        flex-shrink: 0;
+        gap: 20px;
+        will-change: transform;
+        transition: all 300ms ease-in-out;
 
         .item {
+          flex-shrink: 0;
+          width: 486px;
+          height: 486px;
           position: relative;
-          flex-grow: 0;
-          flex-basis: 0;
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
           overflow: hidden;
-          transition: all 650ms ease-in-out;
           cursor: pointer;
           @include kor-h4;
 
