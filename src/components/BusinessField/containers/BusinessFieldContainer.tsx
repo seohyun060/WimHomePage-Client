@@ -76,17 +76,18 @@ const BusinessFieldContainer = () => {
       return;
     }
 
-    carousel.style.transform = `translate(-${translateX}px,0)`;
+    // carousel.style.transform = `translate(-${translateX}px,0)`;
+    console.log(translateX, offset);
 
     if (translateX < offset) {
-      // setCurrentIdx(0);
-      background.style.backgroundImage = `url(${images.buisiness.ai})`;
+      setCurrentIdx(0);
+      // background.style.backgroundImage = `url(${images.buisiness.ai})`;
     } else if (translateX < offset * 2) {
-      // setCurrentIdx(1);
-      background.style.backgroundImage = `url(${images.buisiness.hardware})`;
+      setCurrentIdx(1);
+      // background.style.backgroundImage = `url(${images.buisiness.hardware})`;
     } else if (translateX < offset * 3) {
-      // setCurrentIdx(2);
-      background.style.backgroundImage = `url(${images.buisiness.webApp})`;
+      setCurrentIdx(2);
+      // background.style.backgroundImage = `url(${images.buisiness.webApp})`;
     }
   }, [currentIdx]);
 

@@ -7,9 +7,7 @@ type Props = {
   pointerRef: RefObject<HTMLDivElement>;
   backgroundRef: RefObject<HTMLDivElement>;
   mainRef: RefObject<HTMLDivElement>;
-  titleRef: RefObject<HTMLHeadingElement>;
-  descRef: RefObject<HTMLSpanElement>;
-  buttonRef: RefObject<HTMLButtonElement>;
+
   scrollRef: RefObject<HTMLDivElement>;
   onButtonClicked: () => void;
 };
@@ -19,9 +17,7 @@ const Main = ({
   pointerRef,
   backgroundRef,
   mainRef,
-  titleRef,
-  descRef,
-  buttonRef,
+
   scrollRef,
   onButtonClicked,
 }: Props) => {
@@ -41,14 +37,10 @@ const Main = ({
           <div className='layer-blue' />
         </div>
         <div ref={mainRef} className='main-container'>
-          <h1 ref={titleRef} className={`title`}>
-            {'Imagination\nBecomes Reality'}
-          </h1>
+          <h1 className={`title`}>{'Imagination\nBecomes Reality'}</h1>
           <span
-            ref={descRef}
             className={`description `}>{`여러가지 고객지향적 소프트웨어를 제작하여 고객들이 즐길 수 있는  공간, 편의를 \n누릴 수 있는 공간들을 제작하는 소프트웨어 전문회사 윔 입니다. `}</span>
           <button
-            ref={buttonRef}
             className={`btn-solid-round inquiry `}
             onClick={onButtonClicked}>
             {'프로젝트 문의하기'}

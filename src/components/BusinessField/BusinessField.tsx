@@ -43,18 +43,6 @@ const BusinessField = ({
                 <div className='line' />
                 <span>{'3'}</span>
               </div>
-              {/* <div className='button-container'>
-              <button
-                className='button'
-                onClick={() => onBusinessClicked(currentIdx - 1)}>
-                <img src={images.leftBtnB} alt='left-button' />
-              </button>
-              <button
-                className='button'
-                onClick={() => onBusinessClicked(currentIdx + 1)}>
-                <img src={images.rightBtnB} alt='right-button' />
-              </button>
-            </div> */}
             </div>
           </div>
           <div className='carousel-container'>
@@ -73,10 +61,6 @@ const BusinessField = ({
                     onClick={() => onBusinessClicked(idx)}>
                     <div className='item-desc-container'>
                       <div className='title '>{item.title}</div>
-                      {/* <div
-                        className={`subtitle  ${isActive ? 'invisible' : ''}`}>
-                        {item.subtitle}
-                      </div> */}
                       <p className={`description`}>{item.description}</p>
                     </div>
                   </div>

@@ -10,9 +10,6 @@ const MainContainer = () => {
   const rootRef = useRef<HTMLDivElement>(null);
   const backgroundRef = useRef<HTMLDivElement>(null);
   const mainRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const descRef = useRef<HTMLSpanElement>(null);
-  const buttonRef = useRef<HTMLButtonElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const onButtonClicked = useCallback(() => {
@@ -28,13 +25,10 @@ const MainContainer = () => {
     const pointer = pointerRef.current;
     const background = backgroundRef.current;
     const main = mainRef.current;
-    const title = titleRef.current;
-    const desc = descRef.current;
-    const button = buttonRef.current;
+
     const scroll = scrollRef.current;
 
-    if (!(pointer && background && main && title && desc && button && scroll))
-      return;
+    if (!(pointer && background && main && scroll)) return;
 
     main.style.transform = `translate(0,${-scrollTop / 3}px)`;
     main.style.opacity = `${1 - scrollTop / screenHeight}`;
@@ -66,9 +60,6 @@ const MainContainer = () => {
       pointerRef={pointerRef}
       backgroundRef={backgroundRef}
       mainRef={mainRef}
-      titleRef={titleRef}
-      descRef={descRef}
-      buttonRef={buttonRef}
       scrollRef={scrollRef}
       onButtonClicked={onButtonClicked}
     />

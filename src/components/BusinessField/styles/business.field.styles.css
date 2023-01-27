@@ -203,8 +203,8 @@
   width: 1458;
   display: flex;
   gap: 20px;
-  will-change: transform;
-  transition: all 100ms ease;
+  will-change: transform(translate);
+  transition: all 300ms ease;
 }
 #root .bf-root .main-container .items .item {
   flex-shrink: 0;
