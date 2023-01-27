@@ -7,6 +7,7 @@ const MainContainer = () => {
   const navigate = useNavigate();
   const { pointerRef, pointerAnimation, pointerHandler } = usePointer();
 
+  const rootRef = useRef<HTMLDivElement>(null);
   const backgroundRef = useRef<HTMLDivElement>(null);
   const mainRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -35,14 +36,8 @@ const MainContainer = () => {
     if (!(pointer && background && main && title && desc && button && scroll))
       return;
 
-    title.style.transform = `translate(0,${-scrollTop / 3}px)`;
-    title.style.opacity = `${1 - scrollTop / screenHeight}`;
-
-    desc.style.transform = `translate(0,${-scrollTop / 3}px)`;
-    desc.style.opacity = `${1 - scrollTop / screenHeight}`;
-
-    button.style.transform = `translate(0,${-scrollTop / 3}px)`;
-    button.style.opacity = `${1 - scrollTop / screenHeight}`;
+    main.style.transform = `translate(0,${-scrollTop / 3}px)`;
+    main.style.opacity = `${1 - scrollTop / screenHeight}`;
 
     scroll.style.transform = `translate(0,${scrollTop / 2}px)`;
     scroll.style.opacity = `${1 - scrollTop / screenHeight}`;
@@ -56,16 +51,18 @@ const MainContainer = () => {
 
   useEffect(() => {
     window.addEventListener('mousemove', pointerHandler);
-    window.addEventListener('scroll', mainScrollHandler);
+    rootRef.current?.addEventListener('wheel', mainScrollHandler);
     pointerAnimation();
+
     return () => {
       window.removeEventListener('mousemove', pointerHandler);
-      window.removeEventListener('scroll', mainScrollHandler);
+      rootRef.current?.removeEventListener('wheel', mainScrollHandler);
     };
   }, []);
 
   return (
     <Main
+      rootRef={rootRef}
       pointerRef={pointerRef}
       backgroundRef={backgroundRef}
       mainRef={mainRef}

@@ -75,12 +75,13 @@
       align-items: center;
       justify-content: center;
       color: $white;
+      will-change: transform, opacity;
+      transition: all 300ms ease-in;
 
       h1,
       span {
         white-space: pre-wrap;
         text-align: center;
-        will-change: transform;
       }
 
       .title {

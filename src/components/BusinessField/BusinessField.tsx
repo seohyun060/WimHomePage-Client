@@ -58,7 +58,12 @@ const BusinessField = ({
             </div>
           </div>
           <div className='carousel-container'>
-            <div className='items' ref={carouselRef}>
+            <div
+              className='items'
+              ref={carouselRef}
+              style={{
+                transform: `translate(-${currentIdx * 506}px,0)`,
+              }}>
               {businessList.map((item, idx) => {
                 const isActive = idx === currentIdx;
 

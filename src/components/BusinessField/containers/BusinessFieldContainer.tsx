@@ -5,6 +5,9 @@ import {
 } from '@typedef/components/Business/business.types';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import BusinessField from '../BusinessField';
+import _ from 'lodash';
+
+let isScrolling = false;
 
 const BusinessFieldContainer = () => {
   const [currentIdx, setCurrentIdx] = useState(0);
@@ -47,41 +50,50 @@ const BusinessFieldContainer = () => {
     [businessList],
   );
 
-  const businessFieldScrollHandler = useCallback(() => {
-    const scrollTop = window.scrollY;
-    const screenHeight = window.innerHeight;
-    const offset = 486;
-    const translateXStart = screenHeight * 2 + offset;
-    const translateXEnd = screenHeight * 2 + offset * 3.2;
-    const translateX = scrollTop - screenHeight * 2 - offset;
+  const businessFieldScrollHandler = useCallback(
+    (e: WheelEvent) => {
+      e.preventDefault();
+      console.log('wheel');
 
-    const background = backgroundRef.current;
-    const carousel = carouselRef.current;
+      const scrollTop = window.scrollY;
+      const screenHeight = window.innerHeight;
+      const { deltaY } = e;
 
-    if (!(carousel && background)) return;
+      if (deltaY > 0 && scrollTop < screenHeight * 2) {
+        window.scrollTo(0, screenHeight * 2);
+        return;
+      }
 
-    if (scrollTop < translateXStart) {
-      carousel.style.transform = `translate(0,0)`;
-      return;
-    }
-    if (scrollTop > translateXEnd) {
-      carousel.style.transform = `translate(-${1020}px,0)`;
-      return;
-    }
+      if (isScrolling) return;
+      isScrolling = true;
 
-    carousel.style.transform = `translate(-${translateX}px,0)`;
+      console.log(deltaY, currentIdx);
 
-    if (translateX < offset) {
-      setCurrentIdx(0);
-    } else if (translateX < offset * 2) {
-      setCurrentIdx(1);
-    } else if (translateX < offset * 3) {
-      setCurrentIdx(2);
-    }
-  }, [currentIdx]);
+      const offset = 506;
+
+      const background = backgroundRef.current;
+      const carousel = carouselRef.current;
+
+      if (!(carousel && background)) return;
+
+      deltaY > 0
+        ? setCurrentIdx((prev) => (prev + 1 > 2 ? 2 : prev + 1))
+        : setCurrentIdx((prev) => (prev - 1 < 0 ? 0 : prev - 1));
+
+      // deltaY > 0 ? window.scrollBy(0, offset) : window.scrollBy(0, -offset);
+
+      setTimeout(() => {
+        isScrolling = false;
+      }, 1000);
+    },
+    [currentIdx],
+  );
 
   useEffect(() => {
-    window.addEventListener('scroll', businessFieldScrollHandler);
+    rootRef.current?.addEventListener(
+      'wheel',
+      _.throttle(businessFieldScrollHandler, 500),
+    );
   }, []);
 
   return (

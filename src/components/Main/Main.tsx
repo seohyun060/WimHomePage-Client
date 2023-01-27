@@ -3,6 +3,7 @@ import React, { RefObject, useEffect, useRef, useState } from 'react';
 import './styles/main.styles.css';
 
 type Props = {
+  rootRef: RefObject<HTMLDivElement>;
   pointerRef: RefObject<HTMLDivElement>;
   backgroundRef: RefObject<HTMLDivElement>;
   mainRef: RefObject<HTMLDivElement>;
@@ -14,6 +15,7 @@ type Props = {
 };
 
 const Main = ({
+  rootRef,
   pointerRef,
   backgroundRef,
   mainRef,
@@ -24,7 +26,7 @@ const Main = ({
   onButtonClicked,
 }: Props) => {
   return (
-    <div className='main-root' id='main'>
+    <div ref={rootRef} className='main-root' id='main'>
       <div className='main-fixed-container'>
         <div ref={backgroundRef} className='background'>
           <video
