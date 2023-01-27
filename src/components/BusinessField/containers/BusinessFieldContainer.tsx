@@ -50,50 +50,48 @@ const BusinessFieldContainer = () => {
     [businessList],
   );
 
-  const businessFieldScrollHandler = useCallback(
-    (e: WheelEvent) => {
-      e.preventDefault();
-      console.log('wheel');
+  const businessFieldScrollHandler = useCallback(() => {
+    const scrollTop = window.scrollY;
+    const screenHeight = window.innerHeight;
 
-      const scrollTop = window.scrollY;
-      const screenHeight = window.innerHeight;
-      const { deltaY } = e;
+    if (scrollTop < screenHeight * 2 || scrollTop > screenHeight * 3 + 1900)
+      return;
 
-      if (deltaY > 0 && scrollTop < screenHeight * 2) {
-        window.scrollTo(0, screenHeight * 2);
-        return;
-      }
+    const offset = 486;
+    const translateXStart = screenHeight * 2 + offset;
+    const translateXEnd = screenHeight * 2 + offset * 3.2;
+    const translateX = scrollTop - screenHeight * 2 - offset;
 
-      if (isScrolling) return;
-      isScrolling = true;
+    const background = backgroundRef.current;
+    const carousel = carouselRef.current;
 
-      console.log(deltaY, currentIdx);
+    if (!(carousel && background)) return;
 
-      const offset = 506;
+    if (scrollTop < translateXStart) {
+      carousel.style.transform = `translate(0,0)`;
+      return;
+    }
+    if (scrollTop > translateXEnd) {
+      carousel.style.transform = `translate(-${1020}px,0)`;
+      return;
+    }
 
-      const background = backgroundRef.current;
-      const carousel = carouselRef.current;
+    carousel.style.transform = `translate(-${translateX}px,0)`;
 
-      if (!(carousel && background)) return;
-
-      deltaY > 0
-        ? setCurrentIdx((prev) => (prev + 1 > 2 ? 2 : prev + 1))
-        : setCurrentIdx((prev) => (prev - 1 < 0 ? 0 : prev - 1));
-
-      // deltaY > 0 ? window.scrollBy(0, offset) : window.scrollBy(0, -offset);
-
-      setTimeout(() => {
-        isScrolling = false;
-      }, 1000);
-    },
-    [currentIdx],
-  );
+    if (translateX < offset) {
+      // setCurrentIdx(0);
+      background.style.backgroundImage = `url(${images.buisiness.ai})`;
+    } else if (translateX < offset * 2) {
+      // setCurrentIdx(1);
+      background.style.backgroundImage = `url(${images.buisiness.hardware})`;
+    } else if (translateX < offset * 3) {
+      // setCurrentIdx(2);
+      background.style.backgroundImage = `url(${images.buisiness.webApp})`;
+    }
+  }, [currentIdx]);
 
   useEffect(() => {
-    rootRef.current?.addEventListener(
-      'wheel',
-      _.throttle(businessFieldScrollHandler, 500),
-    );
+    window.addEventListener('scroll', businessFieldScrollHandler);
   }, []);
 
   return (

@@ -51,12 +51,12 @@ const MainContainer = () => {
 
   useEffect(() => {
     window.addEventListener('mousemove', pointerHandler);
-    rootRef.current?.addEventListener('wheel', mainScrollHandler);
+    window.addEventListener('scroll', mainScrollHandler);
     pointerAnimation();
 
     return () => {
       window.removeEventListener('mousemove', pointerHandler);
-      rootRef.current?.removeEventListener('wheel', mainScrollHandler);
+      window.removeEventListener('scroll', mainScrollHandler);
     };
   }, []);
 
