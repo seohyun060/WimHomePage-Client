@@ -114,7 +114,7 @@ const HistoryContainer = () => {
   }, [history]);
 
   const historyScrollHandler = useCallback(
-    (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
+    (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         if (entry.intersectionRatio > 0.9) {
           entry.target.classList.add('visible');

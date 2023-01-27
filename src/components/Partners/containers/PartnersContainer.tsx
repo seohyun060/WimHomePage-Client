@@ -1,5 +1,5 @@
 import images from '@assets/images';
-import React from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import { useState } from 'react';
 import Partners from '../Partners';
 
@@ -19,7 +19,30 @@ const PartnersContainer = () => {
     images.partnersLogo.logo12,
   ]);
 
-  return <Partners partners={partners} />;
+  const mainRef = useRef<HTMLDivElement>(null);
+
+  const partnersScrollHandler = useCallback(
+    (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.intersectionRatio > 0.9) {
+          entry.target.classList.add('visible');
+        } else if (entry.intersectionRatio < 0.1) {
+          entry.target.classList.remove('visible');
+        }
+      });
+    },
+    [],
+  );
+
+  const observer = new IntersectionObserver(partnersScrollHandler, {
+    threshold: new Array(11).fill(0).map((v, i) => i * 0.1),
+  });
+
+  useEffect(() => {
+    mainRef.current?.childNodes.forEach((v) => observer.observe(v as Element));
+  }, []);
+
+  return <Partners partners={partners} mainRef={mainRef} />;
 };
 
 export default PartnersContainer;

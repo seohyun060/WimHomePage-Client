@@ -62,8 +62,7 @@
       }
 
       @include tablet {
-        gap: 60px;
-        padding: 60px 80px;
+        padding: 170px 80px;
 
         .content {
           flex-direction: column;
@@ -108,7 +107,6 @@
         @include tablet {
           margin-left: 0;
           min-height: 400px;
-          gap: 20px;
         }
 
         .month-list {

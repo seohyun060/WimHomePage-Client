@@ -89,15 +89,14 @@
   line-height: 22px;
 }
 
-#root {
-  background-color: #ffffff;
-}
 #root .partners-root {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #f9fafb;
   min-height: 100vh;
+  padding: 0 40px;
 }
 #root .partners-root .title {
   margin-top: 170px;
@@ -125,9 +124,10 @@
   z-index: 1;
   padding: 0px;
   gap: 36px 24px;
-  width: 1360px;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 #root .partners-root .main-container .item {
   background-color: white;
@@ -136,13 +136,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: all 300ms ease-in-out;
+}
+#root .partners-root .main-container .item.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @media (max-width: 1200px) {
   #root .partners-root .main-container {
     gap: 38px 17px;
-    width: 1200px;
-    grid-template-columns: repeat(5, 1fr);
   }
   #root .partners-root .main-container .item {
     width: 194px;
@@ -152,8 +157,6 @@
 @media (max-width: 800px) {
   #root .partners-root .main-container {
     gap: 32px 15px;
-    width: 897px;
-    grid-template-columns: repeat(4, 1fr);
   }
   #root .partners-root .main-container .item {
     width: 172px;

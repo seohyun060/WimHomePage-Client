@@ -152,8 +152,7 @@
 }
 @media (max-width: 1200px) {
   #root .history-root .main-container {
-    gap: 60px;
-    padding: 60px 80px;
+    padding: 170px 80px;
   }
   #root .history-root .main-container .content {
     flex-direction: column;
@@ -200,7 +199,6 @@
   #root .history-root .main-container .list-container {
     margin-left: 0;
     min-height: 400px;
-    gap: 20px;
   }
 }
 #root .history-root .main-container .list-container .month-list {

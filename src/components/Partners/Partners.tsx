@@ -1,12 +1,13 @@
 import images from '@assets/images';
-import React from 'react';
+import React, { RefObject } from 'react';
 import './styles/partners.styles.css';
 
 type Props = {
   partners: string[];
+  mainRef: RefObject<HTMLDivElement>;
 };
 
-const Partners = ({ partners }: Props) => {
+const Partners = ({ partners, mainRef }: Props) => {
   return (
     <div className='partners-root' id='partners'>
       <h1 className='title'>{'Partners'}</h1>
@@ -16,10 +17,10 @@ const Partners = ({ partners }: Props) => {
         {'파트너사들과 함께하고 있습니다.'}
       </h3>
       <img className='partners-logo' src={images.partnersBackground}></img>
-      <div className='main-container'>
+      <div ref={mainRef} className='main-container'>
         {partners.map((item, idx) => {
           return (
-            <div className='item'>
+            <div className='item' key={idx}>
               <img src={item} alt='partners-logo' />
             </div>
           );
