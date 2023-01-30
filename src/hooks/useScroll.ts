@@ -25,6 +25,14 @@ export function useScroll() {
     }
   }, []);
 
+  const scrollHandler = useCallback(() => {
+    const { scrollY, innerHeight } = window;
+
+    const currentPage = Math.floor(scrollY / innerHeight);
+
+    // setPage(currentPage);
+  }, []);
+
   useEffect(() => {
     window.scrollTo({
       top: window.innerHeight * page,
@@ -32,5 +40,5 @@ export function useScroll() {
     });
   }, [page]);
 
-  return { rootRef, wheelHandler, page, onPageChanged };
+  return { rootRef, wheelHandler, page, onPageChanged, scrollHandler };
 }

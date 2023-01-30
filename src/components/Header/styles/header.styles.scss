@@ -1,4 +1,4 @@
-@import '../../../styles/colors';
+@import '../../../styles/mixin';
 
 #root {
   .header-root {
@@ -12,6 +12,14 @@
     padding: 0 40px;
     z-index: 99;
     border-bottom: 1px solid #ffffff12;
+
+    @include tablet {
+      padding: 0 80px;
+    }
+
+    @include mobile {
+      padding: 0 16px;
+    }
 
     &.blur {
       -webkit-backdrop-filter: blur(15px);
@@ -44,11 +52,18 @@
 
         .item {
           a {
-            color: white;
-            font-size: 18px;
-
+            @include eng-h3;
+            color: $white;
             transition: color 0.7s ease-in-out;
           }
+        }
+
+        @include tablet {
+          gap: 60px;
+        }
+
+        @include mobile {
+          display: none;
         }
       }
     }

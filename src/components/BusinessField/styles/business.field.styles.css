@@ -30,40 +30,190 @@
   color: #a502fb;
 }
 
+@font-face {
+  font-family: "Montserrat";
+  src: url("/public/fonts/Montserrat/Montserrat-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url("/public/fonts/Montserrat/static/Montserrat-Bold.ttf");
+}
+@font-face {
+  font-family: "SpoqaHansSansNeo";
+  src: url("/public/fonts/SpoqaHanSansNeo_all/SpoqaHanSansNeo_OTF_original/SpoqaHanSansNeo-Regular.otf");
+}
+@font-face {
+  font-family: "SpoqaHansSansNeo-Bold";
+  src: url("/public/fonts/SpoqaHanSansNeo_all/SpoqaHanSansNeo_OTF_original/SpoqaHanSansNeo-Bold.otf");
+}
+.eng {
+  font-family: "Montserrat";
+}
+.eng-h1 {
+  font-family: "Montserrat-Bold";
+  font-size: 60px;
+  line-height: 80px;
+}
+.eng-h2 {
+  font-weight: 700;
+  font-size: 22px;
+}
+.eng-h3 {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.kor {
+  font-family: "SpoqaHansSansNeo";
+  font-weight: 400;
+}
+.kor-h1 {
+  font-family: "SpoqaHansSansNeo-Bold";
+  font-weight: 700;
+  font-size: 24px;
+}
+.kor-h2 {
+  font-size: 22px;
+  line-height: 34px;
+}
+.kor-h3 {
+  font-size: 20px;
+  line-height: 32px;
+}
+.kor-h4 {
+  font-size: 16px;
+  line-height: 26px;
+}
+.kor-h5 {
+  font-size: 15px;
+  line-height: 22px;
+}
+
 #root .bf-root {
   position: relative;
-  height: 100vh;
+  height: calc(100vh + 1600px + 300px);
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+@media (max-width: 520px) {
+  #root .bf-root {
+    height: calc(100vh + 100px);
+  }
+}
+#root .bf-root .bf-fixed-root {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  padding: 400px 0;
-  transition: background-image 650ms ease-in-out;
+  overflow: hidden;
 }
-#root .bf-root.ai {
-  background: center/cover no-repeat url("/public/assets/images/img-business-ai.jpg");
+@media (max-width: 520px) {
+  #root .bf-root .bf-fixed-root {
+    height: calc(100vh + 100px);
+  }
 }
-#root .bf-root.hardware {
-  background: center/cover no-repeat url("/public/assets/images/img-business-hardware.jpg");
+#root .bf-root .background-imgs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #ffffff;
 }
-#root .bf-root.webApp {
-  background: center/cover no-repeat url("/public/assets/images/img-business-web-app.jpg");
+@media (max-width: 520px) {
+  #root .bf-root .background-imgs {
+    height: calc(100vh + 100px);
+  }
+}
+#root .bf-root .background-imgs .background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  transition: opacity 300ms ease-in-out;
+  opacity: 0;
+}
+#root .bf-root .background-imgs .background.visible {
+  opacity: 1;
+}
+#root .bf-root .background-imgs .background.ai {
+  background: center/cover no-repeat url("/public/assets/images/img-business-ai.webp");
+}
+#root .bf-root .background-imgs .background.hardware {
+  background: center/cover no-repeat url("/public/assets/images/img-business-hardware.webp");
+}
+#root .bf-root .background-imgs .background.web-app {
+  background: center/cover no-repeat url("/public/assets/images/img-business-web-app.webp");
 }
 #root .bf-root .layer {
   position: absolute;
-  width: 100vw;
+  top: 0;
+  left: 0;
   height: 100vh;
+  width: 100vw;
   background-image: linear-gradient(to top, #ffffff, rgba(255, 255, 255, 0.3));
 }
+@media (max-width: 520px) {
+  #root .bf-root .layer {
+    height: calc(100vh + 100px);
+  }
+}
 #root .bf-root .main-container {
+  position: relative;
   display: flex;
+  width: 1200px;
+  align-items: center;
   gap: 230px;
-  z-index: 999;
+}
+@media (max-width: 1200px) {
+  #root .bf-root .main-container {
+    position: absolute;
+    left: 80px;
+    gap: 60px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media (max-width: 768px) {
+  #root .bf-root .main-container {
+    left: 16px;
+    gap: 60px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+#root .bf-root .main-container .title-container .title {
+  font-family: "Montserrat-Bold";
+  font-size: 60px;
+  line-height: 80px;
+  color: #111111;
+}
+@media (max-width: 768px) {
+  #root .bf-root .main-container .title-container .title {
+    font-size: 48px;
+  }
 }
 #root .bf-root .main-container .title-container .description {
   margin-top: 22px;
   white-space: pre-wrap;
+  font-family: "SpoqaHansSansNeo";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  color: #111111;
+}
+@media (max-width: 768px) {
+  #root .bf-root .main-container .title-container .description {
+    font-size: 16px;
+    line-height: 26px;
+  }
 }
 #root .bf-root .main-container .pagination-container {
   margin-top: 148px;
@@ -71,10 +221,21 @@
   align-items: center;
   gap: 36px;
 }
+@media (max-width: 1200px) {
+  #root .bf-root .main-container .pagination-container {
+    margin-top: 50px;
+  }
+}
 #root .bf-root .main-container .pagination-container .page {
   display: flex;
   align-items: center;
   gap: 12px;
+}
+#root .bf-root .main-container .pagination-container .page span {
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 16px;
+  color: #111111;
 }
 #root .bf-root .main-container .pagination-container .page .line {
   height: 1px;
@@ -82,6 +243,7 @@
   background-color: #111111;
 }
 #root .bf-root .main-container .pagination-container .button-container {
+  visibility: hidden;
   display: flex;
   gap: 8px;
 }
@@ -89,28 +251,59 @@
   width: 40px;
   height: 40px;
 }
-#root .bf-root .main-container .carousel-container {
-  width: 1098px;
-  display: flex;
-  overflow-y: hidden;
-  flex-shrink: 0;
+@media (max-width: 520px) {
+  #root .bf-root .main-container .pagination-container .button-container {
+    visibility: visible;
+  }
 }
-#root .bf-root .main-container .carousel-container .item {
+#root .bf-root .main-container .carousel-container {
+  position: absolute;
+  left: 520px;
+  overflow: hidden;
+}
+@media (max-width: 1200px) {
+  #root .bf-root .main-container .carousel-container {
+    position: static;
+  }
+}
+#root .bf-root .main-container .items {
+  display: flex;
+  gap: 20px;
+  will-change: transform(translate);
+  transition: all 300ms ease;
+}
+#root .bf-root .main-container .items .item {
+  flex-shrink: 0;
+  width: 486px;
+  height: 486px;
   position: relative;
-  flex-grow: 0;
-  flex-basis: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  transition: all 650ms ease-in-out;
   cursor: pointer;
+  font-size: 16px;
+  line-height: 26px;
 }
-#root .bf-root .main-container .carousel-container .item .invisible {
+#root .bf-root .main-container .items .item .background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+@media (max-width: 520px) {
+  #root .bf-root .main-container .items .item {
+    width: calc(100vw - 32px);
+    height: calc(100vw - 32px);
+  }
+}
+#root .bf-root .main-container .items .item .invisible {
   display: none;
 }
-#root .bf-root .main-container .carousel-container .item::after {
+#root .bf-root .main-container .items .item::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -118,7 +311,7 @@
   height: 50%;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
 }
-#root .bf-root .main-container .carousel-container .item .item-desc-container {
+#root .bf-root .main-container .items .item .item-desc-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -127,34 +320,31 @@
   padding: 48px 0;
   overflow: hidden;
   width: 400px;
+  color: white;
 }
-#root .bf-root .main-container .carousel-container .item .item-desc-container .subtitle {
+@media (max-width: 520px) {
+  #root .bf-root .main-container .items .item .item-desc-container {
+    width: calc(100vw - 32px);
+    padding: 0 10px;
+  }
+}
+#root .bf-root .main-container .items .item .item-desc-container .title {
+  font-family: "SpoqaHansSansNeo-Bold";
+  font-weight: 700;
+  font-size: 24px;
+}
+#root .bf-root .main-container .items .item .item-desc-container .subtitle {
   margin-top: 6px;
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 16px;
 }
-#root .bf-root .main-container .carousel-container .item .item-desc-container .description {
+#root .bf-root .main-container .items .item .item-desc-container .description {
   margin-top: 16px;
+  font-size: 16px;
+  line-height: 26px;
 }
-#root .bf-root .main-container .carousel-container .item.inactive {
-  flex-basis: 282px;
-  justify-content: flex-end;
-  max-width: 282px;
-  margin-left: 24px;
-}
-#root .bf-root .main-container .carousel-container .item.active {
-  flex-grow: 1;
-  height: 486px;
-  padding: 48px 40px;
-}
-#root .bf-root .main-container .carousel-container .item.active::after {
+#root .bf-root .main-container .items .item::after {
   height: 100%;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
-}
-#root .bf-root .main-container .carousel-container .item.ai {
-  background: center/cover no-repeat url("/public/assets/images/img-business-ai.jpg");
-}
-#root .bf-root .main-container .carousel-container .item.hardware {
-  background: center/cover no-repeat url("/public/assets/images/img-business-hardware.jpg");
-}
-#root .bf-root .main-container .carousel-container .item.webApp {
-  background: center/cover no-repeat url("/public/assets/images/img-business-web-app.jpg");
 }/*# sourceMappingURL=business.field.styles.css.map */

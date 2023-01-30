@@ -1,16 +1,26 @@
-@import '../../../styles/colors';
-@import '../../../styles/fonts';
+@import '../../../styles/mixin';
 
 #root {
   .main-root {
     position: relative;
-    height: 100vh;
-    width: 100%;
+    height: 200vh;
+    width: 100vw;
     background-color: $black;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow: scroll;
+
+    .main-fixed-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
     .pointer {
       z-index: 9999;
@@ -23,6 +33,10 @@
       background-color: $white;
       mix-blend-mode: difference;
       pointer-events: none;
+
+      @include tablet {
+        display: none;
+      }
     }
 
     .background {
@@ -36,7 +50,7 @@
         object-fit: cover;
       }
 
-      .layer1 {
+      .layer-black {
         position: absolute;
         width: 100vw;
         height: 100vh;
@@ -44,7 +58,7 @@
         opacity: 0.5;
       }
 
-      .layer2 {
+      .layer-blue {
         position: absolute;
         width: 100vw;
         height: 100vh;
@@ -57,13 +71,20 @@
     }
 
     .main-container {
-      position: relative;
-      width: 1400px;
+      position: absolute;
+      width: 100%;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       color: $white;
+      will-change: transform, opacity;
+      transition: all 300ms ease-in;
+
+      @include mobile {
+        padding: 0 16px;
+      }
 
       h1,
       span {
@@ -71,11 +92,29 @@
         text-align: center;
       }
 
-      span {
-        margin-top: 25px;
+      .title {
+        @include eng-h1;
+        color: white;
+
+        @include mobile {
+          font-size: 48px;
+          line-height: 1.2;
+        }
       }
 
-      button {
+      .description {
+        @include kor-h3;
+        color: $gray2;
+        margin-top: 25px;
+
+        @include mobile {
+          padding: 0 16px;
+          font-size: 16px;
+          line-height: 1.5;
+        }
+      }
+
+      .inquiry {
         margin-top: 48px;
       }
     }
@@ -88,6 +127,12 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
+      transition: all 300ms ease-in-out;
+
+      .label {
+        @include eng-h3;
+        color: $white;
+      }
 
       .scroll-anim {
         width: 24px;

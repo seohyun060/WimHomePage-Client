@@ -1,6 +1,13 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
 import Header from '../Header';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { HomeContext } from '@components/App';
 
 export const section: { [key: number]: string } = {
   0: '#main',
@@ -10,32 +17,16 @@ export const section: { [key: number]: string } = {
   4: '#contact',
 };
 
-type Props = {
-  page: number;
-  onPageChanged: (page: number) => void;
-};
-const HeaderContainer = ({ page, onPageChanged }: Props) => {
+const HeaderContainer = () => {
   const navigate = useNavigate();
   const location = useLocation();
-
-  const isBlackMode = useMemo(() => {
-    return (
-      section[page] === '#partners' || location.pathname === '/contact-detail'
-    );
-  }, [page, location]);
+  const { headerMode } = useContext(HomeContext);
 
   const onItemClicked = useCallback((page: number) => {
-    onPageChanged(page);
-    navigate(`/${section[page]}`);
+    window.location.href = `/${section[page]}`;
   }, []);
 
-  return (
-    <Header
-      page={page}
-      onItemClicked={onItemClicked}
-      isBlackMode={isBlackMode}
-    />
-  );
+  return <Header onItemClicked={onItemClicked} headerMode={headerMode} />;
 };
 
 export default HeaderContainer;

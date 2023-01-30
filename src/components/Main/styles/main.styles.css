@@ -91,13 +91,23 @@
 
 #root .main-root {
   position: relative;
-  height: 100vh;
-  width: 100%;
+  height: 200vh;
+  width: 100vw;
   background-color: #111111;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  overflow: scroll;
+}
+#root .main-root .main-fixed-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 #root .main-root .pointer {
   z-index: 9999;
@@ -111,6 +121,11 @@
   mix-blend-mode: difference;
   pointer-events: none;
 }
+@media (max-width: 1200px) {
+  #root .main-root .pointer {
+    display: none;
+  }
+}
 #root .main-root .background {
   position: absolute;
   left: 0;
@@ -123,37 +138,69 @@
   -o-object-fit: cover;
      object-fit: cover;
 }
-#root .main-root .background .layer1 {
+#root .main-root .background .layer-black {
   position: absolute;
   width: 100vw;
   height: 100vh;
   background-color: #111111;
   opacity: 0.5;
 }
-#root .main-root .background .layer2 {
+#root .main-root .background .layer-blue {
   position: absolute;
   width: 100vw;
   height: 100vh;
   background-image: radial-gradient(circle at 50% 50%, rgba(0, 23, 49, 0), rgba(0, 26, 56, 0.51) 87%);
 }
 #root .main-root .main-container {
-  position: relative;
-  width: 1400px;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: #ffffff;
+  will-change: transform, opacity;
+  transition: all 300ms ease-in;
+}
+@media (max-width: 768px) {
+  #root .main-root .main-container {
+    padding: 0 16px;
+  }
 }
 #root .main-root .main-container h1,
 #root .main-root .main-container span {
   white-space: pre-wrap;
   text-align: center;
 }
-#root .main-root .main-container span {
+#root .main-root .main-container .title {
+  font-family: "Montserrat-Bold";
+  font-size: 60px;
+  line-height: 80px;
+  color: white;
+}
+@media (max-width: 768px) {
+  #root .main-root .main-container .title {
+    font-size: 48px;
+    line-height: 1.2;
+  }
+}
+#root .main-root .main-container .description {
+  font-family: "SpoqaHansSansNeo";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  color: #eff0f2;
   margin-top: 25px;
 }
-#root .main-root .main-container button {
+@media (max-width: 768px) {
+  #root .main-root .main-container .description {
+    padding: 0 16px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+#root .main-root .main-container .inquiry {
   margin-top: 48px;
 }
 #root .main-root .scroll-container {
@@ -164,6 +211,13 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
+  transition: all 300ms ease-in-out;
+}
+#root .main-root .scroll-container .label {
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 16px;
+  color: #ffffff;
 }
 #root .main-root .scroll-container .scroll-anim {
   width: 24px;
