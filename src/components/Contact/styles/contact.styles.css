@@ -32,29 +32,37 @@
 #root .contact-root {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  height: 1080px;
+  height: 100vh;
   min-height: 100vh;
 }
-#root .contact-root .curtain {
-  position: absolute;
+#root .contact-root .contact-main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
-  height: 680px;
+  height: inherit;
+}
+#root .contact-root .contact-main .curtain {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;
   z-index: 1;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #191b1f);
 }
-#root .contact-root .contact-logo {
+#root .contact-root .contact-main .contact-logo {
   position: absolute;
   width: 100%;
-  height: 680px;
+  height: 100%;
   z-index: 0;
 }
-#root .contact-root .eng-h1 {
-  margin-top: 170px;
+#root .contact-root .contact-main .eng-h1 {
+  margin-top: 18.9vh;
   color: white;
-  z-index: 2;
+  z-index: 5;
 }
-#root .contact-root .kor-h3 {
+#root .contact-root .contact-main .kor-h3 {
   margin-top: 22px;
   text-align: center;
   margin-bottom: 48px;
@@ -62,7 +70,7 @@
   font-size: 20px;
   z-index: 2;
 }
-#root .contact-root .kor-h3-ask {
+#root .contact-root .contact-main .kor-h3-ask {
   color: white;
   width: 184px;
   height: 56px;
@@ -72,19 +80,66 @@
   z-index: 2;
   border-radius: 28px;
 }
-#root .contact-root .contact-footer {
-  width: 100vw;
+#root .contact-root .footer {
+  width: 100%;
   height: 400px;
+  display: flex;
+  position: relative;
   background-color: black;
+  font-size: 15px;
+}
+#root .contact-root .footer-location {
+  width: 643px;
+  height: 187px;
+  margin-bottom: 106px;
+  margin-top: 107px;
+  margin-left: 18.75%;
+}
+#root .contact-root .footer-location button {
+  margin-right: 10px;
+  margin-bottom: 24px;
+  text-decoration: underline;
+}
+#root .contact-root .footer-location span {
+  color: white;
+  margin-right: 10px;
+}
+#root .contact-root .footer-location p {
+  color: white;
+  line-height: 1.8;
+}
+#root .contact-root .footer-location p button {
+  text-decoration: underline;
+  margin-left: 10px;
+}
+#root .contact-root .footer-logo {
+  width: 106.1px;
+  height: 27.1px;
+  position: absolute;
+  top: 266.9px;
+  right: 360px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
   #root .contact-root {
     flex-direction: column;
+  }
+  #root .contact-root .footer-location {
+    margin-left: 80px;
+  }
+  #root .contact-root .footer-logo {
+    right: 80px;
   }
 }
 @media (max-width: 800px) {
   #root .contact-root {
     flex-direction: column;
+  }
+  #root .contact-root .footer-location {
+    margin-left: 16px;
+  }
+  #root .contact-root .footer-logo {
+    top: 350px;
+    left: 16px;
   }
 }/*# sourceMappingURL=contact.styles.css.map */
