@@ -163,6 +163,11 @@
   will-change: transform, opacity;
   transition: all 300ms ease-in;
 }
+@media (max-width: 768px) {
+  #root .main-root .main-container {
+    padding: 0 16px;
+  }
+}
 #root .main-root .main-container h1,
 #root .main-root .main-container span {
   white-space: pre-wrap;
@@ -174,6 +179,12 @@
   line-height: 80px;
   color: white;
 }
+@media (max-width: 768px) {
+  #root .main-root .main-container .title {
+    font-size: 48px;
+    line-height: 1.2;
+  }
+}
 #root .main-root .main-container .description {
   font-family: "SpoqaHansSansNeo";
   font-weight: 400;
@@ -181,6 +192,13 @@
   line-height: 32px;
   color: #eff0f2;
   margin-top: 25px;
+}
+@media (max-width: 768px) {
+  #root .main-root .main-container .description {
+    padding: 0 16px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
 }
 #root .main-root .main-container .inquiry {
   margin-top: 48px;
