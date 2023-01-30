@@ -7,7 +7,7 @@
       display: flex;
       height: 62px;
       align-items: center;
-      border: 1px solid $lineGray;
+      border: 1px solid $gray1;
       padding: 0 20px;
       gap: 20px;
       font-size: 18px;
@@ -18,7 +18,7 @@
       }
 
       .span {
-        color: $gray100;
+        color: $gray1;
       }
 
       .input {
