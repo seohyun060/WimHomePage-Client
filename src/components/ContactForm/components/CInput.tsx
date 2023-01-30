@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/cinput.styles.css';
+import '../styles/cinput.styles.scss';
 
 type Props = {
   id: string;
