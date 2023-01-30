@@ -13,7 +13,9 @@ const Contact = () => {
           <br />
           {'연락을 드리겠습니다.'}
         </h3>
-        <a className='kor-h3-ask'>{'프로젝트 문의하기'}</a>
+        <a className='kor-h3-ask' href='/contact-detail'>
+          {'프로젝트 문의하기'}
+        </a>
       </div>
       <div className='footer'>
         <div className='footer-location'>

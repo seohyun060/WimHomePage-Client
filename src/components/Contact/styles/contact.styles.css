@@ -26,11 +26,13 @@
   color: #111111;
 }
 
-
 .primary-purple {
   color: #a502fb;
 }
 
+#root {
+  background-color: white;
+}
 #root .contact-root {
   display: flex;
   flex-direction: column;

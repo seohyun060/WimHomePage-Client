@@ -3,7 +3,7 @@ import { ContactFormType } from '@typedef/components/Contact/contact.types';
 import CInput from '../components/CInput';
 
 import React from 'react';
-import '../styles/contact.detail.styles.css';
+//import '../styles/contact.detail.styles.css';
 type Props = {
   contactForm: ContactFormType;
   onValueChanged: (
