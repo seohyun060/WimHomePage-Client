@@ -97,6 +97,11 @@
   flex-direction: column;
   align-items: center;
 }
+@media (max-width: 520px) {
+  #root .bf-root {
+    height: calc(100vh + 100px);
+  }
+}
 #root .bf-root .bf-fixed-root {
   position: -webkit-sticky;
   position: sticky;
@@ -108,6 +113,11 @@
   justify-content: center;
   overflow: hidden;
 }
+@media (max-width: 520px) {
+  #root .bf-root .bf-fixed-root {
+    height: calc(100vh + 100px);
+  }
+}
 #root .bf-root .background {
   position: absolute;
   top: 0;
@@ -115,6 +125,11 @@
   height: 100vh;
   width: 100vw;
   transition: background-image 300ms ease-in-out;
+}
+@media (max-width: 520px) {
+  #root .bf-root .background {
+    height: calc(100vh + 100px);
+  }
 }
 #root .bf-root .background.ai {
   background: center/cover no-repeat url("/public/assets/images/img-business-ai.webp");
@@ -133,6 +148,11 @@
   width: 100vw;
   background-image: linear-gradient(to top, #ffffff, rgba(255, 255, 255, 0.3));
 }
+@media (max-width: 520px) {
+  #root .bf-root .layer {
+    height: calc(100vh + 100px);
+  }
+}
 #root .bf-root .main-container {
   position: relative;
   display: flex;
@@ -144,7 +164,17 @@
   #root .bf-root .main-container {
     position: absolute;
     left: 80px;
-    gap: 180px;
+    gap: 60px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media (max-width: 768px) {
+  #root .bf-root .main-container {
+    left: 16px;
+    gap: 60px;
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 #root .bf-root .main-container .title-container .title {
@@ -168,6 +198,11 @@
   align-items: center;
   gap: 36px;
 }
+@media (max-width: 1200px) {
+  #root .bf-root .main-container .pagination-container {
+    margin-top: 50px;
+  }
+}
 #root .bf-root .main-container .pagination-container .page {
   display: flex;
   align-items: center;
@@ -185,6 +220,7 @@
   background-color: #111111;
 }
 #root .bf-root .main-container .pagination-container .button-container {
+  visibility: hidden;
   display: flex;
   gap: 8px;
 }
@@ -192,14 +228,22 @@
   width: 40px;
   height: 40px;
 }
+@media (max-width: 520px) {
+  #root .bf-root .main-container .pagination-container .button-container {
+    visibility: visible;
+  }
+}
 #root .bf-root .main-container .carousel-container {
   position: absolute;
-  left: 500px;
+  left: 520px;
   overflow: hidden;
-  width: 1498;
+}
+@media (max-width: 1200px) {
+  #root .bf-root .main-container .carousel-container {
+    position: static;
+  }
 }
 #root .bf-root .main-container .items {
-  width: 1458;
   display: flex;
   gap: 20px;
   will-change: transform(translate);
@@ -218,6 +262,12 @@
   cursor: pointer;
   font-size: 16px;
   line-height: 26px;
+}
+@media (max-width: 520px) {
+  #root .bf-root .main-container .items .item {
+    width: calc(100vw - 32px);
+    height: calc(100vw - 32px);
+  }
 }
 #root .bf-root .main-container .items .item .invisible {
   display: none;
@@ -241,6 +291,12 @@
   width: 400px;
   color: white;
 }
+@media (max-width: 520px) {
+  #root .bf-root .main-container .items .item .item-desc-container {
+    width: calc(100vw - 32px);
+    padding: 0 10px;
+  }
+}
 #root .bf-root .main-container .items .item .item-desc-container .title {
   font-family: "SpoqaHansSansNeo-Bold";
   font-weight: 700;
@@ -257,18 +313,7 @@
   font-size: 16px;
   line-height: 26px;
 }
-#root .bf-root .main-container .items .item.inactive {
-  flex-basis: 282px;
-  justify-content: flex-end;
-  max-width: 282px;
-  margin-left: 24px;
-}
-#root .bf-root .main-container .items .item.active {
-  flex-grow: 1;
-  height: 486px;
-  padding: 48px 40px;
-}
-#root .bf-root .main-container .items .item.active::after {
+#root .bf-root .main-container .items .item::after {
   height: 100%;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
 }

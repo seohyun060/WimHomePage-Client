@@ -53,6 +53,9 @@ const BusinessFieldContainer = () => {
   const businessFieldScrollHandler = useCallback(() => {
     const scrollTop = window.scrollY;
     const screenHeight = window.innerHeight;
+    const screenWdith = window.innerWidth;
+
+    if (screenWdith < 500) return;
 
     if (scrollTop < screenHeight * 2 || scrollTop > screenHeight * 3 + 1900)
       return;

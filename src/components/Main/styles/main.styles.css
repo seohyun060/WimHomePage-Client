@@ -121,6 +121,11 @@
   mix-blend-mode: difference;
   pointer-events: none;
 }
+@media (max-width: 1200px) {
+  #root .main-root .pointer {
+    display: none;
+  }
+}
 #root .main-root .background {
   position: absolute;
   left: 0;

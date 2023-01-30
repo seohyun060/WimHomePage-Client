@@ -9,6 +9,10 @@
     flex-direction: column;
     align-items: center;
 
+    @media (max-width: 520px) {
+      height: calc(100vh + 100px);
+    }
+
     .bf-fixed-root {
       position: sticky;
       top: 0;
@@ -18,6 +22,10 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
+
+      @media (max-width: 520px) {
+        height: calc(100vh + 100px);
+      }
     }
 
     .background {
@@ -27,6 +35,10 @@
       height: 100vh;
       width: 100vw;
       transition: background-image 300ms ease-in-out;
+
+      @media (max-width: 520px) {
+        height: calc(100vh + 100px);
+      }
 
       &.ai {
         background: center / cover no-repeat
@@ -55,6 +67,10 @@
         $white,
         rgba(255, 255, 255, 0.3)
       );
+
+      @media (max-width: 520px) {
+        height: calc(100vh + 100px);
+      }
     }
 
     .main-container {
@@ -67,7 +83,16 @@
       @include tablet {
         position: absolute;
         left: 80px;
-        gap: 180px;
+        gap: 60px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      @include mobile {
+        left: 16px;
+        gap: 60px;
+        flex-direction: column;
+        align-items: flex-start;
       }
 
       .title-container {
@@ -91,6 +116,10 @@
         align-items: center;
         gap: 36px;
 
+        @include tablet {
+          margin-top: 50px;
+        }
+
         .page {
           display: flex;
           align-items: center;
@@ -109,24 +138,32 @@
         }
 
         .button-container {
+          visibility: hidden;
           display: flex;
           gap: 8px;
           img {
             width: 40px;
             height: 40px;
           }
+
+          @media (max-width: 520px) {
+            visibility: visible;
+          }
         }
       }
 
       .carousel-container {
         position: absolute;
-        left: 500px;
+        left: 520px;
         overflow: hidden;
-        width: calc(486 * 3 + 40);
+
+        @include tablet {
+          position: static;
+        }
       }
 
       .items {
-        width: calc(486 * 3);
+        // width: calc(486 * 3);
         display: flex;
         gap: 20px;
         will-change: transform(translate);
@@ -144,6 +181,11 @@
           overflow: hidden;
           cursor: pointer;
           @include kor-h4;
+
+          @media (max-width: 520px) {
+            width: calc(100vw - 32px);
+            height: calc(100vw - 32px);
+          }
 
           .invisible {
             display: none;
@@ -173,6 +215,11 @@
             width: 400px;
             color: white;
 
+            @media (max-width: 520px) {
+              width: calc(100vw - 32px);
+              padding: 0 10px;
+            }
+
             .title {
               @include kor-h1;
             }
@@ -188,26 +235,13 @@
             }
           }
 
-          &.inactive {
-            flex-basis: 282px;
-            justify-content: flex-end;
-            max-width: 282px;
-            margin-left: 24px;
-          }
-
-          &.active {
-            flex-grow: 1;
-            height: 486px;
-            padding: 48px 40px;
-
-            &::after {
-              height: 100%;
-              background-image: linear-gradient(
-                to bottom,
-                rgba(0, 0, 0, 0),
-                rgba(0, 0, 0, 0.6)
-              );
-            }
+          &::after {
+            height: 100%;
+            background-image: linear-gradient(
+              to bottom,
+              rgba(0, 0, 0, 0),
+              rgba(0, 0, 0, 0.6)
+            );
           }
 
           &.ai {

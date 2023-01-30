@@ -43,6 +43,18 @@ const BusinessField = ({
                 <div className='line' />
                 <span>{'3'}</span>
               </div>
+              <div className='button-container'>
+                <button
+                  className='button'
+                  onClick={() => onBusinessClicked(currentIdx - 1)}>
+                  <img src={images.leftBtnB} alt='left-button' />
+                </button>
+                <button
+                  className='button'
+                  onClick={() => onBusinessClicked(currentIdx + 1)}>
+                  <img src={images.rightBtnB} alt='right-button' />
+                </button>
+              </div>
             </div>
           </div>
           <div className='carousel-container'>
@@ -50,15 +62,14 @@ const BusinessField = ({
               className='items'
               ref={carouselRef}
               style={{
-                transform: `translate(-${currentIdx * 506}px,0)`,
+                transform: `translate(-${
+                  currentIdx *
+                  (window.innerWidth < 500 ? window.innerWidth - 12 : 506)
+                }px,0)`,
               }}>
               {businessList.map((item, idx) => {
-                const isActive = idx === currentIdx;
-
                 return (
-                  <div
-                    className={`item  ${item.business} active`}
-                    onClick={() => onBusinessClicked(idx)}>
+                  <div className={`item  ${item.business}`}>
                     <div className='item-desc-container'>
                       <div className='title '>{item.title}</div>
                       <p className={`description`}>{item.description}</p>
