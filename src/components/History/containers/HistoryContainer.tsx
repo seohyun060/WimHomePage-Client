@@ -130,6 +130,12 @@ const HistoryContainer = () => {
     threshold: new Array(11).fill(0).map((v, i) => i * 0.1),
   });
 
+  useEffect(() => {
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <History
       rootRef={rootRef}

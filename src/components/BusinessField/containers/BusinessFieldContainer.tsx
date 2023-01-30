@@ -77,7 +77,6 @@ const BusinessFieldContainer = () => {
     }
 
     // carousel.style.transform = `translate(-${translateX}px,0)`;
-    console.log(translateX, offset);
 
     if (translateX < offset) {
       setCurrentIdx(0);

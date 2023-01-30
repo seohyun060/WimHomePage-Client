@@ -3,24 +3,24 @@ import React, { useEffect, useRef } from 'react';
 import { section } from './containers/HeaderContainer';
 import './styles/header.styles.css';
 import { Link } from 'react-router-dom';
+import { HeaderModeType } from '@typedef/components/home.types';
 
 type Props = {
-  page: number;
-  isBlackMode: boolean;
+  headerMode: HeaderModeType;
   onItemClicked: (page: number) => void;
 };
 
-const Header = ({ page, isBlackMode, onItemClicked }: Props) => {
+const Header = ({ headerMode, onItemClicked }: Props) => {
   return (
     <header
-      className={`header-root${isBlackMode ? '-black' : ''} ${
-        page > 0 ? 'blur' : ''
+      className={`header-root${headerMode.isBlack ? '-black' : ''} ${
+        headerMode.isBlur ? 'blur' : ''
       }`}>
       <div className='header-container'>
         <div className='logo'>
           <a onClick={() => onItemClicked(0)}>
             <img
-              src={isBlackMode ? images.logoHeaderb : images.logoHeaderW}
+              src={headerMode.isBlack ? images.logoHeaderb : images.logoHeaderW}
               alt='logo'
             />
           </a>

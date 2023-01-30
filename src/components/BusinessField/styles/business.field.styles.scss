@@ -26,22 +26,21 @@
       left: 0;
       height: 100vh;
       width: 100vw;
-      will-change: background-image;
       transition: background-image 300ms ease-in-out;
 
       &.ai {
         background: center / cover no-repeat
-          url('/public/assets/images/img-business-ai.jpg');
+          url('/public/assets/images/img-business-ai.webp');
       }
 
       &.hardware {
         background: center / cover no-repeat
-          url('/public/assets/images/img-business-hardware.jpg');
+          url('/public/assets/images/img-business-hardware.webp');
       }
 
       &.webApp {
         background: center / cover no-repeat
-          url('/public/assets/images/img-business-web-app.jpg');
+          url('/public/assets/images/img-business-web-app.webp');
       }
     }
 

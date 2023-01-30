@@ -22,10 +22,11 @@
       @include kor-h3;
       color: $black;
     }
-    .partners-logo {
-      z-index: 0;
+    .partners-layer {
       position: absolute;
       right: 0px;
+      width: 30vw;
+      height: 100vh;
     }
     .main-container {
       z-index: 1;

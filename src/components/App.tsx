@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import BusinessFieldContainer from './BusinessField/containers/BusinessFieldContainer';
 import ContactContainer from './Contact/containers/ContactContainer';
 import Footer from './Footer/Footer';
@@ -12,30 +12,43 @@ import { useScroll } from '@hooks/useScroll';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HomeContainer from './Home/containers/HomeContainer';
 import ContactDetailContainer from './Contact/containers/ContactDetailContainer';
+import { HeaderModeType } from '@typedef/components/home.types';
+
+export const HomeContext = React.createContext({
+  headerMode: { isBlack: false, isBlur: false },
+  changeMode: (key: keyof HeaderModeType, value: boolean) => {},
+});
 
 function App() {
-  const { rootRef, wheelHandler, page, onPageChanged, scrollHandler } =
-    useScroll();
+  const [headerMode, setHeaderMode] = useState<HeaderModeType>({
+    isBlack: false,
+    isBlur: false,
+  });
 
-  // useEffect(() => {
-  //   rootRef.current?.addEventListener('wheel', wheelHandler);
-  //   // document.addEventListener('scroll', scrollHandler);
-
-  //   return () => {
-  //     rootRef.current?.removeEventListener('wheel', wheelHandler);
-  //   };
-  // }, []);
+  const changeMode = useCallback(
+    (key: keyof HeaderModeType, value: boolean) => {
+      setHeaderMode((prev) => {
+        return { ...prev, [key]: value };
+      });
+    },
+    [],
+  );
 
   return (
-    <BrowserRouter>
-      <div ref={rootRef} className='homepage-root'>
-        <HeaderContainer page={page} onPageChanged={onPageChanged} />
-        <Routes>
-          <Route index element={<HomeContainer />} />
-          <Route path='/contact-detail' element={<ContactDetailContainer />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+    <HomeContext.Provider value={{ headerMode, changeMode }}>
+      <BrowserRouter>
+        <div className='homepage-root'>
+          <HeaderContainer />
+          <Routes>
+            <Route index element={<HomeContainer />} />
+            <Route
+              path='/contact-detail'
+              element={<ContactDetailContainer />}
+            />
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </HomeContext.Provider>
   );
 }
 

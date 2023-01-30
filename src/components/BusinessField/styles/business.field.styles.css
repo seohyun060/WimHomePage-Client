@@ -114,17 +114,16 @@
   left: 0;
   height: 100vh;
   width: 100vw;
-  will-change: background-image;
   transition: background-image 300ms ease-in-out;
 }
 #root .bf-root .background.ai {
-  background: center/cover no-repeat url("/public/assets/images/img-business-ai.jpg");
+  background: center/cover no-repeat url("/public/assets/images/img-business-ai.webp");
 }
 #root .bf-root .background.hardware {
-  background: center/cover no-repeat url("/public/assets/images/img-business-hardware.jpg");
+  background: center/cover no-repeat url("/public/assets/images/img-business-hardware.webp");
 }
 #root .bf-root .background.webApp {
-  background: center/cover no-repeat url("/public/assets/images/img-business-web-app.jpg");
+  background: center/cover no-repeat url("/public/assets/images/img-business-web-app.webp");
 }
 #root .bf-root .layer {
   position: absolute;

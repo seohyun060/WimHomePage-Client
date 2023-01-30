@@ -115,10 +115,11 @@
   line-height: 32px;
   color: #111111;
 }
-#root .partners-root .partners-logo {
-  z-index: 0;
+#root .partners-root .partners-layer {
   position: absolute;
   right: 0px;
+  width: 30vw;
+  height: 100vh;
 }
 #root .partners-root .main-container {
   z-index: 1;

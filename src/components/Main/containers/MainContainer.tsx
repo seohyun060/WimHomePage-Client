@@ -1,11 +1,19 @@
 import { usePointer } from '@hooks/usePointer';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import Main from '../Main';
 import { useNavigate } from 'react-router-dom';
+import { HomeContext } from '@components/App';
 
 const MainContainer = () => {
   const navigate = useNavigate();
   const { pointerRef, pointerAnimation, pointerHandler } = usePointer();
+  const { changeMode } = useContext(HomeContext);
 
   const rootRef = useRef<HTMLDivElement>(null);
   const backgroundRef = useRef<HTMLDivElement>(null);
