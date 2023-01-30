@@ -8,19 +8,17 @@
     align-items: center;
     background-color: $gray1;
     min-height: 100vh;
-    padding: 0 40px;
+    padding: 170px 40px;
 
     @include mobile {
       padding: 120px 16px;
     }
 
     .title {
-      margin-top: 170px;
       @include eng-h1;
       color: $black;
 
       @include mobile {
-        margin-top: 0px;
         font-size: 48px;
       }
     }
