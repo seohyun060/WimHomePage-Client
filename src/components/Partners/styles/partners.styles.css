@@ -98,12 +98,23 @@
   min-height: 100vh;
   padding: 0 40px;
 }
+@media (max-width: 768px) {
+  #root .partners-root {
+    padding: 120px 16px;
+  }
+}
 #root .partners-root .title {
   margin-top: 170px;
   font-family: "Montserrat-Bold";
   font-size: 60px;
   line-height: 80px;
   color: #111111;
+}
+@media (max-width: 768px) {
+  #root .partners-root .title {
+    margin-top: 0px;
+    font-size: 48px;
+  }
 }
 #root .partners-root .description {
   margin-top: 22px;
@@ -115,11 +126,19 @@
   line-height: 32px;
   color: #111111;
 }
+@media (max-width: 768px) {
+  #root .partners-root .description {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
 #root .partners-root .partners-layer {
   position: absolute;
   right: 0px;
-  width: 30vw;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 #root .partners-root .main-container {
   z-index: 1;
@@ -129,6 +148,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+@media (max-width: 415px) {
+  #root .partners-root .main-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 16px;
+  }
 }
 #root .partners-root .main-container .item {
   background-color: white;
@@ -141,26 +167,16 @@
   transform: translateY(-30px);
   transition: all 300ms ease-in-out;
 }
+@media (max-width: 415px) {
+  #root .partners-root .main-container .item {
+    width: calc((100vw - 56px) / 2);
+    padding: 0 5px;
+  }
+  #root .partners-root .main-container .item img {
+    width: 90%;
+  }
+}
 #root .partners-root .main-container .item.visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-@media (max-width: 1200px) {
-  #root .partners-root .main-container {
-    gap: 38px 17px;
-  }
-  #root .partners-root .main-container .item {
-    width: 194px;
-    height: 93px;
-  }
-}
-@media (max-width: 800px) {
-  #root .partners-root .main-container {
-    gap: 32px 15px;
-  }
-  #root .partners-root .main-container .item {
-    width: 172px;
-    height: 83px;
-  }
 }/*# sourceMappingURL=partners.styles.css.map */

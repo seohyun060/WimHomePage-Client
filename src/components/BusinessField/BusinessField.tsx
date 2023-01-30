@@ -26,10 +26,21 @@ const BusinessField = ({
   return (
     <div ref={rootRef} className={`bf-root `} id='business'>
       <div className='bf-fixed-root'>
-        <div
-          ref={backgroundRef}
-          className={`background  ${businessList[currentIdx].business}`}
-        />
+        <div ref={backgroundRef} className={`background-imgs`}>
+          <div
+            className={`background  ai ${currentIdx === 0 ? 'visible' : ''} `}
+          />
+          <div
+            className={`background hardware ${
+              currentIdx === 1 ? 'visible' : ''
+            } `}
+          />
+          <div
+            className={`background web-app ${
+              currentIdx === 2 ? 'visible' : ''
+            } `}
+          />
+        </div>
         <div className='layer' />
         <div className='main-container'>
           <div>
@@ -69,7 +80,11 @@ const BusinessField = ({
               }}>
               {businessList.map((item, idx) => {
                 return (
-                  <div className={`item  ${item.business}`}>
+                  <div key={idx} className={`item ${item.business}`}>
+                    <img
+                      className='background'
+                      src={images.buisiness[item.business]}
+                    />
                     <div className='item-desc-container'>
                       <div className='title '>{item.title}</div>
                       <p className={`description`}>{item.description}</p>

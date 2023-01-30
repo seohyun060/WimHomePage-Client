@@ -118,26 +118,38 @@
     height: calc(100vh + 100px);
   }
 }
-#root .bf-root .background {
+#root .bf-root .background-imgs {
   position: absolute;
   top: 0;
   left: 0;
   height: 100vh;
   width: 100vw;
-  transition: background-image 300ms ease-in-out;
+  background-color: #ffffff;
 }
 @media (max-width: 520px) {
-  #root .bf-root .background {
+  #root .bf-root .background-imgs {
     height: calc(100vh + 100px);
   }
 }
-#root .bf-root .background.ai {
+#root .bf-root .background-imgs .background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  transition: opacity 300ms ease-in-out;
+  opacity: 0;
+}
+#root .bf-root .background-imgs .background.visible {
+  opacity: 1;
+}
+#root .bf-root .background-imgs .background.ai {
   background: center/cover no-repeat url("/public/assets/images/img-business-ai.webp");
 }
-#root .bf-root .background.hardware {
+#root .bf-root .background-imgs .background.hardware {
   background: center/cover no-repeat url("/public/assets/images/img-business-hardware.webp");
 }
-#root .bf-root .background.webApp {
+#root .bf-root .background-imgs .background.web-app {
   background: center/cover no-repeat url("/public/assets/images/img-business-web-app.webp");
 }
 #root .bf-root .layer {
@@ -183,6 +195,11 @@
   line-height: 80px;
   color: #111111;
 }
+@media (max-width: 768px) {
+  #root .bf-root .main-container .title-container .title {
+    font-size: 48px;
+  }
+}
 #root .bf-root .main-container .title-container .description {
   margin-top: 22px;
   white-space: pre-wrap;
@@ -191,6 +208,12 @@
   font-size: 20px;
   line-height: 32px;
   color: #111111;
+}
+@media (max-width: 768px) {
+  #root .bf-root .main-container .title-container .description {
+    font-size: 16px;
+    line-height: 26px;
+  }
 }
 #root .bf-root .main-container .pagination-container {
   margin-top: 148px;
@@ -263,6 +286,14 @@
   font-size: 16px;
   line-height: 26px;
 }
+#root .bf-root .main-container .items .item .background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
 @media (max-width: 520px) {
   #root .bf-root .main-container .items .item {
     width: calc(100vw - 32px);
@@ -316,13 +347,4 @@
 #root .bf-root .main-container .items .item::after {
   height: 100%;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
-}
-#root .bf-root .main-container .items .item.ai {
-  background: center/cover no-repeat url("/public/assets/images/img-business-ai.jpg");
-}
-#root .bf-root .main-container .items .item.hardware {
-  background: center/cover no-repeat url("/public/assets/images/img-business-hardware.jpg");
-}
-#root .bf-root .main-container .items .item.webApp {
-  background: center/cover no-repeat url("/public/assets/images/img-business-web-app.jpg");
 }/*# sourceMappingURL=business.field.styles.css.map */

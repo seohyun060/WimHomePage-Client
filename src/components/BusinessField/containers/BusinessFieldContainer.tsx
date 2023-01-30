@@ -5,7 +5,7 @@ import {
 } from '@typedef/components/Business/business.types';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import BusinessField from '../BusinessField';
-import _ from 'lodash';
+import _, { isFunction } from 'lodash';
 
 let isScrolling = false;
 
@@ -45,6 +45,10 @@ const BusinessFieldContainer = () => {
 
   const onBusinessClicked = useCallback(
     (idx: number) => {
+      if (idx < 0 || idx > 2) {
+        return;
+      }
+
       setCurrentIdx(idx < 0 ? businessList.length - 1 : idx);
     },
     [businessList],
