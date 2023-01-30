@@ -4,12 +4,13 @@ import './styles/partners.styles.css';
 
 type Props = {
   partners: string[];
+  rootRef: RefObject<HTMLDivElement>;
   mainRef: RefObject<HTMLDivElement>;
 };
 
-const Partners = ({ partners, mainRef }: Props) => {
+const Partners = ({ partners, rootRef, mainRef }: Props) => {
   return (
-    <div className='partners-root' id='partners'>
+    <div ref={rootRef} className='partners-root' id='partners'>
       <img className='partners-layer' src={images.partnersBackground} />
       <h1 className='title'>{'Partners'}</h1>
       <h3 className='description'>

@@ -12,7 +12,7 @@ import React, {
 } from 'react';
 import BusinessField from '../BusinessField';
 import _, { isFunction } from 'lodash';
-import { HomeContext } from '@components/App';
+import { HeaderContext } from '@components/App';
 
 let isScrolling = false;
 
