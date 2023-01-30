@@ -1,76 +1,160 @@
-@import '../../../styles/colors';
+@import '../../../styles/mixin';
 
 #root {
   .history-root {
+    position: relative;
     min-height: 100vh;
-    background-color: $gray200;
+    height: fit-content;
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    gap: 96px;
-    padding: 240px 60px;
+
+    .background {
+      position: absolute;
+      height: 100%;
+
+      .img {
+        position: sticky;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        background: center / cover no-repeat
+          url('/public/assets/images/img-history.webp');
+        transition: all 300ms ease;
+        object-fit: cover;
+
+        .layer {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 100vh;
+          width: 100vw;
+          background-color: #000;
+          opacity: 0.5;
+        }
+      }
+    }
 
     .main-container {
+      max-width: 1200px;
+      width: 100%;
       display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 130px;
+      z-index: 10;
+      padding: 170px 40px;
 
-      .timeline {
-        width: 8px;
-        background-color: $primary;
-        opacity: 0.22;
-        border-radius: 4px;
+      .title-container {
+        .title {
+          @include eng-h1;
+          color: $white;
+
+          @include mobile {
+            font-size: 48px;
+          }
+        }
+
+        .description {
+          @include kor-h3;
+          color: $white;
+        }
       }
 
-      .list-container {
-        padding: 48px 0;
+      @include tablet {
+        padding: 170px 80px;
+
+        .content {
+          flex-direction: column;
+          gap: 60px;
+        }
+      }
+
+      @include mobile {
+        padding: 132px 16px;
+      }
+
+      .content {
         display: flex;
-        flex-direction: column;
-        gap: 48px;
 
-        .item {
-          position: relative;
-          padding: 0 40px;
+        .pagination-container {
+          display: flex;
+          align-items: center;
+          gap: 36px;
+          height: fit-content;
 
-          .dot {
-            position: absolute;
-            top: 5px;
-            left: -14px;
-            width: 20px;
-            height: 20px;
-            background-color: rgb(53, 95, 255, 0.4);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+          .year {
+            @include eng-h1;
+            color: $white;
 
-            &::after {
-              content: '';
-              width: 10px;
-              height: 10px;
-              background-color: $primary;
-              opacity: 0.44;
-              border-radius: 50%;
+            @include mobile {
+              font-size: 48px;
             }
           }
 
-          .content {
-            .time {
-              display: block;
-              font-size: 26px;
-              color: $primary;
-              font-weight: 700;
-              margin-bottom: 16px;
+          .button-container {
+            display: flex;
+            gap: 8px;
+            img {
+              width: 40px;
+              height: 40px;
             }
+          }
+        }
+      }
 
-            .history-container {
-              display: flex;
-              flex-direction: column;
-              gap: 12px;
+      .list-container {
+        padding-left: 45px;
+        margin-left: 126px;
+        border-left: 1px solid $white;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        height: fit-content;
 
-              .history {
-                color: $white;
-                font-size: 18px;
-                line-height: 26px;
+        @include tablet {
+          margin-left: 0;
+          min-height: 400px;
+        }
+
+        @include mobile {
+          padding-left: 40px;
+        }
+
+        .month-list {
+          display: flex;
+          gap: 24px;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 300ms ease-in-out;
+          transform: translateY(10px);
+
+          &.visible {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+          }
+
+          .time {
+            @include eng-h2;
+            color: $white;
+          }
+
+          .list-item {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            .history {
+              @include kor-h3;
+              color: $gray2;
+
+              @include mobile {
+                @include kor-h4;
               }
             }
           }
