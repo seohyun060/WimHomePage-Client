@@ -35,8 +35,8 @@ function App() {
   );
 
   return (
-    <HomeContext.Provider value={{ headerMode, changeMode }}>
-      <BrowserRouter>
+    <BrowserRouter>
+      <HomeContext.Provider value={{ headerMode, changeMode }}>
         <div className='homepage-root'>
           <HeaderContainer />
           <Routes>
@@ -47,8 +47,8 @@ function App() {
             />
           </Routes>
         </div>
-      </BrowserRouter>
-    </HomeContext.Provider>
+      </HomeContext.Provider>
+    </BrowserRouter>
   );
 }
 

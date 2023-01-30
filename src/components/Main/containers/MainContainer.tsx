@@ -13,7 +13,10 @@ import { HomeContext } from '@components/App';
 const MainContainer = () => {
   const navigate = useNavigate();
   const { pointerRef, pointerAnimation, pointerHandler } = usePointer();
-  const { changeMode } = useContext(HomeContext);
+  const {
+    changeMode,
+    headerMode: { isBlur },
+  } = useContext(HomeContext);
 
   const rootRef = useRef<HTMLDivElement>(null);
   const backgroundRef = useRef<HTMLDivElement>(null);
@@ -51,11 +54,32 @@ const MainContainer = () => {
     }
   }, []);
 
+  const headerObserverCallback = (entries: IntersectionObserverEntry[]) => {
+    console.log('entry');
+
+    entries.forEach((entry) => {
+      console.log(entry.intersectionRatio);
+
+      if (entry.intersectionRatio < 0.4) {
+        changeMode('isBlur', true);
+      } else {
+        changeMode('isBlur', false);
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(headerObserverCallback, {
+    threshold: new Array(11).fill(0).map((v, i) => i * 0.1),
+  });
+
   useEffect(() => {
     window.addEventListener('mousemove', pointerHandler);
     window.addEventListener('scroll', mainScrollHandler);
     pointerAnimation();
 
+    if (!mainRef.current) return;
+
+    observer.observe(mainRef.current);
     return () => {
       window.removeEventListener('mousemove', pointerHandler);
       window.removeEventListener('scroll', mainScrollHandler);
