@@ -26,6 +26,10 @@
   color: #111111;
 }
 
+.primary-purple {
+  color: #a502fb;
+}
+
 #root .cinput-root .label {
   width: 100%;
   display: flex;

@@ -8,12 +8,12 @@ import React, {
 } from 'react';
 import Main from '../Main';
 import { useNavigate } from 'react-router-dom';
-import { HomeContext } from '@components/App';
+import { HeaderContext } from '@components/App';
 
 const MainContainer = () => {
   const navigate = useNavigate();
   const { pointerRef, pointerAnimation, pointerHandler } = usePointer();
-  const { changeMode } = useContext(HomeContext);
+  const { changeMode } = useContext(HeaderContext);
 
   const rootRef = useRef<HTMLDivElement>(null);
   const backgroundRef = useRef<HTMLDivElement>(null);
@@ -52,10 +52,30 @@ const MainContainer = () => {
   }, []);
 
   useEffect(() => {
+    if (!rootRef.current) return;
+
     window.addEventListener('mousemove', pointerHandler);
     window.addEventListener('scroll', mainScrollHandler);
     pointerAnimation();
 
+    const headerObserverCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        const top = entry.boundingClientRect.top;
+        const height = entry.boundingClientRect.height;
+
+        if (top <= 30 && Math.abs(top - 30) <= height) {
+          changeMode('isBlur', false);
+        } else {
+          changeMode('isBlur', true);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(headerObserverCallback, {
+      threshold: new Array(11).fill(0).map((v, i) => i * 0.1),
+    });
+
+    observer.observe(rootRef.current);
     return () => {
       window.removeEventListener('mousemove', pointerHandler);
       window.removeEventListener('scroll', mainScrollHandler);
