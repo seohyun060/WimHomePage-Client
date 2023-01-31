@@ -1,84 +1,49 @@
-@import '../../../styles/colors';
+@import '../../../styles/mixin';
 
-#root {
-  .footer-root {
-    min-height: 400px;
+.footer-root {
+  position: relative;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: $black;
+  font-size: 15px;
+  padding: 106px 40px;
+
+  @include mobile {
+    padding: 106px 16px;
+  }
+
+  .footer-main {
+    width: 100%;
+    max-width: 1200px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: $black;
-    padding: 123px 0;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
 
-    .main-container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+  .location {
+    button {
+      margin-right: 10px;
+      margin-bottom: 24px;
+      text-decoration: underline;
+    }
+    span {
       color: $white;
-      gap: 50px;
-      font-size: 14px;
-
-      .terms-container {
-        display: flex;
-        gap: 24px;
-        align-items: center;
-
-        a {
-          color: $white;
-          text-decoration: underline;
-          font-size: 14px;
-        }
-
-        .bar {
-          width: 1px;
-          height: 9px;
-          background-color: $white;
-        }
-      }
-
-      .container {
-        display: flex;
-        justify-content: space-between;
-
-        .info-container {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 18px;
-
-          .col {
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-            margin-right: 70px;
-            max-height: 87px;
-
-            .item {
-              display: flex;
-              gap: 30px;
-              .title {
-                font-weight: 700;
-                width: 85px;
-              }
-            }
-          }
-        }
-
-        .logo-container {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-end;
-          justify-content: flex-end;
-          min-width: 200px;
-          gap: 20px;
-
-          span {
-            width: 100%;
-            font-size: 13px;
-            line-height: 17px;
-            color: #a6a4a3;
-          }
-        }
+      margin-right: 10px;
+    }
+    p {
+      color: $white;
+      line-height: 1.8;
+      button {
+        text-decoration: underline;
+        margin-left: 10px;
       }
     }
+  }
+  .logo {
+    width: 106px;
+    height: 27px;
+    margin-top: 56px;
   }
 }

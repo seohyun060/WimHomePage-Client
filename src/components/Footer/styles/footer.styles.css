@@ -30,73 +30,106 @@
   color: #a502fb;
 }
 
-#root .footer-root {
-  min-height: 400px;
+@font-face {
+  font-family: "Montserrat";
+  src: url("/public/fonts/Montserrat/Montserrat-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url("/public/fonts/Montserrat/static/Montserrat-Bold.ttf");
+}
+@font-face {
+  font-family: "SpoqaHansSansNeo";
+  src: url("/public/fonts/SpoqaHanSansNeo_all/SpoqaHanSansNeo_OTF_original/SpoqaHanSansNeo-Regular.otf");
+}
+@font-face {
+  font-family: "SpoqaHansSansNeo-Bold";
+  src: url("/public/fonts/SpoqaHanSansNeo_all/SpoqaHanSansNeo_OTF_original/SpoqaHanSansNeo-Bold.otf");
+}
+.eng {
+  font-family: "Montserrat";
+}
+.eng-h1 {
+  font-family: "Montserrat-Bold";
+  font-size: 60px;
+  line-height: 80px;
+}
+.eng-h2 {
+  font-weight: 700;
+  font-size: 22px;
+}
+.eng-h3 {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.kor {
+  font-family: "SpoqaHansSansNeo";
+  font-weight: 400;
+}
+.kor-h1 {
+  font-family: "SpoqaHansSansNeo-Bold";
+  font-weight: 700;
+  font-size: 24px;
+}
+.kor-h2 {
+  font-size: 22px;
+  line-height: 34px;
+}
+.kor-h3 {
+  font-size: 20px;
+  line-height: 32px;
+}
+.kor-h4 {
+  font-size: 16px;
+  line-height: 26px;
+}
+.kor-h5 {
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.footer-root {
+  position: relative;
+  width: 100vw;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
   background-color: #111111;
-  padding: 123px 0;
+  font-size: 15px;
+  padding: 106px 40px;
 }
-#root .footer-root .main-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: #ffffff;
-  gap: 50px;
-  font-size: 14px;
+@media (max-width: 768px) {
+  .footer-root {
+    padding: 106px 16px;
+  }
 }
-#root .footer-root .main-container .terms-container {
-  display: flex;
-  gap: 24px;
-  align-items: center;
-}
-#root .footer-root .main-container .terms-container a {
-  color: #ffffff;
-  text-decoration: underline;
-  font-size: 14px;
-}
-#root .footer-root .main-container .terms-container .bar {
-  width: 1px;
-  height: 9px;
-  background-color: #ffffff;
-}
-#root .footer-root .main-container .container {
-  display: flex;
-  justify-content: space-between;
-}
-#root .footer-root .main-container .container .info-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-}
-#root .footer-root .main-container .container .info-container .col {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  margin-right: 70px;
-  max-height: 87px;
-}
-#root .footer-root .main-container .container .info-container .col .item {
-  display: flex;
-  gap: 30px;
-}
-#root .footer-root .main-container .container .info-container .col .item .title {
-  font-weight: 700;
-  width: 85px;
-}
-#root .footer-root .main-container .container .logo-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-end;
-  min-width: 200px;
-  gap: 20px;
-}
-#root .footer-root .main-container .container .logo-container span {
+.footer-root .footer-main {
   width: 100%;
-  font-size: 13px;
-  line-height: 17px;
-  color: #a6a4a3;
+  max-width: 1200px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.footer-root .location button {
+  margin-right: 10px;
+  margin-bottom: 24px;
+  text-decoration: underline;
+}
+.footer-root .location span {
+  color: #ffffff;
+  margin-right: 10px;
+}
+.footer-root .location p {
+  color: #ffffff;
+  line-height: 1.8;
+}
+.footer-root .location p button {
+  text-decoration: underline;
+  margin-left: 10px;
+}
+.footer-root .logo {
+  width: 106px;
+  height: 27px;
+  margin-top: 56px;
 }/*# sourceMappingURL=footer.styles.css.map */
