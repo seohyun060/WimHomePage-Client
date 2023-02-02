@@ -1,1 +1,331 @@
-/*# sourceMappingURL=contact.detail.styles.css.map */
+.white {
+  color: #ffffff;
+}
+
+.gray1 {
+  color: #f9fafb;
+}
+
+.gray2 {
+  color: #eff0f2;
+}
+
+.gray3 {
+  color: #d6d6d6;
+}
+
+.gray4 {
+  color: #999999;
+}
+
+.gray5 {
+  color: #767676;
+}
+
+.black {
+  color: #111111;
+}
+
+.primary-purple {
+  color: #a502fb;
+}
+
+.white {
+  color: #ffffff;
+}
+
+.gray1 {
+  color: #f9fafb;
+}
+
+.gray2 {
+  color: #eff0f2;
+}
+
+.gray3 {
+  color: #d6d6d6;
+}
+
+.gray4 {
+  color: #999999;
+}
+
+.gray5 {
+  color: #767676;
+}
+
+.black {
+  color: #111111;
+}
+
+.primary-purple {
+  color: #a502fb;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/public/fonts/Montserrat/Montserrat-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url("/public/fonts/Montserrat/static/Montserrat-Bold.ttf");
+}
+@font-face {
+  font-family: "SpoqaHansSansNeo";
+  src: url("/public/fonts/SpoqaHanSansNeo_all/SpoqaHanSansNeo_OTF_original/SpoqaHanSansNeo-Regular.otf");
+}
+@font-face {
+  font-family: "SpoqaHansSansNeo-Bold";
+  src: url("/public/fonts/SpoqaHanSansNeo_all/SpoqaHanSansNeo_OTF_original/SpoqaHanSansNeo-Bold.otf");
+}
+.eng {
+  font-family: "Montserrat";
+}
+.eng-h1 {
+  font-family: "Montserrat-Bold";
+  font-size: 60px;
+  line-height: 80px;
+}
+.eng-h2 {
+  font-weight: 700;
+  font-size: 22px;
+}
+.eng-h3 {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.kor {
+  font-family: "SpoqaHansSansNeo";
+  font-weight: 400;
+}
+.kor-h1 {
+  font-family: "SpoqaHansSansNeo-Bold";
+  font-weight: 700;
+  font-size: 24px;
+}
+.kor-h2 {
+  font-size: 22px;
+  line-height: 34px;
+}
+.kor-h3 {
+  font-size: 20px;
+  line-height: 32px;
+}
+.kor-h4 {
+  font-size: 16px;
+  line-height: 26px;
+}
+.kor-h5 {
+  font-size: 15px;
+  line-height: 22px;
+}
+
+#root {
+  background-color: white;
+}
+#root .contact-detail-root {
+  display: flex;
+  width: 100vw;
+  margin-top: 70px;
+  height: 100vh;
+  min-height: 100vh;
+}
+#root .contact-detail-root .backimg {
+  position: absolute;
+  left: -1083px;
+  min-width: 768px;
+  height: 100vh;
+  background-color: #d6d6d6;
+}
+#root .contact-detail-root .backimg-curtain {
+  position: absolute;
+  height: 100vh;
+  min-width: 768px;
+  left: 0px;
+  background-color: #808080;
+  opacity: 0.83;
+}
+#root .contact-detail-root .title-container .title {
+  z-index: 2;
+  position: absolute;
+  top: 180px;
+  left: 360px;
+  font-size: 60px;
+  color: white;
+}
+#root .contact-detail-root .title-line {
+  position: absolute;
+  width: 408px;
+  height: 2px;
+  border: 0;
+  background-color: white;
+  top: 267px;
+  left: 360px;
+  z-index: 2;
+}
+#root .contact-detail-root .title-text {
+  position: absolute;
+  font-size: 16px;
+  line-height: 26px;
+  color: white;
+  top: 309px;
+  left: 360px;
+  z-index: 2;
+}
+#root .contact-detail-root .request-download {
+  position: absolute;
+  z-index: 2;
+  width: 142.3px;
+  left: 360px;
+  top: 428px;
+}
+#root .contact-detail-root .main-container {
+  margin-left: 768px;
+}
+#root .contact-detail-root .main-container .request {
+  font-family: "SpoqaHansSansNeo-Bold";
+  font-weight: 700;
+  font-size: 24px;
+  margin-top: 143px;
+  margin-left: 102px;
+}
+#root .contact-detail-root .main-container .request-line {
+  height: 2px;
+  margin-top: 24px;
+  width: 792px;
+  border: 0;
+  background-color: black;
+}
+#root .contact-detail-root .main-container .form {
+  height: 966px;
+}
+#root .contact-detail-root .main-container .form .input-container {
+  margin-top: 40px;
+  margin-left: 102px;
+  width: 690px;
+  height: 592px;
+  display: flex;
+  flex-wrap: wrap;
+}
+#root .contact-detail-root .main-container .form .input-container .cinput-root .span {
+  font-size: 15px;
+  color: #767676;
+}
+#root .contact-detail-root .main-container .form .input-container .cinput-root.file .box {
+  width: 478px;
+}
+#root .contact-detail-root .main-container .form .input-container .cinput-root.file .button {
+  margin-left: 8px;
+  width: 102px;
+  height: 56px;
+  text-align: center;
+  padding-top: 18px;
+  background-color: #767676;
+  font-size: 16px;
+  color: white;
+}
+#root .contact-detail-root .main-container .form .input-container .cinput-root.textarea {
+  height: 112px;
+}
+#root .contact-detail-root .main-container .form .input-line {
+  width: 690px;
+  margin-top: 40px;
+  margin-left: 102px;
+  background-color: #d6d6d6;
+  border: 0;
+  height: 1px;
+}
+#root .contact-detail-root .main-container .form .input-text {
+  width: 588px;
+  height: 112px;
+  padding: 20px 20px 0 19px;
+  background-color: #f9fafb;
+  font-size: 15px;
+  line-height: 22px;
+  color: #767676;
+  overflow: auto;
+  margin-left: 204px;
+  margin-top: 40px;
+}
+#root .contact-detail-root .main-container .form .checkbox-container {
+  width: 348px;
+  height: 21px;
+  display: flex;
+  margin-left: 204px;
+  margin-top: 24px;
+  align-items: center;
+}
+#root .contact-detail-root .main-container .form .checkbox-container .checkbox-img {
+  width: 20px;
+  margin-right: 8px;
+}
+#root .contact-detail-root .main-container .form .checkbox-container .checkbox-text {
+  font-size: 15px;
+  line-height: 22px;
+}
+#root .contact-detail-root .main-container .form .checkbox-container .checkbox-text.purple {
+  color: #a502fb;
+}
+#root .contact-detail-root .main-container .form .submit-btn {
+  width: 588px;
+  margin-top: 40px;
+  height: 56px;
+  background-image: linear-gradient(to right, #3e5cd1, #a502fb);
+  margin-left: 204px;
+}
+
+@media (max-width: 1400px) {
+  #root .contact-detail-root .backimg {
+    min-width: 460px;
+    left: -1391px;
+  }
+  #root .contact-detail-root .backimg-curtain {
+    min-width: 460px;
+  }
+  #root .contact-detail-root .title-container .title {
+    left: 80px;
+  }
+  #root .contact-detail-root .title-line {
+    left: 80px;
+    width: 380px;
+  }
+  #root .contact-detail-root .title-text {
+    left: 80px;
+  }
+  #root .contact-detail-root .request-download {
+    left: 80px;
+  }
+  #root .contact-detail-root .main-container {
+    margin-left: 461px;
+  }
+  #root .contact-detail-root .main-container .request {
+    margin-left: 16px;
+  }
+  #root .contact-detail-root .main-container .request-line {
+    width: 740px;
+  }
+  #root .contact-detail-root .main-container .form .input-container {
+    margin-left: 16px;
+  }
+  #root .contact-detail-root .main-container .form .input-container .cinput-root.file .box {
+    width: 402px;
+  }
+  #root .contact-detail-root .main-container .form .input-line {
+    margin-left: 16px;
+  }
+  #root .contact-detail-root .main-container .form .input-text {
+    margin-left: 115px;
+    width: 512px;
+  }
+  #root .contact-detail-root .main-container .form .checkbox-container {
+    margin-left: 115px;
+  }
+  #root .contact-detail-root .main-container .form .submit-btn {
+    margin-left: 115px;
+    width: 512px;
+  }
+  #root .contact-detail-root .main-container .form .cinput-root .box {
+    width: 512px;
+  }
+}/*# sourceMappingURL=contact.detail.styles.css.map */

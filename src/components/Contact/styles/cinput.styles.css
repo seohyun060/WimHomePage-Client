@@ -31,43 +31,53 @@
 }
 
 #root .cinput-root {
-  width: 30.6vw;
+  width: 690px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
 }
 #root .cinput-root .label {
-  width: 100%;
+  width: 84px;
+  height: 21px;
+  font-size: 16px;
+  margin-right: 16px;
+}
+#root .cinput-root .box {
+  width: 588px;
   display: flex;
   height: 62px;
   align-items: center;
-  border: 1px solid black;
+  border: 1px solid #d6d6d6;
   padding: 0 20px;
   gap: 20px;
   font-size: 18px;
   line-height: 28px;
 }
-#root .cinput-root .label:focus-within .span {
+#root .cinput-root .box:focus-within .span {
   color: black;
 }
-#root .cinput-root .label .span {
+#root .cinput-root .box .span {
   color: black;
 }
-#root .cinput-root .label .input {
-  color: black;
+#root .cinput-root .box .input {
+  color: #767676;
   background-color: transparent;
   flex: 1;
-  font-size: 18px;
+  font-size: 15px;
   line-height: 28px;
 }
-#root .cinput-root .label.textarea {
-  height: 186px;
+#root .cinput-root .box.textarea {
+  height: 112px;
   align-items: flex-start;
   padding: 20px;
 }
-#root .cinput-root .label.textarea .input {
+#root .cinput-root .box.textarea .input {
   height: 100%;
   resize: none;
   border: 0;
 }
-#root .cinput-root .label .button {
+#root .cinput-root .box .button {
   width: 80px;
   height: 32px;
   font-size: 15px;
@@ -78,6 +88,11 @@
   justify-content: center;
   cursor: pointer;
 }
-#root .cinput-root .label .button:hover {
+#root .cinput-root .box .button:hover {
   opacity: 0.7;
+}
+@media (max-width: 1400px) {
+  #root .cinput-root .box {
+    width: 512px;
+  }
 }/*# sourceMappingURL=cinput.styles.css.map */

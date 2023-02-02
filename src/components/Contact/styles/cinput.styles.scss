@@ -1,14 +1,23 @@
 @import '../../../styles/colors';
-
 #root {
   .cinput-root {
-    width: 30.6vw;
+    width: 690px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
     .label {
-      width: 100%;
+      width: 84px;
+      height: 21px;
+      font-size: 16px;
+      margin-right: 16px;
+    }
+    .box {
+      width: 588px;
       display: flex;
       height: 62px;
       align-items: center;
-      border: 1px solid black;
+      border: 1px solid $gray3;
       padding: 0 20px;
       gap: 20px;
       font-size: 18px;
@@ -23,15 +32,15 @@
       }
 
       .input {
-        color: black;
+        color: $gray5;
         background-color: transparent;
         flex: 1;
-        font-size: 18px;
+        font-size: 15px;
         line-height: 28px;
       }
 
       &.textarea {
-        height: 186px;
+        height: 112px;
         align-items: flex-start;
         padding: 20px;
 
@@ -56,6 +65,13 @@
         &:hover {
           opacity: 0.7;
         }
+      }
+    }
+  }
+  @media (max-width: 1400px) {
+    .cinput-root {
+      .box {
+        width: 512px;
       }
     }
   }

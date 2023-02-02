@@ -1,0 +1,231 @@
+@import '../../../styles/colors';
+@import '../../../styles/mixin';
+#root {
+  background-color: white;
+  .contact-detail-root {
+    display: flex;
+    width: 100vw;
+    margin-top: 70px;
+    // align-items: center;
+    height: 100vh;
+    //background-color: black;
+    min-height: 100vh;
+
+    .backimg {
+      position: absolute;
+      left: -1083px;
+      min-width: 768px;
+
+      height: 100vh;
+      background-color: $gray3;
+    }
+    .backimg-curtain {
+      position: absolute;
+      height: 100vh;
+      min-width: 768px;
+      left: 0px;
+      background-color: #808080;
+      opacity: 0.83;
+    }
+    .title-container {
+      .title {
+        z-index: 2;
+        position: absolute;
+        top: 180px;
+        left: 360px;
+        font-size: 60px;
+        color: white;
+      }
+    }
+    .title-line {
+      position: absolute;
+      width: 408px;
+      height: 2px;
+      border: 0;
+      background-color: white;
+      top: 267px;
+      left: 360px;
+      z-index: 2;
+    }
+    .title-text {
+      position: absolute;
+      @include kor-h4;
+      color: white;
+      top: 309px;
+      left: 360px;
+      z-index: 2;
+    }
+    .request-download {
+      position: absolute;
+      z-index: 2;
+      width: 142.3px;
+      left: 360px;
+      top: 428px;
+    }
+    .main-container {
+      margin-left: 768px;
+      .request {
+        @include kor-h1;
+
+        margin-top: 143px;
+        margin-left: 102px;
+      }
+      .request-line {
+        height: 2px;
+        margin-top: 24px;
+        width: 792px;
+        border: 0;
+        background-color: black;
+      }
+
+      .form {
+        height: 966px;
+        .input-container {
+          margin-top: 40px;
+          margin-left: 102px;
+          width: 690px;
+          height: 592px;
+          display: flex;
+          flex-wrap: wrap;
+          .cinput-root {
+            .span {
+              font-size: 15px;
+              color: $gray5;
+            }
+            &.file {
+              .box {
+                width: 478px;
+              }
+              .button {
+                margin-left: 8px;
+                width: 102px;
+                height: 56px;
+                text-align: center;
+                padding-top: 18px;
+                background-color: $gray5;
+                font-size: 16px;
+                color: white;
+              }
+            }
+            &.textarea {
+              height: 112px;
+            }
+          }
+        }
+        .input-line {
+          width: 690px;
+          margin-top: 40px;
+          margin-left: 102px;
+          background-color: $gray3;
+          border: 0;
+          height: 1px;
+        }
+        .input-text {
+          width: 588px;
+          height: 112px;
+          padding: 20px 20px 0 19px;
+          background-color: $gray1;
+          @include kor-h5;
+          color: $gray5;
+          overflow: auto;
+          margin-left: 204px;
+          margin-top: 40px;
+        }
+        .checkbox-container {
+          width: 348px;
+          height: 21px;
+          display: flex;
+          margin-left: 204px;
+          margin-top: 24px;
+          align-items: center;
+          .checkbox-img {
+            width: 20px;
+            margin-right: 8px;
+          }
+          .checkbox-text {
+            @include kor-h5;
+            &.purple {
+              color: $primary-purple;
+            }
+          }
+        }
+        .submit-btn {
+          width: 588px;
+          margin-top: 40px;
+          height: 56px;
+          background-image: linear-gradient(to right, #3e5cd1, $primary-purple);
+          margin-left: 204px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1400px) {
+  #root {
+    .contact-detail-root {
+      .backimg {
+        min-width: 460px;
+        left: -1391px;
+      }
+
+      .backimg-curtain {
+        min-width: 460px;
+      }
+      .title-container {
+        .title {
+          left: 80px;
+        }
+      }
+      .title-line {
+        left: 80px;
+        width: 380px;
+      }
+      .title-text {
+        left: 80px;
+      }
+      .request-download {
+        left: 80px;
+      }
+      .main-container {
+        margin-left: 461px;
+        .request {
+          margin-left: 16px;
+        }
+        .request-line {
+          width: 740px;
+        }
+        .form {
+          .input-container {
+            margin-left: 16px;
+            .cinput-root {
+              &.file {
+                .box {
+                  width: 402px;
+                }
+              }
+            }
+          }
+          .input-line {
+            margin-left: 16px;
+          }
+          .input-text {
+            margin-left: 115px;
+            width: 512px;
+          }
+          .checkbox-container {
+            margin-left: 115px;
+          }
+          .submit-btn {
+            margin-left: 115px;
+            width: 512px;
+          }
+          .cinput-root {
+            .box {
+              width: 512px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

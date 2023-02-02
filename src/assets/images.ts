@@ -36,6 +36,8 @@ const images = {
   pdf: '/assets/pdf/WIM_COMPANY_PORTFOLIO.pdf',
   privacy: '/terms/privacy.html',
   terms: '/terms/terms.html',
+  checkOff: '/assets/images/checkbox-off@3x.png',
+  checkOn: '/assets/images/checkbox@3x.png',
 };
 
 export default images;

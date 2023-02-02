@@ -13,6 +13,7 @@ const initialForm: ContactFormType = {
 };
 const ContactDetailContainer = () => {
   const [contactForm, setContactForm] = useState<ContactFormType>(initialForm);
+  const [checkToggle, setCheckToggle] = useState(false);
 
   const onValueChanged = useCallback(
     (key: keyof ContactFormType, value: string | File | null) => {
@@ -20,6 +21,9 @@ const ContactDetailContainer = () => {
     },
     [contactForm],
   );
+  const onCheckToggle = useCallback(() => {
+    setCheckToggle((prev) => !prev);
+  }, []);
 
   const onSubmitClicked = useCallback(() => {
     setContactForm(initialForm);
@@ -30,6 +34,8 @@ const ContactDetailContainer = () => {
       contactForm={contactForm}
       onValueChanged={onValueChanged}
       onSubmitClicked={onSubmitClicked}
+      checkToggle={checkToggle}
+      onCheckToggle={onCheckToggle}
     />
   );
 };
