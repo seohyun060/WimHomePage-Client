@@ -25,6 +25,7 @@ const images = {
   mainVideo: '/assets/images/main-video.mp4',
   contact: '/assets/images/img-contact-us.webp',
   contactDetail: '/assets/images/img-contact-us-detail.webp',
+  contactDetailMobile: '/assets/images/img-contact-us-detail-mobile.png',
   hisotry: '/assets/images/img-history.webp',
   partners: '/assets/images/img-partners@3x.png',
   downloadW: '/assets/images/ic-download-w@3x.png',

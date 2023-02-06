@@ -34,6 +34,8 @@ const ContactDetail = ({
       </p>
       <img className='request-download' src={images.downloadW} />
       <img className='backimg' src={images.contactDetail} />
+      <img className='backimg-mobile' src={images.contactDetailMobile} />
+
       <div className='backimg-curtain' />
       <div className='main-container'>
         <div className='request'>프로젝트 문의하기</div>
@@ -157,6 +159,7 @@ const ContactDetail = ({
             {'문의하기'}
           </button>
         </form>
+        <img className='request-download-mobile' src={images.downloadB} />
       </div>
     </div>
   );
