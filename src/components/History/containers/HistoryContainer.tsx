@@ -113,36 +113,12 @@ const HistoryContainer = () => {
     });
   }, [history]);
 
-  const historyScrollHandler = useCallback(
-    (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.intersectionRatio > 0.9) {
-          entry.target.classList.add('visible');
-        } else if (entry.intersectionRatio < 0.1) {
-          entry.target.classList.remove('visible');
-        }
-      });
-    },
-    [],
-  );
-
-  const observer = new IntersectionObserver(historyScrollHandler, {
-    threshold: new Array(11).fill(0).map((v, i) => i * 0.1),
-  });
-
-  useEffect(() => {
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
-
   return (
     <History
       rootRef={rootRef}
       listRef={listRef}
       history={history}
       currentIdx={currentIdx}
-      observer={observer}
       onPrevClicked={onPrevClicked}
       onNextClicked={onNextClicked}
     />
