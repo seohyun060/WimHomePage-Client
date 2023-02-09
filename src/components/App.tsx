@@ -15,7 +15,7 @@ import HomeContainer from './Home/containers/HomeContainer';
 import ContactDetailContainer from './Contact/containers/ContactDetailContainer';
 import { HeaderModeType } from '@typedef/components/home.types';
 
-export const HomeContext = React.createContext({
+export const HeaderContext = React.createContext({
   headerMode: { isBlack: false, isBlur: false },
   changeMode: (key: keyof HeaderModeType, value: boolean) => {},
 });
@@ -36,8 +36,8 @@ function App() {
   );
 
   return (
-      <BrowserRouter>
-        <HomeContext.Provider value={{ headerMode, changeMode }}>
+    <BrowserRouter>
+      <HeaderContext.Provider value={{ headerMode, changeMode }}>
         <div className='homepage-root'>
           <HeaderContainer />
           <Routes>
@@ -48,9 +48,8 @@ function App() {
             />
           </Routes>
         </div>
-       </HomeContext.Provider>
-      </BrowserRouter>
-
+      </HeaderContext.Provider>
+    </BrowserRouter>
   );
 }
 

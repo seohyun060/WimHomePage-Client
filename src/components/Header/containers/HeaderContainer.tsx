@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 import Header from '../Header';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { HomeContext } from '@components/App';
+import { HeaderContext } from '@components/App';
 
 export const section: { [key: number]: string } = {
   0: '#main',
@@ -20,7 +20,7 @@ export const section: { [key: number]: string } = {
 const HeaderContainer = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { headerMode } = useContext(HomeContext);
+  const { headerMode } = useContext(HeaderContext);
 
   const onItemClicked = useCallback((page: number) => {
     window.location.href = `/${section[page]}`;

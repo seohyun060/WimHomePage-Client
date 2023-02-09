@@ -3,9 +3,16 @@ import {
   BusinessListItemTypes,
   BusinessTypes,
 } from '@typedef/components/Business/business.types';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import BusinessField from '../BusinessField';
 import _, { isFunction } from 'lodash';
+import { HeaderContext } from '@components/App';
 
 let isScrolling = false;
 
@@ -38,9 +45,6 @@ const BusinessFieldContainer = () => {
 
   const backgroundRef = useRef<HTMLImageElement>(null);
   const rootRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const descRef = useRef<HTMLSpanElement>(null);
-  const buttonRef = useRef<HTMLButtonElement>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
 
   const onBusinessClicked = useCallback(
@@ -69,10 +73,9 @@ const BusinessFieldContainer = () => {
     const translateXEnd = screenHeight * 2 + offset * 3.2;
     const translateX = scrollTop - screenHeight * 2 - offset;
 
-    const background = backgroundRef.current;
     const carousel = carouselRef.current;
 
-    if (!(carousel && background)) return;
+    if (!carousel) return;
 
     if (scrollTop < translateXStart) {
       carousel.style.transform = `translate(0,0)`;
@@ -83,22 +86,21 @@ const BusinessFieldContainer = () => {
       return;
     }
 
-    // carousel.style.transform = `translate(-${translateX}px,0)`;
-
     if (translateX < offset) {
       setCurrentIdx(0);
-      // background.style.backgroundImage = `url(${images.buisiness.ai})`;
     } else if (translateX < offset * 2) {
       setCurrentIdx(1);
-      // background.style.backgroundImage = `url(${images.buisiness.hardware})`;
     } else if (translateX < offset * 3) {
       setCurrentIdx(2);
-      // background.style.backgroundImage = `url(${images.buisiness.webApp})`;
     }
   }, [currentIdx]);
 
   useEffect(() => {
     window.addEventListener('scroll', businessFieldScrollHandler);
+
+    return () => {
+      window.removeEventListener('scroll', businessFieldScrollHandler);
+    };
   }, []);
 
   return (

@@ -30,98 +30,136 @@
   color: #a502fb;
 }
 
-#root {
-  background-color: white;
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/public/fonts/Montserrat/Montserrat-VariableFont_wght.ttf");
 }
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url("/public/fonts/Montserrat/static/Montserrat-Bold.ttf");
+}
+@font-face {
+  font-family: "SpoqaHansSansNeo";
+  src: url("/public/fonts/SpoqaHanSansNeo_all/SpoqaHanSansNeo_OTF_original/SpoqaHanSansNeo-Regular.otf");
+}
+@font-face {
+  font-family: "SpoqaHansSansNeo-Bold";
+  src: url("/public/fonts/SpoqaHanSansNeo_all/SpoqaHanSansNeo_OTF_original/SpoqaHanSansNeo-Bold.otf");
+}
+.eng {
+  font-family: "Montserrat";
+}
+.eng-h1 {
+  font-family: "Montserrat-Bold";
+  font-size: 60px;
+  line-height: 80px;
+}
+.eng-h2 {
+  font-weight: 700;
+  font-size: 22px;
+}
+.eng-h3 {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.kor {
+  font-family: "SpoqaHansSansNeo";
+  font-weight: 400;
+}
+.kor-h1 {
+  font-family: "SpoqaHansSansNeo-Bold";
+  font-weight: 700;
+  font-size: 24px;
+}
+.kor-h2 {
+  font-size: 22px;
+  line-height: 34px;
+}
+.kor-h3 {
+  font-size: 20px;
+  line-height: 32px;
+}
+.kor-h4 {
+  font-size: 16px;
+  line-height: 26px;
+}
+.kor-h5 {
+  font-size: 15px;
+  line-height: 22px;
+}
+
 #root .contact-root {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  min-height: 100vh;
-}
-#root .contact-root .contact-main {
   position: relative;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  height: inherit;
+  height: 680px;
 }
-#root .contact-root .contact-main .curtain {
+#root .contact-root .background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#root .contact-root .background .curtain {
   position: absolute;
   top: 0px;
   width: 100%;
   height: 100%;
-  z-index: 1;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #191b1f);
 }
-#root .contact-root .contact-main .contact-logo {
+#root .contact-root .background .image {
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
-#root .contact-root .contact-main .eng-h1 {
-  margin-top: 18.9vh;
-  color: white;
-  z-index: 5;
+#root .contact-root .contact-main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: inherit;
 }
-#root .contact-root .contact-main .kor-h3 {
+#root .contact-root .contact-main .title {
+  font-family: "Montserrat-Bold";
+  font-size: 60px;
+  line-height: 80px;
+  color: #ffffff;
+}
+@media (max-width: 768px) {
+  #root .contact-root .contact-main .title {
+    font-size: 48px;
+  }
+}
+#root .contact-root .contact-main .description {
+  font-family: "SpoqaHansSansNeo";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
   margin-top: 22px;
   text-align: center;
   margin-bottom: 48px;
-  color: white;
+  color: #ffffff;
   font-size: 20px;
-  z-index: 2;
 }
-#root .contact-root .contact-main .kor-h3-ask {
-  color: white;
-  width: 184px;
-  height: 56px;
-  text-align: center;
+@media (max-width: 768px) {
+  #root .contact-root .contact-main .description {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+#root .contact-root .contact-main .button {
+  color: #ffffff;
+  padding: 18px 30px;
   border: 1px solid #ffffff;
-  line-height: 3.5;
-  z-index: 2;
   border-radius: 28px;
-}
-#root .contact-root .footer {
-  width: 100%;
-  height: 400px;
   display: flex;
-  position: relative;
-  background-color: black;
-  font-size: 15px;
-}
-#root .contact-root .footer-location {
-  width: 643px;
-  height: 187px;
-  margin-bottom: 106px;
-  margin-top: 107px;
-  margin-left: 18.75%;
-}
-#root .contact-root .footer-location button {
-  margin-right: 10px;
-  margin-bottom: 24px;
-  text-decoration: underline;
-}
-#root .contact-root .footer-location span {
-  color: white;
-  margin-right: 10px;
-}
-#root .contact-root .footer-location p {
-  color: white;
-  line-height: 1.8;
-}
-#root .contact-root .footer-location p button {
-  text-decoration: underline;
-  margin-left: 10px;
-}
-#root .contact-root .footer-logo {
-  width: 106.1px;
-  height: 27.1px;
-  position: absolute;
-  top: 266.9px;
-  right: 360px;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 1400px) {

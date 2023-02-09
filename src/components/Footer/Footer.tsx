@@ -10,58 +10,23 @@ type Props = {
 const Footer = ({ info }: Props) => {
   return (
     <div className='footer-root'>
-      <div className='main-container'>
-        <div className='terms-container'>
-          <div className='terms'>
-            <a href={images.privacy} target='_blank'>
-              {'개인정보 처리방침'}
-            </a>
-          </div>
-          <div className='bar' />
-          <div className='terms'>
-            <a href={images.terms} target='_blank'>
-              {'서비스 이용약관'}
-            </a>
-          </div>
+      <div className='footer-main'>
+        <div className='location'>
+          <button>개인정보 처리 방침</button>
+          <span>|</span>
+          <button>서비스 이용약관</button>
+          <p>
+            회사명: 주식회사 윔 | 대표 : 전우진 | 연락처: 010-9844-2434
+            <br />
+            이메일: wim@wimcorp.co.kr | 사업분야: 응용 소프트웨어 개발 및 공급업
+            <br />
+            사업자등록번호: 507 - 86 - 02537 | 주소: 대구광역시 북구 대학로 80
+            경북대학교 창업보육센터 308호
+          </p>
+          <br />
+          <p>WIM Corp., Inc. All rights reserved</p>
         </div>
-        <div className='container'>
-          <div className='info-container'>
-            <div className='col'>
-              {info.slice(0, 3).map((item, idx) => {
-                return (
-                  <div className='item' key={idx}>
-                    <span className='title'>{item.title}</span>
-                    <span className='description'>{item.description}</span>
-                  </div>
-                );
-              })}
-            </div>
-            <div className='col'>
-              {info.slice(3, 6).map((item, idx) => {
-                return (
-                  <div className='item' key={idx}>
-                    <span className='title'>{item.title}</span>
-                    <span className='description'>{item.description}</span>
-                  </div>
-                );
-              })}
-            </div>
-            <div className='col'>
-              {info.slice(6).map((item, idx) => {
-                return (
-                  <div className='item' key={idx}>
-                    <span className='title'>{item.title}</span>
-                    <span className='description'>{item.description}</span>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-          <div className='logo-container'>
-            <img src={images.logoFooter} alt='wim-logo' />
-            <span>{'WIM Corp., Inc. All rights reserved'}</span>
-          </div>
-        </div>
+        <img className='logo' src={images.logoFooter} />
       </div>
     </div>
   );
