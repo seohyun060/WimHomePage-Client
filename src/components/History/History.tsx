@@ -9,7 +9,7 @@ type Props = {
   listRef: RefObject<HTMLDivElement>;
   history: HistoryTypes;
   currentIdx: number;
-  observer: IntersectionObserver;
+
   onPrevClicked: () => void;
   onNextClicked: () => void;
 };
@@ -19,7 +19,7 @@ const History = ({
   listRef,
   history,
   currentIdx,
-  observer,
+
   onPrevClicked,
   onNextClicked,
 }: Props) => {
@@ -37,7 +37,7 @@ const History = ({
         </div>
         <div className='content'>
           <div className='pagination-container'>
-            <span className='year '>{Object.keys(history)[currentIdx]}</span>
+            <span className='year'>{Object.keys(history)[currentIdx]}</span>
             <div className='button-container'>
               <button className='button' onClick={onPrevClicked}>
                 <img src={images.leftBtnW} alt='left-button' />
@@ -53,7 +53,6 @@ const History = ({
                 <MonthListContainer
                   monthItem={item}
                   key={`${item.list}${item.month}`}
-                  observer={observer}
                 />
               );
             })}

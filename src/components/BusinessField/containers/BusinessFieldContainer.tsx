@@ -45,9 +45,6 @@ const BusinessFieldContainer = () => {
 
   const backgroundRef = useRef<HTMLImageElement>(null);
   const rootRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const descRef = useRef<HTMLSpanElement>(null);
-  const buttonRef = useRef<HTMLButtonElement>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
 
   const onBusinessClicked = useCallback(
@@ -100,6 +97,10 @@ const BusinessFieldContainer = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', businessFieldScrollHandler);
+
+    return () => {
+      window.removeEventListener('scroll', businessFieldScrollHandler);
+    };
   }, []);
 
   return (
