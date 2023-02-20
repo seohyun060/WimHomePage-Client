@@ -234,14 +234,7 @@
   height: 4px;
   border-radius: 50%;
   background-color: #ffffff;
-  -webkit-animation: ball-animation ease-out 0.7s infinite alternate;
-          animation: ball-animation ease-out 0.7s infinite alternate;
-}
-
-@-webkit-keyframes ball-animation {
-  100% {
-    transform: translateY(15px);
-  }
+  animation: ball-animation ease-out 0.7s infinite alternate;
 }
 
 @keyframes ball-animation {

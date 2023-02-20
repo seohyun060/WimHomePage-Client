@@ -84,7 +84,6 @@
   background-color: rgba(255, 255, 255, 0.1);
 }
 #root .contactform-root .main-container .download-container {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   margin-left: auto;
